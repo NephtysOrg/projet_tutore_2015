@@ -1,0 +1,173 @@
+\documentclass[a4paper, 10pt]{report}
+
+%% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{framed}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+%% Couleurs
+\definecolor{vert-0}{HTML}{459436}
+\definecolor{vert-1}{HTML}{93CC4A}
+\definecolor{bleu-0}{HTML}{005572}
+\definecolor{bleu-1}{HTML}{006573}
+\definecolor{bleu-2}{HTML}{008B8D}
+\colorlet{shadecolor}{gray!7}
+
+%% Parametres
+\setcounter{tocdepth}{2}
+\sectionfont{\color{bleu-1}}
+\subsectionfont{\color{bleu-2}}
+
+%% Commandes
+\renewcommand{\thesection}{\arabic{section}} % Les sections n'affichent pas le numero du chapitre
+\newcommand{\keyword}[1]{\noindent\textbf{\underline{#1}}} % Mot clef des algos en gras et soulignés
+\setlist[itemize]{label=\tiny$\bullet$}
+
+%% Environements
+\renewenvironment{shaded}
+	{
+  	\def\FrameCommand{\fboxsep=\FrameSep \colorbox{shadecolor}
+  	}
+  	\MakeFramed{\advance\hsize-\width \FrameRestore\FrameRestore}}
+ {\endMakeFramed}
+
+
+\newenvironment{discussion}
+    {
+    \noindent\textbf{\textcolor{vert-1}{$\blacksquare$  Discussion : \\}}
+    }
+    {
+    \noindent\textcolor{vert-1}{\\$\blacksquare$}\\
+    }
+    
+\newenvironment{tache}[1][]
+    {
+    \noindent\textbf{\textcolor{vert-0}{$\clubsuit$  Tâches à réaliser pour le #1 : }}
+    }
+    {
+    \noindent\textcolor{vert-0}{\\$\clubsuit$}\\
+    }
+    
+\newenvironment{ordre}[1][]
+    {
+    \noindent\textbf{\textcolor{vert-0}{$\clubsuit$  Ordre du jour du #1 : }}
+    }
+    {
+    }
+
+\begin{document}
+%% Couverture
+\title{{\huge \textbf{Compte rendu de réunion et Ordres du jour \\ Projet tutoré 2015}}}
+\author{Roland Bary, Charles Follet}
+\date{Encadrants : Marie-Noelle Bessagnet, Annig Lacayrelle,  Albert Royer, Christian Sallaberry}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Jeudi 5 Février}
+\begin{discussion}
+\begin{itemize}
+\item Rencontre entre l'équipe d'encadrants et les groupes associés aux projets.
+\item Présentation brève des cahiers de charges relatifs au différents projets et de l'environnement d'annotation thématique GATE.
+\end{itemize}
+\end{discussion}
+
+\begin{tache}[09/02/2015]
+\begin{itemize}
+\item Installer l'environnement GATE et effectuer quelques tests pour se familiariser avec.
+\item Installer  le logiciel TreeTagger et effectuer quelques tests pour se familiariser avec.
+\item Lire la documentation de GATE jusqu'à la partie 6.
+\item Lire des ressources documentaires de chaque projet.
+\end{itemize}
+\end{tache} 
+
+\section{Lundi 9 Février 2015}
+\subsection{Paramétrage de GATE}
+Convention de nommage :\\
+GATEdir : Chemin d'installation de GATE.\\
+TREETAGGERdir : Chemin d'installation de TreeTagger.
+\subsubsection{ANNIE}
+\begin{itemize}
+\item Lancer le CREOLE plugin manager en cliquant sur le logo CREOLE (puzzle).
+\item Cocher la case Load Now et Load Always du plugin ANNIE.
+\item Cliquer sur Apply All.
+\item Fermer le plugin manager.
+\end{itemize}
+\subsubsection{Unicode Tokenizer}
+Dans GATE :
+\begin{itemize}
+\item Clic droit sur Processing Ressource dans l'arborescence de gauche.
+\item New  GATE Unicode Tokenizer avec encoding : utf8, rulesURL :\begin{verbatim}
+GATEdir/plugins/Lang_French/tokeniser/FrenchTokeniser.rules
+\end{verbatim}
+\end{itemize}
+\subsubsection{Inclusion TreeTagger}
+\begin{itemize}
+\item Éditer 
+\begin{verbatim}
+GATEdir/plugin/Tagger_Framework/resources/TreeTagger/treetagger-french-gate
+\end{verbatim}
+\item Ajouter/modifier les lignes suivantes 
+\begin{verbatim}
+ BIN=TREETAGGERdir/bin
+ LIB=TREETAGGERdir/lib
+ CMD=TREETAGGERdir/cmd
+\end{verbatim}
+\end{itemize}
+\subsubsection{Récupérer une application}
+\begin{itemize}
+\item Clic droit sur Applications puis Restore application from file...
+\item sélectionner \begin{verbatim}
+GATEdir/plugins/Lang_French/french+tagger.gapp
+\end{verbatim}
+\item Dans French\_NE : clic gauche sur Treetager-FR-NoTokenization
+\item modifier encoding: utf-8 et taggerBinary : \begin{verbatim}
+GATEdir/plugins/Tagger_Framework/resources/TreeTagger/tree-tagger-french-gate
+\end{verbatim}
+\end{itemize}
+\subsection{Corrections de bugs}
+\subsubsection{GAWK}
+installer gawk : \begin{verbatim}sudo apt-get install gawk\end{verbatim}
+\subsubsection{Renommage}
+Copie de french-utf8.par en french.par dans le dossier \begin{verbatim} TREETAGGERdir/lib\end{verbatim}
+\subsubsection{LuckyException}
+Dans \begin{verbatim}GATEdir/plugin/Lang_French/tokeniser/postprocess.jap\end{verbatim}
+\newpage
+\section{Mardi 03 Mars 2015}
+\begin{discussion}
+Il a été au cours de cette réunion, de présenter le travail que nous avons effectué durant les vacances du mois de février :
+\begin{itemize}
+\item Définition des éléments d'information ciblés, par une ébauche de construction de règles d'annotations. Les éléments ciblés étant les suivants :
+      \begin{itemize}
+	\item Spatiale: villes, départements, villes de pays frontaliers
+	\item Temporelle: période d'émission des monnaies
+	\item Thématique: nature de la monnaie, légende du droit et légende du revers, le type de la monnaie, le nom de l'atelier, personnages associés aux monnaies
+      \end{itemize}
+\item Construction d'un premier Gazetter à partir des nom de villes et départements de France récupérés sur le site web de L'INSEE
+\item Tests d'annotation sur un fichier d'extension .txt (Tiré de la ressource documentaire) avec le dit gazetter constitué.
+\end{itemize}
+Aussi plusieurs remarques ont été mises en évidence, à savoir :
+\begin{itemize}
+ \item L'amélioration de l'ébauche de construction des règles d'annotation qui a été présentée, par l'ajout des thématiques 'collection','Trésors' et 'trouvailles' et 
+ \item Le traitement en priorité cas généraux d'annotation et noter les cas spécifiques rencontrés
+ \item Formaliser aux mieux l'information, à l'aide de notions bien connues (i.e Expression Régulières, automates, ...)
+ \item Constitution de Gazetter à partir d'informations directement extraites de la ressource documentaire
+\end{itemize}
+\end{discussion}
+%%%%%%%%%%% Taches a realiser %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tache}
+A l'issue de cette réunion il nous a été recommandé de réaliser les tâches suivantes pour la prochaine rencontre:
+\begin{itemize}
+ \item Scan et Océrisation des pages constituant les chapitres I à III, afin d'extraire des informations nécessaires à la constructions de Gazzeters
+ \item Améliorer l'ébauche de construction des règles d'annotation, par des illustrations, et des notes de problèmes éventuellement rencontrés
+\end{itemize}
+\end{tache}
+%%%%%%%%%%% Ordre du jour %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ordre}[]
+\end{ordre}
+\end{document}

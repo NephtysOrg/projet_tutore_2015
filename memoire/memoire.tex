@@ -1,0 +1,183 @@
+\documentclass[a4paper, 11pt]{article}
+
+%%%% Packages %%%%
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{framed}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+%% Couleurs
+ \definecolor{orange}{HTML}{E74C3C}
+ \definecolor{dark-blue}{HTML}{1A2530}
+ \definecolor{blue}{HTML}{34495E}
+ 
+ \colorlet{shadecolor}{gray!7}
+
+%% Parametres
+\setcounter{tocdepth}{2}
+%\sectionfont{\color{}}
+%\subsectionfont{\color{}}
+
+
+%% Commandes
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}} % Les sections n'affichent pas le numero du chapitre
+
+%% Environements
+\renewenvironment{shaded}
+	{
+  	\def\FrameCommand{\fboxsep=\FrameSep \colorbox{shadecolor}
+  	}
+  	\MakeFramed{\advance\hsize-\width \FrameRestore\FrameRestore}}
+ {\endMakeFramed}
+
+
+
+\newenvironment{general}
+    {
+    \noindent\textbf{\textcolor{dark-blue}{$\blacksquare$  Cas général : \\}}
+    }
+    {
+    ~\\\noindent\textcolor{dark-blue}{$\blacksquare$}\\
+    }
+    
+\newenvironment{particulier}
+    {
+    \noindent\textbf{\textcolor{blue}{$\blacksquare$  Cas particulier : \\}}
+    }
+    {
+    \\\noindent\textcolor{blue}{$\blacksquare$}\\
+    }
+\newenvironment{exemple}
+    {
+    \noindent\textbf{\textcolor{orange}{
+    Exemple : \\}}
+    }
+    {\\
+    }
+
+\begin{document}
+
+%% Couverture
+\title{Projet Tutoré}
+\author{Charles Follet \and Roland Bary}
+\maketitle
+\tableofcontents
+\newpage
+\section{Numérisation}
+A l'aide d'un scanner standard, nous avons numérisé de la page 11 à 67 afin d'avoir le maximum de ressource pour notre travail suivant le 10 mars (date de remise de l'ouvrage).\\
+Ensuite il a fallu convertir les fichiers pdf scannés à l'aide d'un outil d'OCRisation en ligne de commande : tesseract. Nous avons obtenu des fichiers txt exploitables pour créer des gazetteers.
+\section{Annotations}
+Ébauches des règles d'annotation.
+\subsection{Spatiales}
+\subsubsection{Villes, Départements, Pays}
+Les villes ne sont pas très utiles à annoter, elles ont un sens thématique car elles correspondent à un atelier.
+\newpage
+\subsection{Temporelles}
+\subsubsection{Périodes}
+\begin{general}
+Une période d'émission est un intervalle de deux dates. Dans notre travail, les dates sont constituée de trois et seulement trois chiffres. Chacune d'entre elles peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
+ Définissons comment capter une date : 
+\begin{verbatim}
+([0-9]{3}\/?[0-9]?)
+\end{verbatim}
+\textit{Signification : Trouver une suite de trois chiffres suivis de 0 ou 1  \og/\fg{} suivis d'un chiffre. Placer le résultat dans un groupe.}\\
+
+Il suffit maintenant de combiner deux expressions régulières comme celle-ci avec un tiret et de concaténer l'expression obtenu à la chaine \og Type de \fg{}.
+\begin{verbatim}
+Type de ([0-9]{3}\/?[0-9]?)-([0-9]{3}\/?[0-9]?)
+\end{verbatim}
+~\\
+\begin{exemple}
+"\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
+Group \#1 : 771 \\
+Group \#2 : 793/4
+\end{exemple}
+\end{general}
+
+\subsubsection{Périodes de règne}
+\begin{general}
+Il est plus judicieux d'utiliser un gazetteer ici car les noms des personnages sont assez difficiles à capter. (L'OCRisation n'a pas été très réussie ... Solution?)
+\end{general}
+\subsubsection{...}
+\newpage
+\subsection{Thématiques}
+\subsubsection{Nature de la monnaie}
+\begin{general}
+La nature de la monnaie est souvent un élément de l'ensemble {Denier, Obole, Monnaie D'Or}. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. 
+\begin{verbatim}
+[\s]{2,}(Denier|Obole|Monnaie d'or)
+\end{verbatim}
+\end{general}
+\begin{particulier}
+Il y a cependant des natures un peu "exotiques" comme faux obole.
+\end{particulier}
+\subsubsection{Légendes}
+\begin{general}
+Construire un gazetteer concernant les légendes parait une tache périlleuse. De plus, étant donnée le grand nombre de légendes, la performance de notre application serai loin d'être optimale. Voila pourquoi nous proposons une expressions régulière, complexe certes, mais optimisée. \\
+\begin{enumerate}
+\item Se positionner à la ligne qui suit la nature de la pièce
+\begin{verbatim}
+(?:Denier|Obole|Monnaie d'or).*\n
+\end{verbatim}
+\item Capturer l'ensemble des caractères entre 0 ou 1 symbole + et 2 ou plus espaces. C'est la légende du droit.
+\begin{verbatim}
+\+?\s?(.*)[ ]{2,}
+\end{verbatim}
+\item Capture l'ensemble des caractères entre 0 ou 1 symbole + et la fin de ligne. C'est la légende du revers.
+\begin{verbatim}
+\+?\s?(.*)
+\end{verbatim}
+\end{enumerate}
+On obtient une expression comme suit : 
+\begin{verbatim}
+(?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+?\s?(.*)
+\end{verbatim}
+\begin{exemple}
+\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
+Group \#1 : CARLO  45E \\
+Group \#2 : CROIX SIMPLE
+\end{exemple}
+\end{general}
+\subsubsection{Types monétaire}
+\begin{general}
+Le type monétaire correspond(?) à la période d'émission.
+\begin{verbatim}
+(Type de [0-9]{3}\/?[0-9]?-[0-9]{3}\/?[0-9]?)
+\end{verbatim}
+\end{general}
+
+\subsubsection{Ateliers}
+\begin{general}
+Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier suivi. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetteer.
+\end{general}
+\begin{particulier}
+\end{particulier}
+
+\subsubsection{Personnages}
+\begin{general}
+Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetteer ici. (L'OCRisation n'a pas été très réussie ... Solution?)
+\end{general}
+\begin{particulier}
+\end{particulier}
+
+\subsubsection{Collections, Trésors, Trouvailles}
+\begin{general}
+Les \textit{mots} Collections, Trésors, Trouvailles sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
+\begin{verbatim}
+Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
+\end{verbatim}
+\begin{exemple}
+\emph{"Collections: Berlin 1,77, 1,70, 1,59, \\
+        1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 \\
+        (1,72), 588 (1,77). Trésors:"}\\
+Group \#1 :  Berlin 1,77, 1,70, 1,59,
+        1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 (1,72), 588 (1,77). Trésors:
+\end{exemple}
+\end{general}
+\begin{particulier}
+\end{particulier}
+
+\end{document}
