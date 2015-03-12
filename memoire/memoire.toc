@@ -5,13 +5,12 @@
 \contentsline {subsubsection}{\numberline {1.1}Villes, D\IeC {\'e}partements, Pays}{2}
 \contentsline {subsection}{\numberline {2}Temporelles}{3}
 \contentsline {subsubsection}{\numberline {2.1}P\IeC {\'e}riodes}{3}
-\contentsline {subsubsection}{\numberline {2.2}P\IeC {\'e}riodes d'\IeC {\'e}mission}{3}
+\contentsline {subsubsection}{\numberline {2.2}P\IeC {\'e}riodes d'\IeC {\'e}mission}{4}
 \contentsline {subsubsection}{\numberline {2.3}P\IeC {\'e}riodes de r\IeC {\`e}gne}{4}
-\contentsline {subsubsection}{\numberline {2.4}...}{4}
-\contentsline {subsection}{\numberline {3}Th\IeC {\'e}matiques}{5}
-\contentsline {subsubsection}{\numberline {3.1}Nature de la monnaie}{5}
-\contentsline {subsubsection}{\numberline {3.2}L\IeC {\'e}gendes}{5}
-\contentsline {subsubsection}{\numberline {3.3}Types mon\IeC {\'e}taire}{6}
-\contentsline {subsubsection}{\numberline {3.4}Ateliers}{6}
-\contentsline {subsubsection}{\numberline {3.5}Personnages}{6}
-\contentsline {subsubsection}{\numberline {3.6}Collections, Tr\IeC {\'e}sors, Trouvailles}{6}
+\contentsline {subsection}{\numberline {3}Th\IeC {\'e}matiques}{6}
+\contentsline {subsubsection}{\numberline {3.1}Nature de la monnaie}{6}
+\contentsline {subsubsection}{\numberline {3.2}L\IeC {\'e}gende}{6}
+\contentsline {subsubsection}{\numberline {3.3}Types mon\IeC {\'e}taire}{7}
+\contentsline {subsubsection}{\numberline {3.4}Ateliers}{8}
+\contentsline {subsubsection}{\numberline {3.5}Personnages}{8}
+\contentsline {subsubsection}{\numberline {3.6}Collections, Tr\IeC {\'e}sors, Trouvailles}{8}

@@ -17,6 +17,7 @@
 
 %% Parametres
 \setcounter{tocdepth}{2}
+\setlength{\parindent}{0pt}
 %\sectionfont{\color{}}
 %\subsectionfont{\color{}}
 
@@ -35,24 +36,25 @@
 
 
 
-\newenvironment{general}
+\newenvironment{vulgarisation}
     {
-    \noindent\textbf{\textcolor{dark-blue}{$\blacksquare$  Cas général : \\}}
+    \textbf{\textcolor{dark-blue}{$\blacksquare$  Vulgarisation : \\}}
+
     }
     {
-    ~\\\noindent\textcolor{dark-blue}{$\blacksquare$}\\
+    ~\\\textcolor{dark-blue}{$\blacksquare$}\\
     }
     
-\newenvironment{particulier}
+\newenvironment{formalisation}
     {
-    \noindent\textbf{\textcolor{blue}{$\blacksquare$  Cas particulier : \\}}
+    \textbf{\textcolor{blue}{$\blacksquare$  Formalisation : \\}}
     }
     {
-    \\\noindent\textcolor{blue}{$\blacksquare$}\\
+    ~\\\textcolor{blue}{$\blacksquare$}\\
     }
 \newenvironment{exemple}
     {
-    \noindent\textbf{\textcolor{orange}{
+    \textbf{\textcolor{orange}{
     Exemple : \\}}
     }
     {\\
@@ -68,28 +70,38 @@
 \newpage
 \section{Numérisation}
 A l'aide d'un scanner standard, nous avons numérisé de la page 11 à 67 afin d'avoir le maximum de ressource pour notre travail suivant le 10 mars (date de remise de l'ouvrage).\\
-Ensuite il a fallu convertir les fichiers pdf scannés à l'aide d'un outil d'OCRisation en ligne de commande : tesseract. Nous avons obtenu des fichiers txt exploitables pour créer des gazetteers.
+Ensuite il a fallu convertir les fichiers .pdf scannés à l'aide d'un outil d'OCRisation en ligne de commande : tesseract. Nous avons obtenu des fichiers .txt exploitables pour créer des gazetiers.
 \section{Annotations}
 Ébauches des règles d'annotation.
 \subsection{Spatiales}
 \subsubsection{Villes, Départements, Pays}
-Les villes ne sont pas très utiles à annoter, elles ont un sens thématique car elles correspondent à un atelier.
+
 \newpage
 \subsection{Temporelles}
 Les annotations temporelles concernent uniquement des périodes. Parmi ces périodes, on distingue celles d'émission des monnaies et celle de règne des souverains.
 \subsubsection{Périodes}
-\begin{general}
-Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituée de trois et seulement trois chiffres. Chacune d'entre elles peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
- Définissons comment capter une date : 
+\begin{vulgarisation}
+\textbf{Date} : trois et seulement trois chiffres. Peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'incertitude sur la date.\\
+Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. Chacune d'entre elle peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
+\begin{exemple}
+\textit{757/8}
+\end{exemple}
+
+\textbf{Période} : intervalle de deux dates séparées par un tiret.\\
+\begin{exemple}
+\textit{757/8-786}
+\end{exemple}
+
+\end{vulgarisation}
+\begin{formalisation}
+\textbf{Date}
 \begin{verbatim}
 ([0-9]{3}\/?[0-9]?)
 \end{verbatim}
-
-Il suffit maintenant de combiner deux expressions régulières comme celle-ci avec un tiret.
+\textbf{Période}
 \begin{verbatim}
 ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 \end{verbatim}
-~\\
 \begin{exemple}
 "\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
 Group \#1 : 771 \\
@@ -97,41 +109,80 @@ Group \#2 : 793/4\\\\\noindent
 Group \#1 : 768 \\
 Group \#2 : 814
 \end{exemple}
-\end{general}
+\end{formalisation}
 
 \subsubsection{Périodes d'émission}
-\begin{general}
-Les périodes d'émission des monnaies ont toujours la même allure : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
-Il faut aussi sécuriser la capture de la période pour ne pas sélectionner toutes les périodes du document en ajoutant la contrainte "précédée de Type de".
+\begin{vulgarisation}
+\textbf{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
+Il faut sécuriser la capture de la période pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à l’émission de monnaie en ajoutant la contrainte "précédée de Type de".
+\end{vulgarisation}
+\begin{formalisation}
+\textbf{Périodes d'émission} : 
 \begin{verbatim}
 Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 \end{verbatim}
 \begin{exemple}
-"\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
+"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
 Group \#1 : 771 \\
 Group \#2 : 793/4
 \end{exemple}
-\end{general}
+\end{formalisation}
+
 \subsubsection{Périodes de règne}
-\begin{general}
-Les périodes de règne ont également toujours la même allure : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.
-\end{general}
-\subsubsection{...}
+\begin{vulgarisation}
+\textbf{Périodes de règne} : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.\\
+\begin{exemple}
+"\emph{Type de 771-793/4: Charlemagne (768-814)...}" 
+\end{exemple}
+\end{vulgarisation}
+
+\begin{formalisation}
+\textbf{Périodes de règne} : 
+\begin{verbatim}
+Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
+\end{verbatim}
+\begin{exemple}
+"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
+Correspondance : Charlemagne \\
+Group \#1 : 768 \\
+Group \#2 : 814
+\end{exemple}
+\end{formalisation}
+
 \newpage
 \subsection{Thématiques}
 \subsubsection{Nature de la monnaie}
-\begin{general}
-La nature de la monnaie est souvent un élément de l'ensemble {Denier, Obole, Monnaie D'Or}. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. 
+\begin{vulgarisation}
+\textbf{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
+
+\begin{exemple}
+"\emph{Obole de Charles le Chauve}" \\
+\end{exemple}
+\end{vulgarisation}
+
+\begin{formalisation}
+\textbf{Nature de la monnaie} :
 \begin{verbatim}
-[\s]{2,}(Denier|Obole|Monnaie d'or)
+[\s]{2,}(Denier|Obole|Monnaie d'or|Faux Obole)(.*)? Nom_Souverain
 \end{verbatim}
-\end{general}
-\begin{particulier}
-Il y a cependant des natures un peu "exotiques" comme faux obole.
-\end{particulier}
-\subsubsection{Légendes}
-\begin{general}
-Construire un gazetteer concernant les légendes parait une tache périlleuse. De plus, étant donnée le grand nombre de légendes, la performance de notre application serai loin d'être optimale. Voila pourquoi nous proposons une expressions régulière, complexe certes, mais optimisée. \\
+\begin{exemple}
+"\emph{Obole de Charles le Chauve}" \\
+Correspondance : Charles le Chauve \\
+Group \#1 : 768 \\
+Group \#2 : 814
+\end{exemple}
+\end{formalisation}
+
+\subsubsection{Légende}
+\begin{vulgarisation}
+\textbf{Légende} : toujours à la ligne qui suit la nature de la pièce. Le revers droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite de 2 espaces ou plus. Pour finir, le revers droit vient se placer après zéro ou un caractère +.\\
+\begin{exemple}
+\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
+\end{exemple}
+\end{vulgarisation}
+
+\begin{formalisation}
+\textbf{Légende} :
 \begin{enumerate}
 \item Se positionner à la ligne qui suit la nature de la pièce
 \begin{verbatim}
@@ -146,41 +197,48 @@ Construire un gazetteer concernant les légendes parait une tache périlleuse. D
 \+?\s?(.*)
 \end{verbatim}
 \end{enumerate}
+
 On obtient une expression comme suit : 
 \begin{verbatim}
 (?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+?\s?(.*)
 \end{verbatim}
+
 \begin{exemple}
 \emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
 Group \#1 : CARLO  45E \\
 Group \#2 : CROIX SIMPLE
 \end{exemple}
-\end{general}
+\end{formalisation}
+
 \subsubsection{Types monétaire}
-\begin{general}
-Le type monétaire correspond(?) à la période d'émission.
+\begin{vulgarisation}
+Le type monétaire est la simple concaténation de l'ensemble de mots "Type de" avec la période d'émission.\\
+\begin{exemple}
+"\emph{Type de 771-793/4: Charlemagne (768-814),...}"
+\end{exemple}
+\end{vulgarisation}
+\begin{formalisation}
 \begin{verbatim}
 (Type de [0-9]{3}\/?[0-9]?-[0-9]{3}\/?[0-9]?)
 \end{verbatim}
-\end{general}
+\end{formalisation}
+
 
 \subsubsection{Ateliers}
-\begin{general}
-Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier suivi. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetteer.
-\end{general}
-\begin{particulier}
-\end{particulier}
+\begin{vulgarisation}
+Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetier.
+\end{vulgarisation}
 
 \subsubsection{Personnages}
-\begin{general}
-Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetteer ici. (L'OCRisation n'a pas été très réussie ... Solution?)
-\end{general}
-\begin{particulier}
-\end{particulier}
+\begin{vulgarisation}
+Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetier ici. 
+\end{vulgarisation}
 
 \subsubsection{Collections, Trésors, Trouvailles}
-\begin{general}
-Les \textit{mots} Collections, Trésors, Trouvailles sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
+\begin{vulgarisation}
+\textbf{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
+\end{vulgarisation}
+\begin{formalisation}
 \begin{verbatim}
 Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
 \end{verbatim}
@@ -191,8 +249,6 @@ Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
 Group \#1 :  Berlin 1,77, 1,70, 1,59,
         1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 (1,72), 588 (1,77). Trésors:
 \end{exemple}
-\end{general}
-\begin{particulier}
-\end{particulier}
+\end{formalisation}
 
 \end{document}
