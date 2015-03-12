@@ -76,30 +76,45 @@ Ensuite il a fallu convertir les fichiers pdf scannés à l'aide d'un outil d'OC
 Les villes ne sont pas très utiles à annoter, elles ont un sens thématique car elles correspondent à un atelier.
 \newpage
 \subsection{Temporelles}
+Les annotations temporelles concernent uniquement des périodes. Parmi ces périodes, on distingue celles d'émission des monnaies et celle de règne des souverains.
 \subsubsection{Périodes}
 \begin{general}
-Une période d'émission est un intervalle de deux dates. Dans notre travail, les dates sont constituée de trois et seulement trois chiffres. Chacune d'entre elles peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
+Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituée de trois et seulement trois chiffres. Chacune d'entre elles peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
  Définissons comment capter une date : 
 \begin{verbatim}
 ([0-9]{3}\/?[0-9]?)
 \end{verbatim}
-\textit{Signification : Trouver une suite de trois chiffres suivis de 0 ou 1  \og/\fg{} suivis d'un chiffre. Placer le résultat dans un groupe.}\\
 
-Il suffit maintenant de combiner deux expressions régulières comme celle-ci avec un tiret et de concaténer l'expression obtenu à la chaine \og Type de \fg{}.
+Il suffit maintenant de combiner deux expressions régulières comme celle-ci avec un tiret.
 \begin{verbatim}
-Type de ([0-9]{3}\/?[0-9]?)-([0-9]{3}\/?[0-9]?)
+([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 \end{verbatim}
 ~\\
+\begin{exemple}
+"\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
+Group \#1 : 771 \\
+Group \#2 : 793/4\\\\\noindent
+Group \#1 : 768 \\
+Group \#2 : 814
+\end{exemple}
+\end{general}
+
+\subsubsection{Périodes d'émission}
+\begin{general}
+Les périodes d'émission des monnaies ont toujours la même allure : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
+Il faut aussi sécuriser la capture de la période pour ne pas sélectionner toutes les périodes du document en ajoutant la contrainte "précédée de Type de".
+\begin{verbatim}
+Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
+\end{verbatim}
 \begin{exemple}
 "\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
 Group \#1 : 771 \\
 Group \#2 : 793/4
 \end{exemple}
 \end{general}
-
 \subsubsection{Périodes de règne}
 \begin{general}
-Il est plus judicieux d'utiliser un gazetteer ici car les noms des personnages sont assez difficiles à capter. (L'OCRisation n'a pas été très réussie ... Solution?)
+Les périodes de règne ont également toujours la même allure : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.
 \end{general}
 \subsubsection{...}
 \newpage
