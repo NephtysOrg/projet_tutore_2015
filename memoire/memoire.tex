@@ -81,174 +81,174 @@ Ensuite il a fallu convertir les fichiers .pdf scannés à l'aide d'un outil d'O
 Les annotations temporelles concernent uniquement des périodes. Parmi ces périodes, on distingue celles d'émission des monnaies et celle de règne des souverains.
 \subsubsection{Périodes}
 \begin{vulgarisation}
-\textbf{Date} : trois et seulement trois chiffres. Peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'incertitude sur la date.\\
-Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. Chacune d'entre elle peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
-\begin{exemple}
-\textit{757/8}
-\end{exemple}
-
-\textbf{Période} : intervalle de deux dates séparées par un tiret.\\
-\begin{exemple}
-\textit{757/8-786}
-\end{exemple}
-
+	\textbf{Date} : trois et seulement trois chiffres. Peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'incertitude sur la date.\\
+	Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. Chacune d'entre elle peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
+	\begin{exemple}
+		\textit{757/8}
+	\end{exemple}
+	
+	\textbf{Période} : intervalle de deux dates séparées par un tiret.\\
+	\begin{exemple}
+		\textit{757/8-786}
+	\end{exemple}
+	
 \end{vulgarisation}
 \begin{formalisation}
-\textbf{Date}
-\begin{verbatim}
+	\textbf{Date}
+	\begin{verbatim}
 ([0-9]{3}\/?[0-9]?)
-\end{verbatim}
-\textbf{Période}
-\begin{verbatim}
+	\end{verbatim}
+	\textbf{Période}
+	\begin{verbatim}
 ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
-\end{verbatim}
-\begin{exemple}
-"\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
-Group \#1 : 771 \\
-Group \#2 : 793/4\\\\\noindent
-Group \#1 : 768 \\
-Group \#2 : 814
-\end{exemple}
+	\end{verbatim}
+	\begin{exemple}
+		"\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
+		Group \#1 : 771 \\
+		Group \#2 : 793/4\\\\\noindent
+		Group \#1 : 768 \\
+		Group \#2 : 814
+	\end{exemple}
 \end{formalisation}
 
 \subsubsection{Périodes d'émission}
 \begin{vulgarisation}
-\textbf{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
-Il faut sécuriser la capture de la période pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à l’émission de monnaie en ajoutant la contrainte "précédée de Type de".
+	\textbf{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
+	Il faut sécuriser la capture de la période pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à l’émission de monnaie en ajoutant la contrainte "précédée de Type de".
 \end{vulgarisation}
 \begin{formalisation}
-\textbf{Périodes d'émission} : 
-\begin{verbatim}
+	\textbf{Périodes d'émission} : 
+	\begin{verbatim}
 Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
-\end{verbatim}
-\begin{exemple}
-"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
-Group \#1 : 771 \\
-Group \#2 : 793/4
-\end{exemple}
+	\end{verbatim}
+	\begin{exemple}
+		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
+		Group \#1 : 771 \\
+		Group \#2 : 793/4
+	\end{exemple}
 \end{formalisation}
 
 \subsubsection{Périodes de règne}
 \begin{vulgarisation}
-\textbf{Périodes de règne} : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.\\
-\begin{exemple}
-"\emph{Type de 771-793/4: Charlemagne (768-814)...}" 
-\end{exemple}
+	\textbf{Périodes de règne} : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.\\
+	\begin{exemple}
+		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" 
+	\end{exemple}
 \end{vulgarisation}
 
 \begin{formalisation}
-\textbf{Périodes de règne} : 
-\begin{verbatim}
+	\textbf{Périodes de règne} : 
+	\begin{verbatim}
 Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
-\end{verbatim}
-\begin{exemple}
-"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
-Correspondance : Charlemagne \\
-Group \#1 : 768 \\
-Group \#2 : 814
-\end{exemple}
+	\end{verbatim}
+	\begin{exemple}
+		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
+		Correspondance : Charlemagne \\
+		Group \#1 : 768 \\
+		Group \#2 : 814
+	\end{exemple}
 \end{formalisation}
 
 \newpage
 \subsection{Thématiques}
 \subsubsection{Nature de la monnaie}
 \begin{vulgarisation}
-\textbf{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
-
-\begin{exemple}
-"\emph{Obole de Charles le Chauve}" \\
-\end{exemple}
+	\textbf{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
+	
+	\begin{exemple}
+		"\emph{Obole de Charles le Chauve}" \\
+	\end{exemple}
 \end{vulgarisation}
 
 \begin{formalisation}
-\textbf{Nature de la monnaie} :
-\begin{verbatim}
+	\textbf{Nature de la monnaie} :
+	\begin{verbatim}
 [\s]{2,}(Denier|Obole|Monnaie d'or|Faux Obole)(.*)? Nom_Souverain
-\end{verbatim}
-\begin{exemple}
-"\emph{Obole de Charles le Chauve}" \\
-Correspondance : Charles le Chauve \\
-Group \#1 : 768 \\
-Group \#2 : 814
-\end{exemple}
+	\end{verbatim}
+	\begin{exemple}
+		"\emph{Obole de Charles le Chauve}" \\
+		Correspondance : Charles le Chauve \\
+		Group \#1 : 768 \\
+		Group \#2 : 814
+	\end{exemple}
 \end{formalisation}
 
 \subsubsection{Légende}
 \begin{vulgarisation}
-\textbf{Légende} : toujours à la ligne qui suit la nature de la pièce. Le revers droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite de 2 espaces ou plus. Pour finir, le revers droit vient se placer après zéro ou un caractère +.\\
-\begin{exemple}
-\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
-\end{exemple}
+	\textbf{Légende} : toujours à la ligne qui suit la nature de la pièce. Le revers droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite de 2 espaces ou plus. Pour finir, le revers droit vient se placer après zéro ou un caractère +.\\
+	\begin{exemple}
+		\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
+	\end{exemple}
 \end{vulgarisation}
 
 \begin{formalisation}
-\textbf{Légende} :
-\begin{enumerate}
-\item Se positionner à la ligne qui suit la nature de la pièce
-\begin{verbatim}
+	\textbf{Légende} :
+	\begin{enumerate}
+		\item Se positionner à la ligne qui suit la nature de la pièce
+		      \begin{verbatim}
 (?:Denier|Obole|Monnaie d'or).*\n
-\end{verbatim}
-\item Capturer l'ensemble des caractères entre 0 ou 1 symbole + et 2 ou plus espaces. C'est la légende du droit.
-\begin{verbatim}
+		\end{verbatim}
+		\item Capturer l'ensemble des caractères entre 0 ou 1 symbole + et 2 ou plus espaces. C'est la légende du droit.
+		      \begin{verbatim}
 \+?\s?(.*)[ ]{2,}
-\end{verbatim}
-\item Capture l'ensemble des caractères entre 0 ou 1 symbole + et la fin de ligne. C'est la légende du revers.
-\begin{verbatim}
+		\end{verbatim}
+		\item Capture l'ensemble des caractères entre 0 ou 1 symbole + et la fin de ligne. C'est la légende du revers.
+		      \begin{verbatim}
 \+?\s?(.*)
-\end{verbatim}
-\end{enumerate}
-
-On obtient une expression comme suit : 
-\begin{verbatim}
+		\end{verbatim}
+	\end{enumerate}
+	
+	On obtient une expression comme suit : 
+	\begin{verbatim}
 (?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+?\s?(.*)
-\end{verbatim}
-
-\begin{exemple}
-\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
-Group \#1 : CARLO  45E \\
-Group \#2 : CROIX SIMPLE
-\end{exemple}
+	\end{verbatim}
+	
+	\begin{exemple}
+		\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
+		Group \#1 : CARLO  45E \\
+		Group \#2 : CROIX SIMPLE
+	\end{exemple}
 \end{formalisation}
 
 \subsubsection{Types monétaire}
 \begin{vulgarisation}
-Le type monétaire est la simple concaténation de l'ensemble de mots "Type de" avec la période d'émission.\\
-\begin{exemple}
-"\emph{Type de 771-793/4: Charlemagne (768-814),...}"
-\end{exemple}
+	Le type monétaire est la simple concaténation de l'ensemble de mots "Type de" avec la période d'émission.\\
+	\begin{exemple}
+		"\emph{Type de 771-793/4: Charlemagne (768-814),...}"
+	\end{exemple}
 \end{vulgarisation}
 \begin{formalisation}
-\begin{verbatim}
+	\begin{verbatim}
 (Type de [0-9]{3}\/?[0-9]?-[0-9]{3}\/?[0-9]?)
-\end{verbatim}
+	\end{verbatim}
 \end{formalisation}
 
 
 \subsubsection{Ateliers}
 \begin{vulgarisation}
-Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetier.
+	Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetier.
 \end{vulgarisation}
 
 \subsubsection{Personnages}
 \begin{vulgarisation}
-Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetier ici. 
+	Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetier ici. 
 \end{vulgarisation}
 
 \subsubsection{Collections, Trésors, Trouvailles}
 \begin{vulgarisation}
-\textbf{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
+	\textbf{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
 \end{vulgarisation}
 \begin{formalisation}
-\begin{verbatim}
+	\begin{verbatim}
 Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
-\end{verbatim}
-\begin{exemple}
-\emph{"Collections: Berlin 1,77, 1,70, 1,59, \\
-        1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 \\
-        (1,72), 588 (1,77). Trésors:"}\\
-Group \#1 :  Berlin 1,77, 1,70, 1,59,
-        1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 (1,72), 588 (1,77). Trésors:
-\end{exemple}
+	\end{verbatim}
+	\begin{exemple}
+		\emph{"Collections: Berlin 1,77, 1,70, 1,59, \\
+			1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 \\
+			(1,72), 588 (1,77). Trésors:"}\\
+		Group \#1 :  Berlin 1,77, 1,70, 1,59,
+		1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 (1,72), 588 (1,77). Trésors:
+	\end{exemple}
 \end{formalisation}
 
 \end{document}
