@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 11pt]{book}
 
 %%%% Packages %%%%
 \usepackage[utf8]{inputenc}
@@ -18,8 +18,8 @@
 %% Parametres
 \setcounter{tocdepth}{2}
 \setlength{\parindent}{0pt}
-%\sectionfont{\color{}}
 %\subsectionfont{\color{}}
+%\subsubsectionfont{\color{}}
 
 
 %% Commandes
@@ -38,7 +38,7 @@
 
 \newenvironment{vulgarisation}
     {
-    \textbf{\textcolor{dark-blue}{$\blacksquare$  Vulgarisation : \\}}
+    \textit{\textcolor{dark-blue}{$\blacksquare$  Vulgarisation : \\}}
 
     }
     {
@@ -47,14 +47,14 @@
     
 \newenvironment{formalisation}
     {
-    \textbf{\textcolor{blue}{$\blacksquare$  Formalisation : \\}}
+    \textit{\textcolor{blue}{$\blacksquare$  Formalisation : \\}}
     }
     {
     ~\\\textcolor{blue}{$\blacksquare$}\\
     }
 \newenvironment{exemple}
     {
-    \textbf{\textcolor{orange}{
+    \textit{\textcolor{orange}{
     Exemple : \\}}
     }
     {\\
@@ -66,39 +66,47 @@
 \title{Projet Tutoré}
 \author{Charles Follet \and Roland Bary}
 \maketitle
+\section*{Remerciements}
 \tableofcontents
-\newpage
-\section{Numérisation}
-A l'aide d'un scanner standard, nous avons numérisé de la page 11 à 67 afin d'avoir le maximum de ressource pour notre travail suivant le 10 mars (date de remise de l'ouvrage).\\
-Ensuite il a fallu convertir les fichiers .pdf scannés à l'aide d'un outil d'OCRisation en ligne de commande : tesseract. Nous avons obtenu des fichiers .txt exploitables pour créer des gazetiers.
+
+
+
+
+
+\chapter{Introduction}
+\chapter{Problématique}
+\chapter{État de l'art}
+\subsection{Connaissances}
+\subsection{Outils}
+\chapter{Résolution}
 \section{Annotations}
 Ébauches des règles d'annotation.
 \subsection{Spatiales}
 \subsubsection{Villes, Départements, Pays}
 
 \newpage
-\subsection{Temporelles}
+\subsubsection{Temporelles}
 Les annotations temporelles concernent uniquement des périodes. Parmi ces périodes, on distingue celles d'émission des monnaies et celle de règne des souverains.
 \subsubsection{Périodes}
 \begin{vulgarisation}
-	\textbf{Date} : trois et seulement trois chiffres. Peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'incertitude sur la date.\\
+	\textit{Période} : intervalle de deux dates séparées par un tiret.\\
+	\begin{exemple}
+		\textit{757/8-786}
+	\end{exemple}
+	
+	\textit{Date} : trois et seulement trois chiffres. Peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'incertitude sur la date.\\
 	Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. Chacune d'entre elle peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
 	\begin{exemple}
 		\textit{757/8}
 	\end{exemple}
 	
-	\textbf{Période} : intervalle de deux dates séparées par un tiret.\\
-	\begin{exemple}
-		\textit{757/8-786}
-	\end{exemple}
-	
 \end{vulgarisation}
 \begin{formalisation}
-	\textbf{Date}
+	\textit{Date}
 	\begin{verbatim}
 ([0-9]{3}\/?[0-9]?)
 	\end{verbatim}
-	\textbf{Période}
+	\textit{Période}
 	\begin{verbatim}
 ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 	\end{verbatim}
@@ -113,11 +121,11 @@ Les annotations temporelles concernent uniquement des périodes. Parmi ces péri
 
 \subsubsection{Périodes d'émission}
 \begin{vulgarisation}
-	\textbf{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
+	\textit{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
 	Il faut sécuriser la capture de la période pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à l’émission de monnaie en ajoutant la contrainte "précédée de Type de".
 \end{vulgarisation}
 \begin{formalisation}
-	\textbf{Périodes d'émission} : 
+	\textit{Périodes d'émission} : 
 	\begin{verbatim}
 Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 	\end{verbatim}
@@ -130,14 +138,14 @@ Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 
 \subsubsection{Périodes de règne}
 \begin{vulgarisation}
-	\textbf{Périodes de règne} : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.\\
+	\textit{Périodes de règne} : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.\\
 	\begin{exemple}
 		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" 
 	\end{exemple}
 \end{vulgarisation}
 
 \begin{formalisation}
-	\textbf{Périodes de règne} : 
+	\textit{Périodes de règne} : 
 	\begin{verbatim}
 Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 	\end{verbatim}
@@ -153,7 +161,7 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 \subsection{Thématiques}
 \subsubsection{Nature de la monnaie}
 \begin{vulgarisation}
-	\textbf{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
+	\textit{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
 	
 	\begin{exemple}
 		"\emph{Obole de Charles le Chauve}" \\
@@ -161,7 +169,7 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 \end{vulgarisation}
 
 \begin{formalisation}
-	\textbf{Nature de la monnaie} :
+	\textit{Nature de la monnaie} :
 	\begin{verbatim}
 [\s]{2,}(Denier|Obole|Monnaie d'or|Faux Obole)(.*)? Nom_Souverain
 	\end{verbatim}
@@ -175,14 +183,14 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 
 \subsubsection{Légende}
 \begin{vulgarisation}
-	\textbf{Légende} : toujours à la ligne qui suit la nature de la pièce. Le revers droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite de 2 espaces ou plus. Pour finir, le revers droit vient se placer après zéro ou un caractère +.\\
+	\textit{Légende} : toujours à la ligne qui suit la nature de la pièce. Le revers droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite de 2 espaces ou plus. Pour finir, le revers droit vient se placer après zéro ou un caractère +.\\
 	\begin{exemple}
 		\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
 	\end{exemple}
 \end{vulgarisation}
 
 \begin{formalisation}
-	\textbf{Légende} :
+	\textit{Légende} :
 	\begin{enumerate}
 		\item Se positionner à la ligne qui suit la nature de la pièce
 		      \begin{verbatim}
@@ -236,7 +244,7 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 
 \subsubsection{Collections, Trésors, Trouvailles}
 \begin{vulgarisation}
-	\textbf{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
+	\textit{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
 \end{vulgarisation}
 \begin{formalisation}
 	\begin{verbatim}
@@ -250,5 +258,10 @@ Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
 		1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 (1,72), 588 (1,77). Trésors:
 	\end{exemple}
 \end{formalisation}
+
+
+
+
+\chapter{Conclusion}
 
 \end{document}

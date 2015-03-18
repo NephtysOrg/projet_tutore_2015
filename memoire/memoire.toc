@@ -1,16 +1,22 @@
 \select@language {french}
-\contentsline {section}{\numberline {I}Num\IeC {\'e}risation}{2}
-\contentsline {section}{\numberline {II}Annotations}{2}
-\contentsline {subsection}{\numberline {1}Spatiales}{2}
-\contentsline {subsubsection}{\numberline {1.1}Villes, D\IeC {\'e}partements, Pays}{2}
-\contentsline {subsection}{\numberline {2}Temporelles}{3}
-\contentsline {subsubsection}{\numberline {2.1}P\IeC {\'e}riodes}{3}
-\contentsline {subsubsection}{\numberline {2.2}P\IeC {\'e}riodes d'\IeC {\'e}mission}{4}
-\contentsline {subsubsection}{\numberline {2.3}P\IeC {\'e}riodes de r\IeC {\`e}gne}{4}
-\contentsline {subsection}{\numberline {3}Th\IeC {\'e}matiques}{6}
-\contentsline {subsubsection}{\numberline {3.1}Nature de la monnaie}{6}
-\contentsline {subsubsection}{\numberline {3.2}L\IeC {\'e}gende}{6}
-\contentsline {subsubsection}{\numberline {3.3}Types mon\IeC {\'e}taire}{7}
-\contentsline {subsubsection}{\numberline {3.4}Ateliers}{8}
-\contentsline {subsubsection}{\numberline {3.5}Personnages}{8}
-\contentsline {subsubsection}{\numberline {3.6}Collections, Tr\IeC {\'e}sors, Trouvailles}{8}
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {2}Probl\IeC {\'e}matique}{7}
+\contentsline {chapter}{\numberline {3}\IeC {\'E}tat de l'art}{9}
+\contentsline {subsection}{\numberline {1}Connaissances}{9}
+\contentsline {subsection}{\numberline {2}Outils}{9}
+\contentsline {chapter}{\numberline {4}R\IeC {\'e}solution}{11}
+\contentsline {section}{\numberline {I}Annotations}{11}
+\contentsline {subsection}{\numberline {1}Spatiales}{11}
+\contentsline {subsubsection}{Villes, D\IeC {\'e}partements, Pays}{11}
+\contentsline {subsubsection}{Temporelles}{12}
+\contentsline {subsubsection}{P\IeC {\'e}riodes}{12}
+\contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{13}
+\contentsline {subsubsection}{P\IeC {\'e}riodes de r\IeC {\`e}gne}{13}
+\contentsline {subsection}{\numberline {2}Th\IeC {\'e}matiques}{15}
+\contentsline {subsubsection}{Nature de la monnaie}{15}
+\contentsline {subsubsection}{L\IeC {\'e}gende}{15}
+\contentsline {subsubsection}{Types mon\IeC {\'e}taire}{16}
+\contentsline {subsubsection}{Ateliers}{17}
+\contentsline {subsubsection}{Personnages}{17}
+\contentsline {subsubsection}{Collections, Tr\IeC {\'e}sors, Trouvailles}{17}
+\contentsline {chapter}{\numberline {5}Conclusion}{19}

@@ -1,0 +1,8 @@
+Phase:	Interval
+Rule: Interval
+(
+{Token.kind == "number"}
+{Token.length == 3}
+):tag
+-->
+:tag.date = {rule = "Interval"}
