@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GateDocument version="3">
+<!-- The document's features-->
+
+<GateDocumentFeatures>
+<Feature>
+  <Name className="java.lang.String">MatchesAnnots</Name>
+  <Value className="gate.corpora.ObjectWrapper"><![CDATA[<?xml version='1.0' encoding='UTF-8'?><gate.corpora.ObjectWrapper><value class="map"><entry><null/><list><list><int>111881</int><int>111882</int></list></list></entry></value></gate.corpora.ObjectWrapper>]]></Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">MimeType</Name>
+  <Value className="java.lang.String">text/plain</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">gate.SourceURL</Name>
+  <Value className="java.lang.String">file:/home/cfollet/MEGA/shared/projet_tutore/gate/ressources/062922_auxerre.txt</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">docNewLineType</Name>
+  <Value className="java.lang.String">CRLF</Value>
+</Feature>
+</GateDocumentFeatures>
+<!-- The document content area with serialized nodes -->
+
+<TextWithNodes>            Type de 879-887: Louis III (879-882), Louis le Jeune (879-882), &#xd;
+              Carloman (879-884), Charles le Gros (884-887), Charles de &#xd;
+                Provence (876-880), Boson roi de Provence (879-887)&#xd;
+94      Denier de Carloman (9 exemplaires étudiés)&#xd;
+        + KARL ° CT D, Rx                     + MON +°S NAZ croix&#xd;
+        Poey d'Avant 5638-5641; 5643-5644; Gariel XXXIX 16-17; Morrison-Grunthal 1419; Nombreuses &#xd;
+        variétés de légende, de ponctuation et de gravure. Collections: Berlin; MEC 907 (1,69), 908 (1,32); &#xd;
+        New York 1,74, 1,71; Prou 603 (1,70); Saint-Pétersbourg 1,74; Vienne 1,59. Trésors: Issy-l'Evêque &#xd;
+        (879-884), 2 ex. (D. 172; H. 70 daté de 875).&#xd;
+95      Obole de Carloman&#xd;
+        + KARL ° CT D, Rx                     + MON +°S NAZ croix&#xd;
+        Poey d'Avant 5637, 5642, 5642; Gariel XXXIX 15-18; Morrison-Grunthal 1418, 1420.&#xd;
+        Monnaies de type indéterminé de Carloman (55 exemplaires étudiés).&#xd;
+        Trésors: Autun (879-884), 40 deniers et oboles (D. 23; H. 59 daté de 866); Luzy (début Xe), 15 ex. &#xd;
+        (deniers et oboles) (D. 202).&#xd;
+
+&#xd;
+&#xd;
+&#xd;
+                               Auxerre (Yonne)&#xd;
+&#xd;
+            Type de 840-864: Lothaire I (817-855), Pépin II, roi d'Aquitaine &#xd;
+              (839-865), Charles le Chauve (840-877), Lothaire II roi de &#xd;
+            Lorraine (855-869), Charles l'Enfant roi d'Aquitaine (vers 860)&#xd;
+96      Denier de Charles le Chauve (43 exemplaires étudiés)&#xd;
+        + CAROLVS REX FR croix, 4 globes      AVTISIODERO CIVI temple&#xd;
+        Gariel XXI 1, 2; Morrison-Grunthal 987-990; Depeyrot (I) (2) 96; Nombreuses variétés de légende, de &#xd;
+        ponctuation et de gravure. Collections: Assen 1,54; Berlin; MEC 842 (1,59); New York 1,49; Prou &#xd;
+        582 (1,63), 583 (1,46). Trésors: Groningen-1890 (vers 840), 1 ex. (MG 38; H. 39, daté de 845-846); &#xd;
+        Auxerre (840-845), 1 ex. (D. 24); Tzummarum (840-845), 1 ex. (H. 22 daté de 840, ne mentionne pas &#xd;
+        cette monnaie dans le catalogue); Cosne (840-845), 30 ex. (D. 109; H. 45, daté de 845-846, voir &#xd;
+        p. 93); Midlaren (855), 1 ex. (MG 55; H. 57 daté de 864); Nourray (869-875), 1 ex. (D. 243; H. 64 &#xd;
+        daté de 869-870); Roswinkel (875), 1 ex. (MG 66; H. 75 daté de 877) (1,55); Trouvailles: Auxerre, 1 &#xd;
+        ex. (H. 511)&#xd;
+&#xd;
+                Type de 864-875: Charles le Chauve (840-877), Louis le &#xd;
+            Germanique (840-876), Louis II le Bègue roi d'Aquitaine (867- &#xd;
+                              877), de France (877-879)&#xd;
+97      Denier de Charles le Chauve (22 exemplaires étudiés)&#xd;
+        + GRATIA DEI REX monogramme           + AVTISIODER CIVITAS croix&#xd;
+        Gariel XXV 20-23; Morrison-Grunthal 991, 994, 996-1001; Depeyrot (1) (2) 97; Nombreuses variétés &#xd;
+        de légende, de ponctuation et de gravure (AVTISIODER CIVI). Collections: Berlin 1,77, 1,70, 1,59, &#xd;
+        1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 &#xd;
+        (1,72), 588 (1,77). Trésors: Fontaines/Mercurey (840-875), 1 ex. (D. 147 ne mentionne pas cette &#xd;
+        monnaie; H. 66 daté de 875); Cosne (875-877), 2 ex. (D. 110; H. 67 daté de 875) (1,74, 1,73); &#xd;
+        Montrieux-en-Sologne (887-898), 4 ex. (D. 231; H. 88 daté de 888); Glisy (890), 3 ex. (D. 154; H. 90 &#xd;
+        daté de 888). Monchy-au-Bois (895-898), 1 ex. (D. 217; H. 101 daté de 897-898); Montrieux-en- &#xd;
+        Sologne (900), 1 ex. (D. 229; H. 87 daté de 888).&#xd;
+98      Denier de Charles le Chauve (1 exemplaire étudié)&#xd;
+        + GRATIA DEI REX monogramme           + ALTIEI CIVITVS (rétro.) croix&#xd;
+        Gariel XXV 24; Morrison-Grunthal 991; Depeyrot (1) (2) 98; Collections: Prou 589 (1,68).&#xd;
+&#xd;
+&#xd;
+&#xd;
+&#xd;
+                                                                               151&#xd;
+ &#xd;
+<Node id="3801"/>
+<Node id="3802"/></TextWithNodes>
+<!-- The default annotation set -->
+
+<AnnotationSet>
+<Annotation Id="111770" Type="SpaceToken" StartNode="3801" EndNode="3802">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">kind</Name>
+  <Value className="java.lang.String">control</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">
+</Value>
+</Feature>
+</Annotation>
+<Annotation Id="111839" Type="Split" StartNode="3802" EndNode="3802">
+<Feature>
+  <Name className="java.lang.String">kind</Name>
+  <Value className="java.lang.String">external</Value>
+</Feature>
+</Annotation>
+<Annotation Id="111837" Type="Split" StartNode="3801" EndNode="3802">
+<Feature>
+  <Name className="java.lang.String">kind</Name>
+  <Value className="java.lang.String">external</Value>
+</Feature>
+</Annotation>
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="aze">
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Temporelle">
+</AnnotationSet>
+
+<!-- Named annotation set -->
+
+<AnnotationSet Name="Original markups">
+<Annotation Id="4" Type="paragraph" StartNode="3801" EndNode="3802">
+</Annotation>
+</AnnotationSet>
+
+</GateDocument>

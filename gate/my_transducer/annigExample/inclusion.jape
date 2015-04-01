@@ -1,0 +1,186 @@
+/*
+*   inclusion.jape
+*  Annotation des entités calendaires 
+*  absolues et relatives modifiées 
+*  correspondant à une inclusion 
+* 
+*  Annig 
+* 
+*  Mai 2014
+*/
+
+// Import Java
+//////////////////
+Imports: {
+   import java.text.SimpleDateFormat ;	
+   import java.text.ParseException ;
+}	
+
+Phase:	inclusion
+Input:  Lookup  Token ecAbase ecRbase
+Options: control = appelt
+
+
+
+// Macros
+/////////////////
+
+Macro: Liaison1
+( ( {Token.string == "l"} {Token.string == "'"}) |
+  {Token.string == "le"}  |
+  {Token.string == "la"}  |
+  {Token.string == "les"}     )  
+
+
+Macro: Liaison2
+( ( {Token.string == "d"}  {Token.string == "'"}) |
+  {Token.string == "des"}  |
+  {Token.string == "de"}   |
+  {Token.string == "du"}   |
+  {Token.string == "Du"}   |
+  ( {Token.string == "D"}  {Token.string == "'"}) |
+  {Token.string == "Des"}  |
+  {Token.string == "De"}  )  
+
+Macro: Liaison3
+( {Token.string == "de"}
+  (Liaison1) )  
+
+
+
+
+  
+// Regles
+////////////////
+
+
+//// Absolues ////
+
+
+
+// au début de janvier 1850
+// au milieu, à la fin de ...
+
+Rule:  InclusionA
+
+( ({Lookup.minorType == inclusion}) :i
+  ((Liaison2) | (Liaison3)) ?
+  ({ecAbase}) :arg  )
+:date
+-->  
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","inclusion");
+   AnnotationSet caractInclu = bindings.get("i");
+   Annotation i = caractInclu.iterator().next();
+   String sens = i.getFeatures().get("valeur").toString();
+   ensCaract.put("sens",sens);
+
+   AnnotationSet argAnno = bindings.get("arg");
+ /*  for (Annotation anno:argAnno)
+   {
+      ensCaract.put("argType",anno.getType());
+      ensCaract.put("argValue",anno.getFeatures());
+
+   } */
+
+   Annotation anno = argAnno.iterator().next();
+   // Recupération de l'intervalle associé à l'argument
+   String dateDebS = anno.getFeatures().get("beginInt").toString() ;
+   String dateFinS = anno.getFeatures().get("endInt").toString() ;
+   SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+   Date dDeb = null;
+   Date dFin = null;
+   try {
+      dDeb = sdf.parse(dateDebS);
+      dFin = sdf.parse(dateFinS);
+   }
+   catch (ParseException pe) {
+   	
+   }   
+   
+   // Nbre de jours entre les deux dates
+   int diff = (int)((dFin.getTime() - dDeb.getTime())/(24*60*60*1000));
+ 
+   int tiers = (int)(diff/3);
+   
+   // Calcul du nouvel intervalle
+   Date nvDdeb, nvDfin ;
+   Calendar cal;
+   
+   if ( sens.equals("debut") ) {
+      cal = Calendar.getInstance();
+      cal.setTime(dDeb);
+      cal.add(Calendar.DATE,tiers);
+      nvDfin = cal.getTime();
+      dateFinS = sdf.format(nvDfin);   	
+   }
+   else {
+   	  if ( sens.equals("fin") ) {
+   	  	 cal = Calendar.getInstance();
+         cal.setTime(dFin);
+         cal.add(Calendar.DATE,tiers*(-1));
+         nvDdeb = cal.getTime();
+         dateDebS = sdf.format(nvDdeb);
+   	  }
+   	  else {
+   	  	 cal = Calendar.getInstance();
+         cal.setTime(dDeb);
+         cal.add(Calendar.DATE,tiers);
+         nvDdeb = cal.getTime();
+         dateDebS = sdf.format(nvDdeb); 
+         cal = Calendar.getInstance();
+         cal.setTime(dFin);
+         cal.add(Calendar.DATE,tiers*(-1));
+         nvDfin = cal.getTime();
+         dateFinS = sdf.format(nvDfin);
+         
+   	  }
+   	
+   }
+   
+   ensCaract.put("beginInt",dateDebS);
+   ensCaract.put("endInt",dateFinS);
+   
+   outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAmodif",ensCaract);
+   inputAS.removeAll(bindings.get("arg")); 
+}
+
+
+
+
+
+//// Relatives ////
+
+
+// au début de janvier 
+// au milieu, à la fin de ...
+
+Rule:  InclusionR
+
+( ({Lookup.minorType == inclusion}) :i
+  ((Liaison2) | (Liaison3)) ?
+  ({ecRbase}) :arg  )
+:date
+-->  
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","inclusion");
+   AnnotationSet caractInclu = bindings.get("i");
+   Annotation i = caractInclu.iterator().next();
+   ensCaract.put("sens",i.getFeatures().get("valeur"));
+
+   AnnotationSet argAnno = bindings.get("arg");
+   for (Annotation anno:argAnno)
+   {
+      ensCaract.put("argType",anno.getType());
+      ensCaract.put("argValue",anno.getFeatures());
+   }
+
+   outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecRmodif",ensCaract);
+   inputAS.removeAll(bindings.get("arg"));
+}
+
+

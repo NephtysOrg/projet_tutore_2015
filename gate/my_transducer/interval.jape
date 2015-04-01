@@ -1,8 +1,68 @@
-Phase:	Interval
+/*Phase:	Interval
 Rule: Interval
 (
-{Token.kind == "number"}
-{Token.length == 3}
+	{Token.string=="([0-9]{3}(/[0-9])?)"}
+	{Token.string=="-"}
+	{Token.string=="([0-9]{3}(/[0-9])?)"}
 ):tag
 -->
-:tag.date = {rule = "Interval"}
+:tag.date = {rule = "Interval"}*/
+
+Phase: interval
+Input: Token
+Options: control = appelt
+
+/////////////////////////////////
+Macro: THREE_DIGIT
+({Token.kind==number,Token.length == 3})
+
+Macro: ONE_DIGIT
+({Token.kind==number,Token.length == 1})
+
+Macro:SLASH
+({Token.string=="/"})
+
+Macro:SINGLE_DATE_ACCURATE
+(THREE_DIGIT)
+
+Macro:SINGLE_DATE_INACCURATE
+(THREE_DIGIT SLASH ONE_DIGIT)
+
+Macro:SINGLE_DATE
+(SINGLE_DATE_ACCURATE | SINGLE_DATE_INACCURATE)
+
+/////////////////////////////
+//Rule to detect intervals
+//785-790
+//784/5-802
+Rule: Interval_detect
+(
+	(SINGLE_DATE):d1({Token.string =="-"})(SINGLE_DATE):d2
+)
+:interval -->
+		:interval{
+			//En entree
+			gate.AnnotationSet matchedD1 = (gate.AnnotationSet)bindings.get("d1");
+			gate.Annotation AnnD1 = matchedD1.iterator().next();
+
+			gate.AnnotationSet matchedD2 = (gate.AnnotationSet)bindings.get("d2");
+			gate.Annotation AnnD2 = matchedD2.iterator().next();
+
+
+			String chaineD1 = (String)AnnD1.getFeatures().get("string");
+			String chaineD2 = (String)AnnD2.getFeatures().get("string");
+
+			//declaration d'annotation vide
+			gate.AnnotationSet matchedInter = (gate.AnnotationSet)bindings.get("interval");
+			gate.FeatureMap newFeatures = Factory.newFeatureMap();
+			//MAJ de l'annotation initialement vide
+			newFeatures.put("Kind","interval");
+			newFeatures.put("Rule","Interval_detect");
+			newFeatures.put("D1",chaineD1);
+			newFeatures.put("D2",chaineD2);
+
+			//Validation de l'annotation et sortie
+			outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Interval",newFeatures);
+		}
+
+

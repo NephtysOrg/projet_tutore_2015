@@ -1,0 +1,572 @@
+/*
+*  ecAbase.jape
+*  Annotation des entités calendaires 
+*  absolues et relatives de base
+*  Annig 
+* 
+*  Février 2014
+*/
+
+
+Phase:	ecBase
+Input:  Lookup Token 
+Options: control = appelt
+
+
+// Macros
+/////////////////
+
+Macro: Separateur
+( {Token.string == "/"} |
+  {Token.string == "-"} )
+  
+Macro: IntroMois  
+( ( {Token.string == "mois"}  {Token.string == "de"} ) |
+  ( {Token.string == "mois"}  {Token.string == "d"} {Token.string == "'"}))
+
+Macro: IntroAnnee  
+( {Token.string == "année"} )  
+
+Macro: IntroAnneeScol  
+( {Token.string == "année"} 
+  {Token.string == "scolaire"}  )  
+  
+Macro: Liaison
+( ( {Token.string == "de"}  {Token.string == "l"} {Token.string == "'"}) |
+  ( {Token.string == "de"}  )|
+  ( {Token.string == "à"}  )  ) 
+ 
+ 
+  
+// Regles
+////////////////
+
+
+//// Absolues ////
+
+
+
+// samedi, 5 janvier 1850
+// samedi 5 janvier 1850
+// 5 janvier 1850
+
+Rule:  JourA1
+
+( ( ( ({Lookup.minorType == day} {Token.string == ","}) | 
+      ({Lookup.minorType == day}) )   ) ?
+    ({Token.kind == number, Token.length < 3}):j 
+    ({Lookup.minorType == month}):m
+    ({Token.kind == number, Token.length == 4}):a )
+:date
+-->
+//:date.ecAbase = { kind = "Jour" , valueY = :a.Token.string, valueM = :m.Lookup.valeur, valueD = :j.Token.string}   
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Jour");
+
+   // Récupération du jour, du mois et de l'année
+   
+   AnnotationSet argAnnoJ = bindings.get("j");
+   Annotation annoVJ= argAnnoJ.iterator().next();
+   AnnotationSet argAnnoM = bindings.get("m");
+   Annotation annoVM= argAnnoM.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA= argAnnoA.iterator().next();
+  
+  String dateJ = annoVA.getFeatures().get("string").toString() + "-" 
+                 + annoVM.getFeatures().get("valeur").toString() + "-" 
+                 + annoVJ.getFeatures().get("string");
+  ensCaract.put("beginInt",dateJ);
+  ensCaract.put("endInt",dateJ);
+  
+  outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+
+}
+
+
+
+// premier jour de janvier 1850
+
+Rule:  JourAb1
+
+( ( ( ({Lookup.minorType == day} {Token.string == ","}) | 
+      ({Lookup.minorType == day}) )   ) ?
+    {Token.string == "premier"}  ({Token.string == "jour"})?
+    (Liaison)?
+    ({Lookup.minorType == month}):m
+    ({Token.kind == number, Token.length == 4}):a )
+:date
+-->
+//:date.ecAbase = { kind = "Jour" , valueY = :a.Token.string, valueM = :m.Lookup.valeur, valueD = "1"}
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Jour");
+
+   // Récupération du jour, du mois et de l'année
+   
+   AnnotationSet argAnnoM = bindings.get("m");
+   Annotation annoVM= argAnnoM.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA= argAnnoA.iterator().next();
+  
+  String dateJ = annoVA.getFeatures().get("string").toString() + "-" 
+                 + annoVM.getFeatures().get("valeur").toString() + "-01" ;
+  ensCaract.put("beginInt",dateJ);
+  ensCaract.put("endInt",dateJ);
+  
+  outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+
+}
+
+
+// 1850, le samedi 5 janvier
+// 1850, le 5 janvier
+
+Rule:  JourA2
+
+( ({Token.kind == number, Token.length == 4}):a
+  {Token.string == ","}
+  {Token.string == "le"}
+  ( {Lookup.minorType == day}  ) ?
+  ({Token.kind == number, Token.length < 3}):j 
+  ({Lookup.minorType == month}):m )
+:date
+-->
+//:date.ecAbase = { kind = "Jour" , valueY = :a.Token.string, valueM = :m.Lookup.valeur, valueD = :j.Token.string} 
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Jour");
+
+   // Récupération du jour, du mois et de l'année
+   
+   AnnotationSet argAnnoJ = bindings.get("j");
+   Annotation annoVJ= argAnnoJ.iterator().next();
+   AnnotationSet argAnnoM = bindings.get("m");
+   Annotation annoVM= argAnnoM.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA= argAnnoA.iterator().next();
+  
+  String dateJ = annoVA.getFeatures().get("string").toString() + "-" 
+                 + annoVM.getFeatures().get("valeur").toString() + "-" 
+                 + annoVJ.getFeatures().get("string");
+  ensCaract.put("beginInt",dateJ);
+  ensCaract.put("endInt",dateJ);
+  
+  outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+}
+
+
+// 05/01/1850
+// 05-01-1850
+// 7/1/1970
+
+Rule:  JourA3
+
+( ({Token.kind == number, Token.length <= 2}):j 
+  (Separateur)
+  ({Token.kind == number, Token.length <= 2}):m 
+  (Separateur)
+  ({Token.kind == number, Token.length == 4}):a)
+:date
+-->
+//:date.ecAbase = { kind = "Jour" , valueY = :a.Token.string, valueM = :m.Token.string, valueD = :j.Token.string} 
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Jour");
+
+   // Récupération du jour, du mois et de l'année
+   
+   AnnotationSet argAnnoJ = bindings.get("j");
+   Annotation annoVJ= argAnnoJ.iterator().next();
+   AnnotationSet argAnnoM = bindings.get("m");
+   Annotation annoVM= argAnnoM.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA= argAnnoA.iterator().next();
+  
+  String dateJ = annoVA.getFeatures().get("string").toString() + "-" 
+                 + annoVM.getFeatures().get("string").toString() + "-" 
+                 + annoVJ.getFeatures().get("string");
+  ensCaract.put("beginInt",dateJ);
+  ensCaract.put("endInt",dateJ);
+  
+  outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+
+}
+
+
+// mois de janvier 1850
+// mois d'avril 1850
+// avril 1850
+
+
+Rule:  MoisA
+
+(   (IntroMois)?
+    ({Lookup.minorType == month}):m
+    ({Token.kind == number, Token.length == 4}):a )
+:date
+-->
+//:date.ecAbase = { kind = "Mois" , valueY = :a.Token.string, valueM = :m.Lookup.valeur}  
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Mois");
+
+   // Récupération du mois et de l'année
+
+   AnnotationSet argAnnoM = bindings.get("m");
+   Annotation annoVM = argAnnoM.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA = argAnnoA.iterator().next();
+
+   // Calcul du nombre de jour dans le mois
+   String nbJ;
+   int numM = Integer.parseInt(annoVM.getFeatures().get("valeur").toString());
+   if ((numM == 1) || (numM == 3) || (numM == 5) || (numM == 7) || (numM == 8) || (numM == 10) || (numM ==12))
+      nbJ = "31";
+   else
+   {
+      if (numM != 2)
+         nbJ = "30";
+      else
+      {
+         int numA = Integer.parseInt(annoVA.getFeatures().get("string").toString());
+         if ( ( (numA % 4 ==0) && (numA % 100 != 0)) || (numA % 400 == 0))
+            nbJ = "29";
+         else
+         	nbJ = "28"; 
+      }
+      
+   }   
+   
+  String dateJ = annoVA.getFeatures().get("string").toString() + "-" 
+                + annoVM.getFeatures().get("valeur").toString() + "-01" ;
+  ensCaract.put("beginInt",dateJ);
+  
+  dateJ = annoVA.getFeatures().get("string").toString() + "-" 
+          + annoVM.getFeatures().get("valeur").toString() + "-" 
+          + nbJ ;  
+  ensCaract.put("endInt",dateJ);  
+  
+  outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+
+}
+
+
+
+// printemps de l'année 1850
+// printemps de 1850
+// printemps 1850
+
+
+Rule:  SaisonA1
+
+(   ({Lookup.minorType == season}):s
+    (Liaison)?
+    (IntroAnnee)?
+    ({Token.kind == number, Token.length == 4}):a )
+:date
+-->
+//:date.ecAbase = { kind = "Saison" , valueY = :a.Token.string, valueSeason = :s.Lookup.valeur}  
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Saison");
+
+   // Récupération de la saison et de l'année
+   
+   AnnotationSet argAnnoS = bindings.get("s");
+   Annotation annoVS= argAnnoS.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA= argAnnoA.iterator().next();
+  
+   String dateJb, dateJe;
+   String saison = annoVS.getFeatures().get("valeur").toString();
+   if (saison.equals("printemps"))
+   {
+   	  dateJb = annoVA.getFeatures().get("string").toString() + "-03-20" ;
+   	  dateJe = annoVA.getFeatures().get("string").toString() + "-06-20" ;
+   }
+   else
+   {
+   	  if (saison.equals("automne"))
+      {
+   	     dateJb = annoVA.getFeatures().get("string").toString() + "-09-22" ;
+   	     dateJe = annoVA.getFeatures().get("string").toString() + "-12-20" ;
+      }
+      else
+      {
+   	      if (saison.equals("hiver"))
+          {
+   	         dateJb = annoVA.getFeatures().get("string").toString() + "-12-21" ;
+   	         int numA = Integer.parseInt(annoVA.getFeatures().get("string").toString());
+   	         numA++;
+   	         dateJe = String.valueOf(numA) + "-12-20" ;
+          }
+          else
+          {
+   	         dateJb = annoVA.getFeatures().get("string").toString() + "-06-21" ;
+   	         dateJe = annoVA.getFeatures().get("string").toString() + "-09-21" ;
+   	     
+          }   	
+      }
+   	
+   }
+  
+  ensCaract.put("beginInt",dateJb);
+  ensCaract.put("endInt",dateJe);
+  
+  outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+}
+
+
+
+// hiver de 1960 à 1961
+
+Rule:  SaisonA2
+
+(   ({Lookup.minorType == season}):s
+    (Liaison)
+    ({Token.kind == number, Token.length == 4}):a 
+    (Liaison)
+    {Token.kind == number, Token.length == 4}
+    )
+:date
+-->
+//:date.ecAbase = { kind = "Saison" , valueY = :a.Token.string, valueSeason = :s.Lookup.valeur}  
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Saison");
+
+   // Récupération de la saison et de l'année
+   
+   AnnotationSet argAnnoS = bindings.get("s");
+   Annotation annoVS= argAnnoS.iterator().next();
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA= argAnnoA.iterator().next();
+  
+
+   String dateJb = annoVA.getFeatures().get("string").toString() + "-12-21" ;
+   int numA = Integer.parseInt(annoVA.getFeatures().get("string").toString());
+   numA++;
+   String dateJe = String.valueOf(numA) + "-12-20" ;
+  
+   ensCaract.put("beginInt",dateJb);
+   ensCaract.put("endInt",dateJe);
+  
+   outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+}
+
+
+
+
+// année 1850
+// 1850
+
+
+Rule:  Annee
+
+(   (IntroAnnee)?
+    ({Token.kind == number, Token.length == 4}):a )
+:date
+-->
+//:date.ecAbase = { kind = "Annee" , valueY = :a.Token.string}   
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Annee");
+
+   // Récupération de l'année
+   
+   AnnotationSet argAnnoA = bindings.get("a");
+   Annotation annoVA = argAnnoA.iterator().next();
+  
+
+   String dateJb = annoVA.getFeatures().get("string").toString() + "-01-01" ;
+   String dateJe = annoVA.getFeatures().get("string").toString() + "-12-31" ;
+  
+   ensCaract.put("beginInt",dateJb);
+   ensCaract.put("endInt",dateJe);
+  
+   outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+}
+
+
+// année scolaire 1850-1851
+
+Rule:  AnneeScol
+
+(   (IntroAnneeScol)
+    ({Token.kind == number, Token.length == 4}):a1
+    (Separateur)
+    ({Token.kind == number, Token.length == 4}):a2)
+:date
+-->
+//:date.ecAbase = { kind = "AnneeScol" , valueYbeg = :a1.Token.string, valueYend = :a2.Token.string}   
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","AnneeScol");
+
+   // Récupération des années
+   AnnotationSet argAnnoA1 = bindings.get("a1");
+   Annotation annoVA1 = argAnnoA1.iterator().next();
+   AnnotationSet argAnnoA2 = bindings.get("a2");
+   Annotation annoVA2 = argAnnoA2.iterator().next();
+
+
+   String dateJb = annoVA1.getFeatures().get("string").toString() + "-09-01" ;
+   String dateJe = annoVA2.getFeatures().get("string").toString() + "-08-31" ;
+  
+   ensCaract.put("beginInt",dateJb);
+   ensCaract.put("endInt",dateJe);
+  
+   outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+}
+
+
+// Ve siècle
+// V siècle
+// cinquième siécle
+
+
+Rule:  Siecle
+
+(   ({Lookup.minorType == ordNumber}):s
+    {Token.lemma == "siècle"} )
+:date
+-->
+//:date.ecAbase = { kind = "Siecle" , valueS = :s.Lookup.valeur}  
+{
+   AnnotationSet dateAnno = bindings.get("date");
+   FeatureMap ensCaract = Factory.newFeatureMap();
+   ensCaract.put("kind","Saison");
+
+   // Récupération de la saison et de l'année
+   
+   AnnotationSet argAnnoS = bindings.get("s");
+   Annotation annoVS= argAnnoS.iterator().next();
+    
+   int nbS, nbAd, nbAf;
+   nbS = Integer.parseInt(annoVS.getFeatures().get("valeur").toString());
+   nbAf = nbS * 100 ;
+   nbAd = nbAf - 99 ;   	    
+  
+   String dateJb = String.valueOf(nbAd) + "-01-01" ;  
+   String dateJe = String.valueOf(nbAf) + "-12-31" ;         	    
+      	    
+   ensCaract.put("beginInt",dateJb);
+   ensCaract.put("endInt",dateJe);  
+  
+   outputAS.add(dateAnno.firstNode(),dateAnno.lastNode(),"ecAbase",ensCaract);
+
+}
+
+
+
+//// Relatives ////
+
+// samedi, 5 janvier 
+// samedi 5 janvier 
+// 5 janvier 
+
+Rule:  JourR
+
+( ( ( ({Lookup.minorType == day} {Token.string == ","}) | 
+      ({Lookup.minorType == day}) )   ) ?
+    ({Token.kind == number, Token.length < 3}):j 
+    ({Lookup.minorType == month}):m )
+:date
+-->
+:date.ecRbase = { kind = "Jour" , valueM = :m.Lookup.valeur, valueD = :j.Token.string}   
+
+
+// premier jour de janvier 
+
+Rule:  JourAb1
+
+( ( ( ({Lookup.minorType == day} {Token.string == ","}) | 
+      ({Lookup.minorType == day}) )   ) ?
+    {Token.string == "premier"}  ({Token.string == "jour"})?
+    (Liaison)?
+    ({Lookup.minorType == month}):m
+    ({Token.kind == number, Token.length == 4}):a )
+:date
+-->
+:date.ecAbase = { kind = "Jour" ,  valueM = :m.Lookup.valeur, valueD = "1"}
+
+
+// mois de janvier 
+// mois d'avril 
+// avril 
+
+
+Rule:  MoisR
+
+(   (IntroMois)?
+    ({Lookup.minorType == month}):m )
+:date
+-->
+:date.ecRbase = { kind = "Mois" ,  valueM = :m.Lookup.valeur}  
+
+
+// Regle negative pour ne pas marquer 
+// été indien
+
+Rule:  SaisonRNeg
+
+(   {Lookup.minorType == season}
+    {Token.string == "indien"}  )
+:date
+--> {}
+ 
+
+
+
+
+// printemps 
+
+
+Rule:  SaisonR
+
+(   ({Lookup.minorType == season, Token.lemma!="être"}):s )
+:date
+-->
+:date.ecRbase = { kind = "Saison" ,  valueSeason = :s.Lookup.valeur}  
+
+
+
+// ce jour-là
+// aujourd'hui
+// cette année-là
+// ...
+
+Rule:  RefTempsCal
+
+(   ({Lookup.minorType == refTempsCal}):s )
+:date
+-->
+:date.ecRbase = { kind = "refTempsCal" ,  granularity = :s.Lookup.valeur}  
+
+
+
+
+
+
+
+
+

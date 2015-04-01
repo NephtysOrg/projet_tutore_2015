@@ -1,0 +1,43 @@
+Phase: legende
+Input: Lookup Token SpaceToken NatureMonnaie
+Options: control = appelt
+
+
+Macro:ENDOFLINE
+(
+    {SpaceToken.kind==control, SpaceToken.string !=~ "[\\t]"}
+)
+
+Macro:EXEMPLAIRES
+(
+    ({SpaceToken})*
+    {Token.string == "("}
+    (({Token})({SpaceToken})?)*
+    {Token.string == ")"}
+
+)
+
+Macro: PREVIOUS_LINE
+ (({NatureMonnaie})(EXEMPLAIRES)?(ENDOFLINE))
+
+Macro: LIAISON
+({Token.string == "+"})
+
+Macro: ESPACEMENT
+(({SpaceToken})({SpaceToken})({SpaceToken})*)
+
+Macro: LEGENDE
+(
+((({Token})({SpaceToken})?)*)
+)
+
+//Règles
+Rule: LegendeRule
+(   
+    (PREVIOUS_LINE)
+    (LIAISON)?({SpaceToken})*(LEGENDE)(ESPACEMENT)(LIAISON)?({SpaceToken})*(LEGENDE)
+    
+):Legende 
+-->
+        :Legende.legende = {Kind = "Legende"}
+

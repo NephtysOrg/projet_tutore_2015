@@ -1,0 +1,33 @@
+/*	nature_monnaie.jape
+*	annotation de la nature des monnaies
+*	utilisation d'expressions régulières dans une règle JAPE
+*	simple règles JAPE
+*	Roland Bary - Charles Follet
+*	Mars 2015
+*/
+Phase: nature_monnaie
+Input: Lookup Token SpaceToken ANgazetier
+Options: control = appelt
+
+
+Macro: LIAISON
+({Token.string == "de"})
+
+Macro: MONNAIE
+(
+	({Token.string == "Obole"})|
+	({Token.string == "Denier"})|
+	({Token.string == "Monnaie d'or"})|
+	({Token.string == "Faux Obole"})
+)
+
+
+//Règles
+Rule: NatureMonnaieRule
+(	
+	({SpaceToken})?(MONNAIE):monnaie({SpaceToken})(LIAISON)({SpaceToken})({ANgazetier.majorType == "rois"}):roi
+	
+):NatureMonnaie 
+-->
+		:NatureMonnaie.NatureMonnaie = {Kind = "NatureMonnaie", Monnaie = :monnaie.Token.string, Roi = :roi.ANgazetier.valeur}
+

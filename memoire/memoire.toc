@@ -8,11 +8,11 @@
 \contentsline {section}{\numberline {I}Annotations}{11}
 \contentsline {subsection}{\numberline {1}Spatiales}{11}
 \contentsline {subsubsection}{Villes, D\IeC {\'e}partements, Pays}{11}
-\contentsline {subsubsection}{Temporelles}{12}
+\contentsline {subsection}{\numberline {2}Temporelles}{12}
 \contentsline {subsubsection}{P\IeC {\'e}riodes}{12}
 \contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{13}
 \contentsline {subsubsection}{P\IeC {\'e}riodes de r\IeC {\`e}gne}{13}
-\contentsline {subsection}{\numberline {2}Th\IeC {\'e}matiques}{15}
+\contentsline {subsection}{\numberline {3}Th\IeC {\'e}matiques}{15}
 \contentsline {subsubsection}{Nature de la monnaie}{15}
 \contentsline {subsubsection}{L\IeC {\'e}gende}{15}
 \contentsline {subsubsection}{Types mon\IeC {\'e}taire}{16}

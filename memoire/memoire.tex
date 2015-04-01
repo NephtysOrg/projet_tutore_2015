@@ -6,12 +6,16 @@
 \usepackage{framed}
 \usepackage{amssymb}
 \usepackage{verbatim}
+\usepackage{listings}
 \usepackage[usenames,dvipsnames]{xcolor}
 
 %% Couleurs
  \definecolor{orange}{HTML}{E74C3C}
  \definecolor{dark-blue}{HTML}{1A2530}
  \definecolor{blue}{HTML}{34495E}
+ \definecolor{dkgreen}{rgb}{0,0.6,0}
+ \definecolor{gray}{rgb}{0.5,0.5,0.5}
+ \definecolor{mauve}{rgb}{0.58,0,0.82}
  
  \colorlet{shadecolor}{gray!7}
 
@@ -33,6 +37,23 @@
   	}
   	\MakeFramed{\advance\hsize-\width \FrameRestore\FrameRestore}}
  {\endMakeFramed}
+ 
+ \lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 
 
 
@@ -63,18 +84,22 @@
 \begin{document}
 
 %% Couverture
-\title{Projet Tutoré}
+\title{Conception et développement d’une application d’annotation thématique dans
+l'environnement Gate}
 \author{Charles Follet \and Roland Bary}
 \maketitle
 \section*{Remerciements}
 \tableofcontents
 
-
-
-
-
 \chapter{Introduction}
+La production de documents se fait de plus en plus rapidement et facilement avec la multiplication des moyens numériques mis à notre disposition. Aujourd'hui, chacun peut écrire ce qu'il veut, quand il le veut et le publier quasi instantanément. \\
+Cette liberté est une avancée certaine dans le domaine de la communication. Mais, alors qu'il est possible de chercher des mots via notre éditeur de texte préféré comment faire des recherches un peu plus avancées ?
 \chapter{Problématique}
+\begin{center}
+\begin{Large}
+\textit{"Comment effectuer des recherches avancées sur un corpus de document non structuré ?"}
+\end{Large}
+\end{center}
 \chapter{État de l'art}
 \subsection{Connaissances}
 \subsection{Outils}
@@ -85,7 +110,7 @@
 \subsubsection{Villes, Départements, Pays}
 
 \newpage
-\subsubsection{Temporelles}
+\subsection{Temporelles}
 Les annotations temporelles concernent uniquement des périodes. Parmi ces périodes, on distingue celles d'émission des monnaies et celle de règne des souverains.
 \subsubsection{Périodes}
 \begin{vulgarisation}
@@ -117,6 +142,10 @@ Les annotations temporelles concernent uniquement des périodes. Parmi ces péri
 		Group \#1 : 768 \\
 		Group \#2 : 814
 	\end{exemple}
+	\begin{lstlisting}
+	// Code JAPE
+	...
+	\end{lstlisting}
 \end{formalisation}
 
 \subsubsection{Périodes d'émission}
