@@ -6,15 +6,15 @@
 \contentsline {chapter}{\numberline {3}R\IeC {\'e}solution}{9}
 \contentsline {section}{\numberline {I}Am\IeC {\'e}lioration de nos connaissances}{9}
 \contentsline {section}{\numberline {II}Informations \IeC {\`a} annoter}{10}
-\contentsline {section}{\numberline {III}Annotation avec JAPE}{10}
-\contentsline {subsubsection}{P\IeC {\'e}riodes}{10}
-\contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{11}
-\contentsline {subsubsection}{P\IeC {\'e}riodes de r\IeC {\`e}gne}{11}
-\contentsline {subsubsection}{Nature de la monnaie}{12}
-\contentsline {subsubsection}{L\IeC {\'e}gende}{13}
-\contentsline {subsubsection}{Types mon\IeC {\'e}taire}{14}
-\contentsline {subsubsection}{Collections, Tr\IeC {\'e}sors, Trouvailles}{14}
-\contentsline {section}{\numberline {IV}Annotation avec Gazetiers}{15}
-\contentsline {subsubsection}{Ateliers}{15}
-\contentsline {subsubsection}{Personnages}{15}
-\contentsline {chapter}{\numberline {4}Conclusion}{17}
+\contentsline {section}{\numberline {III}Annotation avec JAPE}{11}
+\contentsline {subsubsection}{P\IeC {\'e}riodes}{11}
+\contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{13}
+\contentsline {subsubsection}{P\IeC {\'e}riodes de r\IeC {\`e}gne}{13}
+\contentsline {subsubsection}{Nature de la monnaie}{14}
+\contentsline {subsubsection}{L\IeC {\'e}gende}{15}
+\contentsline {subsubsection}{Types mon\IeC {\'e}taire}{16}
+\contentsline {subsubsection}{Collections, Tr\IeC {\'e}sors, Trouvailles}{16}
+\contentsline {section}{\numberline {IV}Annotation avec Gazetiers}{17}
+\contentsline {subsubsection}{Ateliers}{17}
+\contentsline {subsubsection}{Personnages}{17}
+\contentsline {chapter}{\numberline {4}Conclusion}{19}

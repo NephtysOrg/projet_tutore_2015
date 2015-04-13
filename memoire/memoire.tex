@@ -198,7 +198,7 @@ Personnages                                      & Gazetier                  \\ 
 \end{tabular}
 \end{table}
 \end{center}
-
+\newpage
 \section{Annotation avec JAPE}
 \subsubsection{Périodes}
 \begin{vulgarisation}
@@ -231,11 +231,33 @@ Personnages                                      & Gazetier                  \\ 
 		Group \#2 : 814
 	\end{exemple}
 	\begin{lstlisting}
-	// Code JAPE
-	...
+		// Regle JAPE
+	Macro: TROIS_NOMBRES
+({Token.kind==number,Token.length == 3})
+
+Macro: UN_NOMBRE
+({Token.kind==number,Token.length == 1})
+
+Macro:SLASH
+({Token.string=="/"})
+
+Macro:DATE_PRECISE
+(TROIS_NOMBRES)
+
+Macro:DATE_IMPRECISE
+(TROIS_NOMBRES SLASH UN_NOMBRE)
+
+Macro:DATE
+(DATE_PRECISE | DATE_IMPRECISE)
+
+Rule: PeriodeRule
+(
+	(DATE):d1({Token.string =="-"})(DATE):d2
+    ):Periode -->
+:Periode{/*Code java pour extraire les extremites de l'intervalle*/}
 	\end{lstlisting}
 \end{formalisation}
-
+\newpage
 \subsubsection{Périodes d'émission}
 \begin{vulgarisation}
 	\textit{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
@@ -251,6 +273,21 @@ Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 		Group \#1 : 771 \\
 		Group \#2 : 793/4
 	\end{exemple}
+		\begin{lstlisting}
+	// Regle JAPE
+	Macro: CHAINE_DEBUT
+(
+    ({Token.string =="Type"})({SpaceToken})
+    ({Token.string =="de"})({SpaceToken})
+)
+
+Rule: PeriodeEmissionRule
+(
+    CHAINE_DEBUT ({Periode}):p
+):PeriodeEmission
+-->
+:PeriodeEmission.PeriodeEmission = { Kind = "PeriodeEmission" ,D1 = :p.Periode.D1, D2 = :p.Periode.D2}
+	\end{lstlisting}
 \end{formalisation}
 
 \subsubsection{Périodes de règne}

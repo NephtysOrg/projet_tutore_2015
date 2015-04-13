@@ -8,14 +8,11 @@ Phase: periode_emission
 Input: Token Periode SpaceToken
 Options: control = appelt
 
-/////////////////////////////////
 Macro: CHAINE_DEBUT
 (
     ({Token.string =="Type"})({SpaceToken})
     ({Token.string =="de"})({SpaceToken})
 )
-
-/////////////////////////////
 
 Rule: PeriodeEmissionRule
 (
