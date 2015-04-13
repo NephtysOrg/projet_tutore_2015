@@ -1,0 +1,48 @@
+Phase: Tresors
+Input: Lookup Token SpaceToken
+Options: control = appelt
+
+Macro: SEPARATOR
+(
+    ({Token.string == ":"})
+)
+
+Macro: TRESORS
+(
+        ({Token.string == "Trésors"})(SEPARATOR)({SpaceToken})
+)
+
+//Règles
+Rule: TresorsRule
+(   
+    (TRESORS):tresors
+):Tresors
+-->
+        :Tresors{
+ //En entree
+ OffsetComparator comparator            = new OffsetComparator();
+
+ gate.AnnotationSet matchedTresors  = (gate.AnnotationSet)bindings.get("tresors");
+ List<Annotation>   listTresors     = new ArrayList<Annotation>(matchedTresors);
+ 
+ Collections.sort(listTresors, comparator);
+ 
+ String tresors = "";
+
+//On récupere chaque token séparés par les expaces
+ for (Annotation ann :  listTresors) {
+  tresors += (String)ann.getFeatures().get("string");
+}
+
+//             //declaration d'annotation vide
+ gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("Tresors");
+ gate.FeatureMap newFeatures        = Factory.newFeatureMap();
+//             //MAJ de l'annotation initialement vide
+newFeatures.put("Kind","Tresors");
+newFeatures.put("Rule","TresorsRule");
+newFeatures.put("Tresors",tresors);
+
+            //Validation de l'annotation et sortie
+outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Tresors",newFeatures);
+        }
+

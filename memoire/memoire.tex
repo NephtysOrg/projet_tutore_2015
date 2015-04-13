@@ -7,7 +7,9 @@
 \usepackage{amssymb}
 \usepackage{verbatim}
 \usepackage{listings}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames,dvipsnames,table,xcdraw]{xcolor}
+\usepackage[pdftex]{graphicx}
+
 
 %% Couleurs
  \definecolor{orange}{HTML}{E74C3C}
@@ -30,6 +32,7 @@
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}} % Les sections n'affichent pas le numero du chapitre
 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 %% Environements
 \renewenvironment{shaded}
 	{
@@ -55,8 +58,7 @@
   tabsize=3
 }
 
-
-
+    
 \newenvironment{vulgarisation}
     {
     \textit{\textcolor{dark-blue}{$\blacksquare$  Vulgarisation : \\}}
@@ -84,34 +86,120 @@
 \begin{document}
 
 %% Couverture
-\title{Conception et développement d’une application d’annotation thématique dans
-l'environnement Gate}
 \author{Charles Follet \and Roland Bary}
-\maketitle
+
+\begin{titlepage}
+\begin{center}
+
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+\includegraphics[width=0.25\textwidth]{./logo.png}~\\[1cm]
+
+\textsc{\Large Projet Tutoré}\\[0.5cm]
+\textsc{\Large M1 Technologies de l'Internet}\\[0.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \LARGE \bfseries Conception et développement d’une application d’annotation thématique dans
+l'environnement Gate \\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\noindent
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Auteurs:}\\
+Roland \textsc{Bary}\\
+Charles \textsc{Follet}
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Tuteurs:} \\
+Marie-Noëlle \textsc{Bessagnet}\\
+Annig \textsc{Lacayrelle}\\
+Albert \textsc{Royer}\\
+Christian \textsc{Sallaberry}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large \date{}}
+
+\end{center}
+\end{titlepage}
 \section*{Remerciements}
+Nous tenons à remercier nos tuteurs pour leur pédagogie et leur encadrement. Monsieur Royer pour sa précision et sa connaissance pointue du domaine. Madame Lacayrelle pour son soutien et sa clarté. Monsieur Sallaberry pour nous avoir remis sur de bonnes pistes quand nous nous égarions. Et enfin, madame Bessagnet pour avoir assuré la coordination et le suivi de ce projet.
 \tableofcontents
 
 \chapter{Introduction}
-La production de documents se fait de plus en plus rapidement et facilement avec la multiplication des moyens numériques mis à notre disposition. Aujourd'hui, chacun peut écrire ce qu'il veut, quand il le veut et le publier quasi instantanément. \\
-Cette liberté est une avancée certaine dans le domaine de la communication. Mais, alors qu'il est possible de chercher des mots via notre éditeur de texte préféré comment faire des recherches un peu plus avancées ?
-\chapter{Problématique}
+La production de documents se fait de plus en plus rapidement et facilement grâce la multiplication des moyens numériques mis à notre disposition. Aujourd'hui, chacun peut écrire ce qu'il veut, quand il le veut et le publier quasi instantanément. \\
+Cette liberté est une avancée certaine dans le domaine de la communication. Mais, alors qu'il est possible de chercher des mots via notre éditeur de texte préféré comment faire des recherches un peu plus avancées dans les divers documents? \\ Plus précisément, posons la problématique suivante : 
 \begin{center}
 \begin{Large}
 \textit{"Comment effectuer des recherches avancées sur un corpus de document non structuré ?"}
 \end{Large}
 \end{center}
+C'est dans le cadre de notre projet tutoré que nous allons, sans avoir la prétention de le résoudre, travailler sur ce problème. Le problème est, dans notre cas, limité à un thème bien précis : les monnaies carolingiennes.\\
+ Notre démarche s'appuiera des connaissances actuelles que nous présenterons en première partie. Ensuite, viendra notre principe de résolution du problème.
+
 \chapter{État de l'art}
-\subsection{Connaissances}
-\subsection{Outils}
+Dans cette partie sera décrit les quelques connaissances et outils actuels dans le domaine considéré : l’annotation sémantique.
+\section{Connaissances}
+
+\section{Outils}
 \chapter{Résolution}
-\section{Annotations}
-Ébauches des règles d'annotation.
-\subsection{Spatiales}
-\subsubsection{Villes, Départements, Pays}
+\section*{Introduction}
+Dans cette partie sera décrit notre démarche pour résoudre la problématique. 
+Voici une version résumée de notre raisonnement pour venir à bout de ce projet. Elle donne une idée générale de notre démarche. Nous avons travaillé par raffinement successif.
+\begin{enumerate}
+\item Amélioration de notre connaissance sur le sujet.
+\item Description en langage naturel des règles d'extraction d'information.
+\item Formalisation et amélioration des règles précédemment établies.
+\item Traduction des règles formelles en langage JAPE.
+\item Construction de gazetiers pour des règles non définissables via JAPE.
+\end{enumerate}
+Nous allons d'abord présenter lister l'ensemble des règles à annoter avec la solution choisie (JAPE ou gazetier). Ensuite nous décrirons précisément chaque règle définie avec JAPE et chaque règle définie avec un gazetier.
+
+\section{Amélioration de nos connaissances}
+// Avec le livre 
 
 \newpage
-\subsection{Temporelles}
-Les annotations temporelles concernent uniquement des périodes. Parmi ces périodes, on distingue celles d'émission des monnaies et celle de règne des souverains.
+\section{Informations à annoter}
+\begin{center}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+\begin{tabular}{|c|c|}
+\hline
+\rowcolor[HTML]{CBCEFB} 
+\textbf{Nom de la règle}                         & \textbf{Solution choisie} \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+ \hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}Spatiale}                       \\ \hline
+Villes, Départements, Pays						& ?   						\\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}Temporelle}                     \\ \hline
+Période d'émission                               & JAPE                      \\
+Période de règne                                 & JAPE                      \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+ \hline
+\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}Thématique}                     \\ \hline
+Natures de la monnaie                            & JAPE                      \\
+Légendes                                         & JAPE                      \\
+Types monétaire                                  & JAPE                      \\
+Collections, trésors, trouvailles                & JAPE                      \\
+Ateliers                                         & Gazetier                  \\
+Personnages                                      & Gazetier                  \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+
+\section{Annotation avec JAPE}
 \subsubsection{Périodes}
 \begin{vulgarisation}
 	\textit{Période} : intervalle de deux dates séparées par un tiret.\\
@@ -186,8 +274,6 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 	\end{exemple}
 \end{formalisation}
 
-\newpage
-\subsection{Thématiques}
 \subsubsection{Nature de la monnaie}
 \begin{vulgarisation}
 	\textit{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
@@ -260,17 +346,6 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 	\end{verbatim}
 \end{formalisation}
 
-
-\subsubsection{Ateliers}
-\begin{vulgarisation}
-	Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetier.
-\end{vulgarisation}
-
-\subsubsection{Personnages}
-\begin{vulgarisation}
-	Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetier ici. 
-\end{vulgarisation}
-
 \subsubsection{Collections, Trésors, Trouvailles}
 \begin{vulgarisation}
 	\textit{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
@@ -289,7 +364,17 @@ Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
 \end{formalisation}
 
 
+\section{Annotation avec Gazetiers}
 
+\subsubsection{Ateliers}
+\begin{vulgarisation}
+	Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetier.
+\end{vulgarisation}
+
+\subsubsection{Personnages}
+\begin{vulgarisation}
+	Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetier ici. 
+\end{vulgarisation}
 
 \chapter{Conclusion}
 

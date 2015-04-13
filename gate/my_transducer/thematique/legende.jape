@@ -3,7 +3,7 @@ Input: Lookup Token SpaceToken NatureMonnaie
 Options: control = appelt
 
 
-Macro:ENDOFLINE
+Macro:FIN_LIGNE
 (
     {SpaceToken.kind==control, SpaceToken.string !=~ "[\\t]"}
 )
@@ -17,8 +17,8 @@ Macro:EXEMPLAIRES
 
 )
 
-Macro: PREVIOUS_LINE
- (({NatureMonnaie})(EXEMPLAIRES)?(ENDOFLINE))
+Macro: LIGNE_PRECEDENTE
+ (({NatureMonnaie})(EXEMPLAIRES)?(FIN_LIGNE))
 
 Macro: LIAISON
 ({Token.string == "+"})
@@ -33,11 +33,42 @@ Macro: LEGENDE
 
 //Règles
 Rule: LegendeRule
+(LIGNE_PRECEDENTE)
 (   
-    (PREVIOUS_LINE)
-    (LIAISON)?({SpaceToken})*(LEGENDE)(ESPACEMENT)(LIAISON)?({SpaceToken})*(LEGENDE)
-    
+    (LIAISON)?({SpaceToken})*(LEGENDE):droit(ESPACEMENT)(LIAISON)?({SpaceToken})*(LEGENDE):revers
 ):Legende 
 -->
-        :Legende.legende = {Kind = "Legende"}
+        :Legende{
+            //En entree
+ OffsetComparator comparator = new OffsetComparator();
+ gate.AnnotationSet matchedDroit = (gate.AnnotationSet)bindings.get("droit");
+ gate.AnnotationSet matchedRevers = (gate.AnnotationSet)bindings.get("revers");
+ List<Annotation>   listDroit = new ArrayList<Annotation>(matchedDroit);
+ List<Annotation>   listRevers = new ArrayList<Annotation>(matchedRevers);
+ Collections.sort(listDroit, comparator);
+ Collections.sort(listRevers, comparator);
+
+ String legende_droit = "";
+ String legendre_revers = "";
+
+//On récupere chaque token séparés par les expaces
+ for (Annotation ann :  listDroit) {
+  legende_droit += (String)ann.getFeatures().get("string");
+}
+for (Annotation ann :  listRevers) {
+  legendre_revers += (String)ann.getFeatures().get("string");
+}
+
+            //declaration d'annotation vide
+gate.AnnotationSet matchedInter = (gate.AnnotationSet)bindings.get("Legende");
+gate.FeatureMap newFeatures = Factory.newFeatureMap();
+            //MAJ de l'annotation initialement vide
+newFeatures.put("Kind","Legende");
+newFeatures.put("Rule","LegendeRule");
+newFeatures.put("Droit",legende_droit);
+newFeatures.put("Revers",legendre_revers);
+
+            //Validation de l'annotation et sortie
+outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Legende",newFeatures);
+        }
 

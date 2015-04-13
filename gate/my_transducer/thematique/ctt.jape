@@ -1,0 +1,48 @@
+Phase: Ctt
+Input: Lookup Token SpaceToken
+Options: control = appelt
+
+Macro: SEPARATOR
+(
+    ({Token.string == ":"})
+)
+
+Macro: Ctt
+(
+        ({Token.string == "Ctt"})(SEPARATOR)({SpaceToken})
+)
+
+//Règles
+Rule: CttRule
+(   
+    (Ctt):ctt
+):Ctt
+-->
+        :Ctt{
+ //En entree
+ OffsetComparator comparator            = new OffsetComparator();
+
+ gate.AnnotationSet matchedCtt  = (gate.AnnotationSet)bindings.get("ctt");
+ List<Annotation>   listCtt     = new ArrayList<Annotation>(matchedCtt);
+ 
+ Collections.sort(listCtt, comparator);
+ 
+ String ctt = "";
+
+//On récupere chaque token séparés par les expaces
+ for (Annotation ann :  listCtt) {
+  ctt += (String)ann.getFeatures().get("string");
+}
+
+//             //declaration d'annotation vide
+ gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("Ctt");
+ gate.FeatureMap newFeatures        = Factory.newFeatureMap();
+//             //MAJ de l'annotation initialement vide
+newFeatures.put("Kind","Ctt");
+newFeatures.put("Rule","CttRule");
+newFeatures.put("Ctt",ctt);
+
+            //Validation de l'annotation et sortie
+outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Ctt",newFeatures);
+        }
+

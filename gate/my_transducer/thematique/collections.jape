@@ -1,0 +1,48 @@
+Phase: Collections
+Input: Lookup Token SpaceToken
+Options: control = appelt
+
+Macro: SEPARATOR
+(
+    ({Token.string == ":"})
+)
+
+Macro: COLLECTIONS
+(
+        ({Token.string == "Collections"})(SEPARATOR)({SpaceToken})
+)
+
+//Règles
+Rule: CollectionsRule
+(   
+    (COLLECTIONS):collections
+):Collections
+-->
+        :Collections{
+ //En entree
+ OffsetComparator comparator            = new OffsetComparator();
+
+ gate.AnnotationSet matchedCollections  = (gate.AnnotationSet)bindings.get("collections");
+ List<Annotation>   listCollections     = new ArrayList<Annotation>(matchedCollections);
+ 
+ Collections.sort(listCollections, comparator);
+ 
+ String collections = "";
+
+//On récupere chaque token séparés par les expaces
+ for (Annotation ann :  listCollections) {
+  collections += (String)ann.getFeatures().get("string");
+}
+
+//             //declaration d'annotation vide
+ gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("Collections");
+ gate.FeatureMap newFeatures        = Factory.newFeatureMap();
+//             //MAJ de l'annotation initialement vide
+newFeatures.put("Kind","Collections");
+newFeatures.put("Rule","CollectionsRule");
+newFeatures.put("Collections",collections);
+
+            //Validation de l'annotation et sortie
+outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Collections",newFeatures);
+        }
+
