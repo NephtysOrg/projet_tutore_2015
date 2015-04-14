@@ -1,48 +1,62 @@
-Phase: Ctt
-Input: Lookup Token SpaceToken
+Phase: ctt
+Input: Token Collections Tresors Trouvailles PeriodeEmission NatureMonnaie ANgazetier
 Options: control = appelt
 
-Macro: SEPARATOR
+Macro: DEBUT
 (
-    ({Token.string == ":"})
+    ({Collections}|{Tresors}|{Trouvailles})
 )
 
-Macro: Ctt
+Macro: CONTENU
 (
-        ({Token.string == "Ctt"})(SEPARATOR)({SpaceToken})
+    ({Token, !Collections, !Tresors, !Trouvailles,!PeriodeEmission,!NatureMonnaie,! ANgazetier.majorType == "ateliers"})+
+)
+
+Macro: FIN
+(
+    ({Collections}|{Tresors}|{Trouvailles}|{ANgazetier.majorType == "ateliers"}|{PeriodeEmission}|{Token.kind =="number"}{NatureMonnaie})
 )
 
 //Règles
 Rule: CttRule
-(   
-    (Ctt):ctt
-):Ctt
+(
+    (DEBUT)
+    (CONTENU):contenu
+    (FIN)
+)
 -->
-        :Ctt{
- //En entree
- OffsetComparator comparator            = new OffsetComparator();
+: contenu{
+    // Pour trier le contenu dans lordre de parcours
+    OffsetComparator comparator            = new OffsetComparator();
 
- gate.AnnotationSet matchedCtt  = (gate.AnnotationSet)bindings.get("ctt");
- List<Annotation>   listCtt     = new ArrayList<Annotation>(matchedCtt);
- 
- Collections.sort(listCtt, comparator);
- 
- String ctt = "";
+    gate.AnnotationSet matchedContenu  = (gate.AnnotationSet)bindings.get("contenu");
+    List<Annotation>   listContenu     = new ArrayList<Annotation>(matchedContenu);
+    
+    Collections.sort(listContenu, comparator);
 
-//On récupere chaque token séparés par les expaces
- for (Annotation ann :  listCtt) {
-  ctt += (String)ann.getFeatures().get("string");
+    String contenu = "";
+
+    //On récupere chaque token séparés par les expaces
+    for (Annotation ann :  listContenu) {
+      contenu += (String)ann.getFeatures().get("string");
+    }
+
+    System.out.println("Contenu : "+ contenu);
+
+    //declaration d'annotation vide
+    gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("Ctt");
+
+if(matchedInter == null){
+    System.out.println("PWOBLEM");
 }
 
-//             //declaration d'annotation vide
- gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("Ctt");
- gate.FeatureMap newFeatures        = Factory.newFeatureMap();
-//             //MAJ de l'annotation initialement vide
-newFeatures.put("Kind","Ctt");
-newFeatures.put("Rule","CttRule");
-newFeatures.put("Ctt",ctt);
+    gate.FeatureMap newFeatures        = Factory.newFeatureMap();
+     //MAJ de l'annotation initialement vide
+    newFeatures.put("Kind","Ctt");
+    newFeatures.put("Rule","CttRule");
+    newFeatures.put("contenu",contenu);
 
-            //Validation de l'annotation et sortie
-outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Ctt",newFeatures);
-        }
+                //Validation de l'annotation et sortie
+    //outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"contenu",newFeatures);
 
+}
