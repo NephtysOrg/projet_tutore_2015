@@ -31,12 +31,18 @@ Rule: CollectionsDetails
       collec += (String)ann.getFeatures().get("string");
   }
 
+  String dellimiter = ";";
+  String splittedCollec[] = collec.split(dellimiter);
+
             //declaration d'annotation vide
   gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("ad");
   gate.FeatureMap newFeatures        = Factory.newFeatureMap();
             //MAJ de l'annotation initialement vide
   newFeatures.put("Kind","collec");
   newFeatures.put("Rule","CollecRule");
+  for (int i = 0; i < splittedCollec.length ; i++) {
+    newFeatures.put("Detail "+i,splittedCollec[i]);
+  }
   newFeatures.put("Details",collec);
 
             //Validation de l'annotation et sortie

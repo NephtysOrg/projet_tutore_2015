@@ -10,11 +10,7 @@ Macro:FIN_LIGNE
 
 Macro:EXEMPLAIRES
 (
-    ({SpaceToken})*
-    {Token.string == "("}
-    (({Token})({SpaceToken})?)*
-    {Token.string == ")"}
-
+((({Token})({SpaceToken})?)*)
 )
 
 Macro: LIGNE_PRECEDENTE
