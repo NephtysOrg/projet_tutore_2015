@@ -2,7 +2,11 @@ Phase: tresors_details
 Input: Token Collections Tresors Trouvailles PeriodeEmission NatureMonnaie ANgazetier
 Options: control = appelt
 
-//Règles
+/**
+* Description : Capture le mot contenu de trouvailles
+* 
+* Exemple : Trouvailles: Lorem ipsum Enim cupidatat Excepteur. 
+*/
 Rule: TrouvaillesDetails
 (
     ({Trouvailles})

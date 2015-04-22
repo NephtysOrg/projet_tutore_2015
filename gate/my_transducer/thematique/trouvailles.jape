@@ -12,7 +12,11 @@ Macro: Trouvailles
         ({Token.string == "Trouvailles"})(SEPARATOR)({SpaceToken})
 )
 
-//Règles
+/**
+* Description : Capture le mot clef trouvaille dans le texte (utile pour ensuite délimiter le contenu de la trouvaille)
+* 
+* Exemple : Trouvailles: 
+*/
 Rule: TrouvaillesRule
 (   
     (Trouvailles):trouvailles

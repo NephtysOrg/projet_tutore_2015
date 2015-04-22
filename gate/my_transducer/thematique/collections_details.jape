@@ -2,12 +2,11 @@ Phase: collections_details
 Input: Token Collections Tresors Trouvailles PeriodeEmission NatureMonnaie Atelier
 Options: control = appelt
 
-Macro: EOL 
-(
-    {Token.string == "."}{Token.string ==~ "\n"}
-)
-
-//Règles
+/**
+* Description : Capture le contenu d'une collection
+* 
+* Exemple : Collections: Lorem ipsum Ut; ea Ut; Excepteur do; aute.
+*/
 Rule: CollectionsDetails
 (
     ({Collections})

@@ -12,7 +12,11 @@ Macro: TRESORS
         ({Token.string == "Trésors"})(SEPARATOR)({SpaceToken})
 )
 
-//Règles
+/**
+* Description : Capture le mot clef tresors dans le texte (utile pour ensuite délimiter le contenu de tresors)
+* 
+* Exemple : Trésors: 
+*/
 Rule: TresorsRule
 (   
     (TRESORS):tresors

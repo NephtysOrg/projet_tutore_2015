@@ -1,14 +1,7 @@
-/*
-*	periode.jape
-*	Annotation d'un interval temporel (898-929 , 768/9-771, 768-771, 768/9-771/2)
-*	Roland Bary - Charles Follet
-*	Mars 2015
-*/
 Phase: periode
 Input: Token
 Options: control = appelt
 
-/////////////////////////////////
 Macro: TROIS_NOMBRES
 ({Token.kind==number,Token.length == 3})
 
@@ -27,10 +20,11 @@ Macro:DATE_IMPRECISE
 Macro:DATE
 (DATE_PRECISE | DATE_IMPRECISE)
 
-/////////////////////////////
-//Rule to detect intervals
-//785-790
-//784/5-802
+/**
+* Description : Capture une période 
+* 
+* Exemple : 758-542 , 758/9-762, ... 
+*/
 Rule: PeriodeRule
 (
 	(DATE):d1({Token.string =="-"})(DATE):d2

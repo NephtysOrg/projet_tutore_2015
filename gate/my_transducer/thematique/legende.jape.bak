@@ -1,24 +1,23 @@
 Phase: legende
-Input: Token SpaceToken NatureMonnaie
+Input: Token  NatureMonnaie
 Options: control = appelt
+
 
 Macro:FIN_LIGNE
 (
-  ({SpaceToken.string=="\r"}{SpaceToken.string=="\n"})
-  |({SpaceToken.string=="\n"}{SpaceToken.string=="\r"})
-  |({SpaceToken.string=="\n"})
-  |({SpaceToken.string=="\r"})
-  )
-
-Macro:LIGNE_PRECEDENTE
-(
-({NatureMonnaie}({SpaceToken.kind == space})?)(({Token})({SpaceToken.kind == space})?)*
+    {SpaceToken.kind==control, SpaceToken.string !=~ "[\\t]"}
 )
+
+Macro:EXEMPLAIRES
+(
+((({Token})({SpaceToken})?)*)
+)
+
+Macro: LIGNE_PRECEDENTE
+ (({NatureMonnaie})(EXEMPLAIRES)?(FIN_LIGNE))
 
 Macro: LIAISON
-(
-    ({Token.string == "+"})
-)
+({Token.string == "+"})
 
 Macro: ESPACEMENT
 (({SpaceToken})({SpaceToken})({SpaceToken})*)
@@ -28,22 +27,15 @@ Macro: LEGENDE
 ((({Token})({SpaceToken})?)*)
 )
 
-/**
-* Description : Capture la légende d'une piece
-* 
-* Exemple : +AZER°OIR        ZUIZE EUIZ 
-*/
+//Règles
 Rule: LegendeRule
-    (LIGNE_PRECEDENTE)
-    (FIN_LIGNE)
-(
-    (LIAISON)?({SpaceToken})*(LEGENDE):droit
-    (ESPACEMENT)
-    (LIAISON)?({SpaceToken})*(LEGENDE):revers
-):Legende
+(LIGNE_PRECEDENTE)
+(   
+    (LIAISON)?({SpaceToken})*(LEGENDE):droit(ESPACEMENT)(LIAISON)?({SpaceToken})*(LEGENDE):revers
+):Legende 
 -->
-:Legende{
-           //En entree
+        :Legende{
+            //En entree
  OffsetComparator comparator = new OffsetComparator();
  gate.AnnotationSet matchedDroit = (gate.AnnotationSet)bindings.get("droit");
  gate.AnnotationSet matchedRevers = (gate.AnnotationSet)bindings.get("revers");
@@ -74,4 +66,5 @@ newFeatures.put("Revers",legendre_revers);
 
             //Validation de l'annotation et sortie
 outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Legende",newFeatures);
-}
+        }
+

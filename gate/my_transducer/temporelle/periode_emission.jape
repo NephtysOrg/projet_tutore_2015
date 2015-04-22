@@ -1,9 +1,3 @@
-/*
-*   periode_emission.jape
-*   
-*   Roland Bary - Charles Follet
-*   Mars 2015
-*/
 Phase: periode_emission
 Input: Token Periode SpaceToken
 Options: control = appelt
@@ -14,6 +8,12 @@ Macro: CHAINE_DEBUT
     ({Token.string =="de"})({SpaceToken})
 )
 
+
+/**
+* Description : Capture une période d'emission
+* 
+* Exemple : Type de 758/9-762
+*/
 Rule: PeriodeEmissionRule
 (
     CHAINE_DEBUT ({Periode}):p

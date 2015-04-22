@@ -37,9 +37,7 @@ Rule: LegendeRule
     (LIGNE_PRECEDENTE)
     (FIN_LIGNE)
 (
-    (LIAISON)?({SpaceToken})*(LEGENDE):droit
-    (ESPACEMENT)
-    (LIAISON)?({SpaceToken})*(LEGENDE):revers
+    (LIAISON)?({SpaceToken})*(LEGENDE):droit(ESPACEMENT)(LIAISON)?({SpaceToken})*(LEGENDE):revers
 ):Legende
 -->
 :Legende{

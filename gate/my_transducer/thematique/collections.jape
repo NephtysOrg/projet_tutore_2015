@@ -12,7 +12,12 @@ Macro: COLLECTIONS
         ({Token.string == "Collections"})(SEPARATOR)({SpaceToken})
 )
 
-//Règles
+
+/**
+* Description : Capture le mot clef collection dans le texte (utile pour ensuite délimiter le contenu de la collection)
+* 
+* Exemple : Collections: 
+*/
 Rule: CollectionsRule
 (   
     (COLLECTIONS):collections

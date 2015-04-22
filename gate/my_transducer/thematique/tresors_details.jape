@@ -2,7 +2,11 @@ Phase: tresors_details
 Input: Token Collections Tresors Trouvailles PeriodeEmission NatureMonnaie ANgazetier
 Options: control = appelt
 
-//Règles
+/**
+* Description : Capture le contenu de trésors 
+* 
+* Exemple : Trésors: Lorem ipsum Exercitation fugiat nulla nulla.
+*/
 Rule: TresorsDetails
 (
     ({Tresors})

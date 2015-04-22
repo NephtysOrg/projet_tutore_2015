@@ -22,7 +22,11 @@ Macro: MONNAIE
 )
 
 
-//Règles
+/**
+* Description : Capture la nature de la monnaie
+* 
+* Exemple : Denier de Charlemagne
+*/
 Rule: NatureMonnaieRule
 (	
 	({SpaceToken})?(MONNAIE):monnaie({SpaceToken})(LIAISON)({SpaceToken})({ANgazetier.majorType == "rois"}):roi
