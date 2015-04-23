@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Auteurs: Roland Bary/Charles Follet -->
+<!ELEMENT annotations (paragraph)*>
+<!ELEMENT paragraph (#PCDATA|
+			Collections|
+			CollectionsDetails|
+			Legende|
+			NatureMonnaie|
+			Periode|
+			PeriodeEmission|
+			Tresors|
+			TresorsDetails|
+			Trouvailles|
+			TrouvaillesDetails)*>
+<!ELEMENT Collections (#PCDATA)>
+<!ELEMENT CollectionsDetails (#PCDATA) >
+<!ELEMENT Legende (#PCDATA)>
+<!ELEMENT NatureMonnaie (#PCDATA) >
+
+<!ELEMENT Periode (#PCDATA)>
+<!ELEMENT PeriodeEmission (#PCDATA)>
+<!ELEMENT Tresors (#PCDATA)>
+<!ELEMENT TresorsDetails (#PCDATA)>
+<!ELEMENT Trouvailles (#PCDATA)>
+<!ELEMENT TrouvaillesDetails (#PCDATA)>
