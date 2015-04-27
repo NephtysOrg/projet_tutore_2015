@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt]{book}
+\documentclass[a4paper, 11pt]{report}
 
 %%%% Packages %%%%
 \usepackage[utf8]{inputenc}
@@ -7,9 +7,11 @@
 \usepackage{amssymb}
 \usepackage{verbatim}
 \usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+
 \usepackage[usenames,dvipsnames,table,xcdraw]{xcolor}
 \usepackage[pdftex]{graphicx}
-
+\usepackage{sectsty}
 
 %% Couleurs
  \definecolor{orange}{HTML}{E74C3C}
@@ -19,13 +21,19 @@
  \definecolor{gray}{rgb}{0.5,0.5,0.5}
  \definecolor{mauve}{rgb}{0.58,0,0.82}
  
+  \definecolor{part_color}{HTML}{E74C3C}
+   \definecolor{section_color}{HTML}{2C3E50}
+    \definecolor{subsection_color}{HTML}{34495E}
+ 
+ 
  \colorlet{shadecolor}{gray!7}
 
 %% Parametres
 \setcounter{tocdepth}{2}
 \setlength{\parindent}{0pt}
-%\subsectionfont{\color{}}
-%\subsubsectionfont{\color{}}
+\partfont{\color{part_color}}
+\sectionfont{\color{section_color}}
+\subsectionfont{\color{subsection_color}}
 
 
 %% Commandes
@@ -135,284 +143,71 @@ Christian \textsc{Sallaberry}
 Nous tenons à remercier nos tuteurs pour leur pédagogie et leur encadrement. Monsieur Royer pour sa précision et sa connaissance pointue du domaine. Madame Lacayrelle pour son soutien et sa clarté. Monsieur Sallaberry pour nous avoir remis sur de bonnes pistes quand nous nous égarions. Et enfin, madame Bessagnet pour avoir assuré la coordination et le suivi de ce projet.
 \tableofcontents
 
-\chapter{Introduction}
-La production de documents se fait de plus en plus rapidement et facilement grâce la multiplication des moyens numériques mis à notre disposition. Aujourd'hui, chacun peut écrire ce qu'il veut, quand il le veut et le publier quasi instantanément. \\
-Cette liberté est une avancée certaine dans le domaine de la communication. Mais, alors qu'il est possible de chercher des mots via notre éditeur de texte préféré comment faire des recherches un peu plus avancées dans les divers documents? \\ Plus précisément, posons la problématique suivante : 
-\begin{center}
-\begin{Large}
-\textit{"Comment effectuer des recherches avancées sur un corpus de document non structuré ?"}
-\end{Large}
-\end{center}
-C'est dans le cadre de notre projet tutoré que nous allons, sans avoir la prétention de le résoudre, travailler sur ce problème. Le problème est, dans notre cas, limité à un thème bien précis : les monnaies carolingiennes.\\
- Notre démarche s'appuiera des connaissances actuelles que nous présenterons en première partie. Ensuite, viendra notre principe de résolution du problème.
+\part{Introduction}
+Avec l'évolution de manière significative des volumes d'informations sur internet, on peut observer une évolution du web vers une approche dans laquelle chaque donnée acquiert un sens afin de rendre possible une interprétation du contenu des pages web par des machines. Cette extension constitue le web sémantique.L'une des principales motivations du web sémantique est la recherche d’information sémantique.
 
-\chapter{État de l'art}
-Dans cette partie sera décrit les quelques connaissances et outils actuels dans le domaine considéré : l’annotation sémantique.
-\section{Connaissances}
+C'est donc dans ce cadre que nous sommes intervenus pour répondre à l'appel d'offre de nos encadrants. L'objectif est l'annotation sémantique d'un document texte spécifique, qui constitue effectivement la première étape dans un processus d'indexation et de recherche d'information sémantique.\\
 
-\section{Outils}
-\chapter{Résolution}
-\section*{Introduction}
-Dans cette partie sera décrit notre démarche pour résoudre la problématique. 
-Voici une version résumée de notre raisonnement pour venir à bout de ce projet. Elle donne une idée générale de notre démarche. Nous avons travaillé par raffinement successif.
-\begin{enumerate}
-\item Amélioration de notre connaissance sur le sujet.
-\item Description en langage naturel des règles d'extraction d'information.
-\item Formalisation et amélioration des règles précédemment établies.
-\item Traduction des règles formelles en langage JAPE.
-\item Construction de gazetiers pour des règles non définissables via JAPE.
-\end{enumerate}
-Nous allons d'abord lister l'ensemble des règles à annoter avec la solution choisie (JAPE ou gazetier). Ensuite nous décrirons précisément chaque règle définie avec JAPE et chaque règle définie avec un gazetier.
-
-\section{Amélioration de nos connaissances}
-// Avec le livre 
-
-\newpage
-\section{Informations à annoter}
-\begin{center}
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[h]
-\begin{tabular}{|c|c|}
-\hline
-\rowcolor[HTML]{CBCEFB} 
-\textbf{Nom de la règle}                         & \textbf{Solution choisie} \\ \hline
-\rowcolor[HTML]{EFEFEF} 
- \hline
-\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}Spatiale}                       \\ \hline
-Villes, Départements, Pays						& ?   						\\ \hline
-\rowcolor[HTML]{EFEFEF} 
-\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}Temporelle}                     \\ \hline
-Période d'émission                               & JAPE                      \\
-Période de règne                                 & JAPE                      \\ \hline
-\rowcolor[HTML]{EFEFEF} 
- \hline
-\multicolumn{2}{|c|}{\cellcolor[HTML]{EFEFEF}Thématique}                     \\ \hline
-Natures de la monnaie                            & JAPE                      \\
-Légendes                                         & JAPE                      \\
-Types monétaire                                  & JAPE                      \\
-Collections, trésors, trouvailles                & JAPE                      \\
-Ateliers                                         & Gazetier                  \\
-Personnages                                      & Gazetier                  \\ \hline
-\end{tabular}
-\end{table}
-\end{center}
-\newpage
-\section{Annotation avec JAPE}
-\subsubsection{Périodes}
-\begin{vulgarisation}
-	\textit{Période} : intervalle de deux dates séparées par un tiret.\\
-	\begin{exemple}
-		\textit{757/8-786}
-	\end{exemple}
+Au regard de ce qui a été exprimé en amont, se pose les problématiques suivantes:
+\begin{itemize}
+\item Existe-t-il des outils qui se prêtent aisément à l'annotation sémantique ?
+\item Quelle approche de conception peut nous permettre de réaliser cette étape d'annotation sur un document texte non-structuré ?
+\end{itemize}
+	~\\
 	
-	\textit{Date} : trois et seulement trois chiffres. Peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'incertitude sur la date.\\
-	Une période est un intervalle de deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. Chacune d'entre elle peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la période.\\
-	\begin{exemple}
-		\textit{757/8}
-	\end{exemple}
-	
-\end{vulgarisation}
-\begin{formalisation}
-	\textit{Date}
-	\begin{verbatim}
-([0-9]{3}\/?[0-9]?)
-	\end{verbatim}
-	\textit{Période}
-	\begin{verbatim}
-([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
-	\end{verbatim}
-	\begin{exemple}
-		"\emph{Type de 771-793/4: Charlemagne (768-814),...}" \\
-		Group \#1 : 771 \\
-		Group \#2 : 793/4\\\\\noindent
-		Group \#1 : 768 \\
-		Group \#2 : 814
-	\end{exemple}
-	\begin{lstlisting}
-		// Regle JAPE
-	Macro: TROIS_NOMBRES
-({Token.kind==number,Token.length == 3})
+La résolution de ces différentes problématiques, nous à donc amené à organiser ce document comme suit: /*Il faut caller notre plan ici */ :)
+Une première partie dans laquelle nous présenterons le cahier des charges. Ensuite une seconde partie décrira quelques connaissances existantes sur le sujet avec les technologies utilisées au sein du projet.
+\part{Cahier des charges}
+	\section{Contexte}
 
-Macro: UN_NOMBRE
-({Token.kind==number,Token.length == 1})
+A partir des travaux de Georges DEPEYROT sur les monnaies carolingiennes, nous avons travaillé pour une équipe parisienne de numismates sur l'annotation du Numéraire Carolingien\footnote{\url{http://www.cgb.fr/le-numeraire-carolingien-moneta-77-3e-edition-depeyrot-georges,Ln71,a.html}}.\\
+Sur celui-ci, l'équipe a besoin d'effectuer des recherches :
 
-Macro:SLASH
-({Token.string=="/"})
+\begin{description}
+\item [Temporelles] : Quelles étaient les pièces en circulation de l'an 859 à l'an 865?
+\item [Spatiales] : Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ? 
+\item [Thématiques] : Combien d'exemplaires de la monaie d'or de Charles le Chauve ont été étudiés ?
+\end{description}
 
-Macro:DATE_PRECISE
-(TROIS_NOMBRES)
+Répondre à cette demande implique de définir puis d'explorer les dimensions temporelles, spatiales et thématiques de l'ouvrage.\\
+Pour celà, il est nécessaire de connaitre le domaine et l'ouvrage afin de savoir quelle information correspond à quelle dimension.\\
+Une fois cet apprentissage fait, nous pouvons construire des règles dans une chaine de traitement permettant d'annoter chaque information en fonction de sa dimension. \\
 
-Macro:DATE_IMPRECISE
-(TROIS_NOMBRES SLASH UN_NOMBRE)
+Les monnaies carolingiennes sont le domaine central pour la réalisation du projet. Les ressources nécessaires à l'annotation (ici sous forme de gazetiers) ont été construites à partir des données de l'ouvrage.\\
 
-Macro:DATE
-(DATE_PRECISE | DATE_IMPRECISE)
+Forte de son expérience dans le domaine, la maitrise d'ouvrage nous a demandé d'utiliser la boîte à outils logicielle GATE qui sera utile pour le traitement du langage naturel.\\~\\
 
-Rule: PeriodeRule
-(
-	(DATE):d1({Token.string =="-"})(DATE):d2
-    ):Periode -->
-:Periode{/*Code java pour extraire les extremites de l'intervalle*/}
-	\end{lstlisting}
-\end{formalisation}
-\newpage
-\subsubsection{Périodes d'émission}
-\begin{vulgarisation}
-	\textit{Périodes d'émission} : \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).
-	Il faut sécuriser la capture de la période pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à l’émission de monnaie en ajoutant la contrainte "précédée de Type de".
-\end{vulgarisation}
-\begin{formalisation}
-	\textit{Périodes d'émission} : 
-	\begin{verbatim}
-Type de : ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
-	\end{verbatim}
-	\begin{exemple}
-		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
-		Group \#1 : 771 \\
-		Group \#2 : 793/4
-	\end{exemple}
-		\begin{lstlisting}
-	// Regle JAPE
-	Macro: CHAINE_DEBUT
-(
-    ({Token.string =="Type"})({SpaceToken})
-    ({Token.string =="de"})({SpaceToken})
-)
+En résumé, les carractéristiques du projet sont : 
+\begin{itemize}
+\item l'apprentissage et la compréhension du domaine considéré,
+\item l'étude des principes d'annotation de documents,
+\item le dévellopement d'une chaine d'annotation dans GATE,
+\item la mise en place d'une visualisation des résultats.
+\end{itemize}
 
-Rule: PeriodeEmissionRule
-(
-    CHAINE_DEBUT ({Periode}):p
-):PeriodeEmission
--->
-:PeriodeEmission.PeriodeEmission = { Kind = "PeriodeEmission" ,D1 = :p.Periode.D1, D2 = :p.Periode.D2}
-	\end{lstlisting}
-\end{formalisation}
-
-\subsubsection{Périodes de règne}
-\begin{vulgarisation}
-	\textit{Périodes de règne} : \og Nom\_souverain \{Période\} : \fg{}. Il faut aussi sécuriser la capture grâce aux noms des souverains. Ceux-ci étant difficiles capter via une expression régulière, il faut créer un gazetier contenant tous les souverains. Ensuite, dès qu'une correspondance avec le gazetier sera établie on captera la période immédiatement après.\\
-	\begin{exemple}
-		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" 
-	\end{exemple}
-\end{vulgarisation}
-
-\begin{formalisation}
-	\textit{Périodes de règne} : 
-	\begin{verbatim}
-Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
-	\end{verbatim}
-	\begin{exemple}
-		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" \\
-		Correspondance : Charlemagne \\
-		Group \#1 : 768 \\
-		Group \#2 : 814
-	\end{exemple}
-\end{formalisation}
-
-\subsubsection{Nature de la monnaie}
-\begin{vulgarisation}
-	\textit{Nature de la monnaie} : toujours un élément de l'ensemble {Denier, Obole, Monnaie D'Or, Faux obole} suivi ou non du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble. Nous vérifions qu'ils y a bien des espaces avant les termes recherchés afin d'augmenter la robustesse de notre recherche. Les noms des souverains seront trouvés à l'aide d'un gazetier.
-	
-	\begin{exemple}
-		"\emph{Obole de Charles le Chauve}" \\
-	\end{exemple}
-\end{vulgarisation}
-
-\begin{formalisation}
-	\textit{Nature de la monnaie} :
-	\begin{verbatim}
-[\s]{2,}(Denier|Obole|Monnaie d'or|Faux Obole)(.*)? Nom_Souverain
-	\end{verbatim}
-	\begin{exemple}
-		"\emph{Obole de Charles le Chauve}" \\
-		Correspondance : Charles le Chauve \\
-		Group \#1 : 768 \\
-		Group \#2 : 814
-	\end{exemple}
-\end{formalisation}
-
-\subsubsection{Légende}
-\begin{vulgarisation}
-	\textit{Légende} : toujours à la ligne qui suit la nature de la pièce. Le revers droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite de 2 espaces ou plus. Pour finir, le revers droit vient se placer après zéro ou un caractère +.\\
-	\begin{exemple}
-		\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
-	\end{exemple}
-\end{vulgarisation}
-
-\begin{formalisation}
-	\textit{Légende} :
-	\begin{enumerate}
-		\item Se positionner à la ligne qui suit la nature de la pièce
-		      \begin{verbatim}
-(?:Denier|Obole|Monnaie d'or).*\n
-		\end{verbatim}
-		\item Capturer l'ensemble des caractères entre 0 ou 1 symbole + et 2 ou plus espaces. C'est la légende du droit.
-		      \begin{verbatim}
-\+?\s?(.*)[ ]{2,}
-		\end{verbatim}
-		\item Capture l'ensemble des caractères entre 0 ou 1 symbole + et la fin de ligne. C'est la légende du revers.
-		      \begin{verbatim}
-\+?\s?(.*)
-		\end{verbatim}
-	\end{enumerate}
-	
-	On obtient une expression comme suit : 
-	\begin{verbatim}
-(?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+?\s?(.*)
-	\end{verbatim}
-	
-	\begin{exemple}
-		\emph{"Denier de Charlemagne ..... \\+ CARLO  45E\indent\indent CROIX SIMPLE"}\\
-		Group \#1 : CARLO  45E \\
-		Group \#2 : CROIX SIMPLE
-	\end{exemple}
-\end{formalisation}
-
-\subsubsection{Types monétaire}
-\begin{vulgarisation}
-	Le type monétaire est la simple concaténation de l'ensemble de mots "Type de" avec la période d'émission.\\
-	\begin{exemple}
-		"\emph{Type de 771-793/4: Charlemagne (768-814),...}"
-	\end{exemple}
-\end{vulgarisation}
-\begin{formalisation}
-	\begin{verbatim}
-(Type de [0-9]{3}\/?[0-9]?-[0-9]{3}\/?[0-9]?)
-	\end{verbatim}
-\end{formalisation}
-
-\subsubsection{Collections, Trésors, Trouvailles}
-\begin{vulgarisation}
-	\textit{Collections, Trésors, Trouvailles} : sont chacun suivis de deux points. Ensuite vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien d'un autre \textit{mot} suivi de deux points.
-\end{vulgarisation}
-\begin{formalisation}
-	\begin{verbatim}
-Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
-	\end{verbatim}
-	\begin{exemple}
-		\emph{"Collections: Berlin 1,77, 1,70, 1,59, \\
-			1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 \\
-			(1,72), 588 (1,77). Trésors:"}\\
-		Group \#1 :  Berlin 1,77, 1,70, 1,59,
-		1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 (1,72), 588 (1,77). Trésors:
-	\end{exemple}
-\end{formalisation}
+	\section{Description}
+	\section{Diagramme de Gantt prévisionnel}
+\part{Cadre d'analyse}
+	\section*{Introduction}
+	\section{Définition de concepts}
+		\subsection{Gazetier}
+		\subsection{Entité nommée}
+		\subsection{Expression régulière}
+	\section{Outil}
+		\subsection{L'environnement Gate}
 
 
-\section{Annotation avec Gazetiers}
 
-\subsubsection{Ateliers}
-\begin{vulgarisation}
-	Le catalogue est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique. Ce lieu peut être une ville, un lieu-dit, ... Il est difficile de trouver un pattern via les expressions régulières. Il faut constituer un gazetier.
-\end{vulgarisation}
+\part{Développement}
 
-\subsubsection{Personnages}
-\begin{vulgarisation}
-	Les personnages ont des formats aussi diverses que variés, il serait difficile d'utiliser une expression régulière. Il est plus judicieux d'utiliser un gazetier ici. 
-\end{vulgarisation}
+	\section{Prise en main de l'environnement}
 
-\chapter{Conclusion}
+	\section{Définition des dimensions d'annotation et leur contenu}
+
+	\section{Première recherche d'entités nommées avec les gazetiers}
+
+	\section{Deuxième recherche d'entités nommées avec les règles JAPE}
+
+\part{Conclusion}
 
 \end{document}

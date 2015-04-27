@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  21 APR 2015 20:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  27 APR 2015 19:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,10 +6,10 @@ entering extended mode
 (./memoire.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 6 languages loaded.
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
-File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -320,6 +320,123 @@ File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen114
+\Hy@linkcounter=\count100
+\Hy@pagecounter=\count101
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count102
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count103
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen115
+\Fld@menulength=\count104
+\Field@Width=\dimen116
+\Fld@charsize=\dimen117
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count105
+\c@Item=\count106
+\c@Hfootnote=\count107
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count108
+\c@bookmark@seq@number=\count109
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip47
+)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
@@ -331,30 +448,23 @@ Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count100
+\Gread@gobject=\count110
 )
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen114
-\extrarowheight=\dimen115
+\col@sep=\dimen118
+\extrarowheight=\dimen119
 \NC@list=\toks21
-\extratabsurround=\skip47
-\backup@length=\skip48
+\extratabsurround=\skip48
+\backup@length=\skip49
 )
 \everycr=\toks22
-\minrowclearance=\skip49
+\minrowclearance=\skip50
 )
-\rownum=\count101
+\rownum=\count111
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -382,87 +492,79 @@ File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen116
-\Gin@req@width=\dimen117
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 ) (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Info: Redefining \degres on input line 86.
-LaTeX Info: Redefining \dots on input line 86.
-LaTeX Info: Redefining \up on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Info: Redefining \degres on input line 94.
+LaTeX Info: Redefining \dots on input line 94.
+LaTeX Info: Redefining \up on input line 94.
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 86.
+(frenchb.ldf)                of your document, on input line 94.
 
-\c@lstlisting=\count102
+\c@lstlisting=\count112
+\AtBeginShipoutBox=\box28
+Package hyperref Info: Link coloring OFF on input line 94.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count113
+)
+LaTeX Info: Redefining \ref on input line 94.
+LaTeX Info: Redefining \pageref on input line 94.
+LaTeX Info: Redefining \nameref on input line 94.
+
+(./memoire.out) (./memoire.out)
+\@outlinefile=\write3
+\openout3 = `memoire.out'.
+
+
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen118
-\scratchbox=\box28
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\scratchcounter=\count114
+\scratchdimen=\dimen122
+\scratchbox=\box29
+\nofMPsegments=\count115
+\nofMParguments=\count116
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen119
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen123
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks24
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+)
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
@@ -472,16 +574,20 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./logo.png, id=1, 204.765pt x 92.0238pt>
+<./logo.png, id=76, 204.765pt x 92.0238pt>
 File: ./logo.png Graphic file (type png)
  <use ./logo.png>
-Package pdftex.def Info: ./logo.png used on input line 96.
+Package pdftex.def Info: ./logo.png used on input line 104.
 (pdftex.def)             Requested size: 90.0pt x 40.44707pt.
  [1
 
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>] [2] (./memoir
-e.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./logo.png>]pdfTeX warning
+ (ext4): destination with the same identifier (name{page.1}) has been already u
+sed, duplicate ignored
+<to be read again> 
+                   \relax 
+l.144 \tableofcontents
+                       [1] (./memoire.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -492,225 +598,124 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
-\tf@toc=\write3
-\openout3 = `memoire.toc'.
+\tf@toc=\write4
+\openout4 = `memoire.toc'.
 
- [3
+ [2
 
-] [4
-
-]
-Chapitre 1.
-
-Overfull \hbox (0.22495pt too wide) in paragraph at lines 146--148
-\OT1/cmr/m/n/10.95 Notre d^^Semarche s'ap-puiera des connais-sances ac-tuelles 
-que nous pr^^Sesenterons
- []
-
-
-Overfull \hbox (3.08424pt too wide) in paragraph at lines 146--148
-\OT1/cmr/m/n/10.95 en premi^^Rere par-tie. En-suite, vien-dra notre prin-cipe d
-e r^^Sesolution du probl^^Reme. 
- []
-
-[5] [6
+] [3
 
 ]
-Chapitre 2.
-[7] [8
+Overfull \hbox (21.66875pt too wide) in paragraph at lines 147--148
+\OT1/cmr/m/n/10.95 consti-tue le web s^^Semantique.L'une des prin-ci-pales mo-t
+i-va-tions du web s^^Semantique
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+
+Overfull \hbox (7.67717pt too wide) in paragraph at lines 153--154
+[]\OT1/cmr/m/n/10.95 Existe-t-il des ou-tils qui se pr^etent ais^^Sement ^^Ra l
+'an-no-ta-tion s^^Semantique? 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
+
+ []
+
+[4] [5
 
 ]
-Chapitre 3.
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 205--209
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 161.
+
+
+Overfull \hbox (50.83998pt too wide) in paragraph at lines 163--163
+[][][]\OT1/cmr/m/n/9 .[][][]$\OT1/cmtt/m/n/9 http : / / www . cgb . fr / le-[]n
+umeraire-[]carolingien-[]moneta-[]77-[]3e-[]edition-[]depeyrot-[]georges ,[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--215
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--233
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--233
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
-[12]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 263.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 263.
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--276
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--300
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--300
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 306--313
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--313
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 318--322
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 318--322
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 318--322
-
- []
-
-
-Overfull \hbox (13.6647pt too wide) in paragraph at lines 326--326
-[]\OT1/cmtt/m/n/10.95 [\s]{2,}(Denier|Obole|Monnaie d'or|Faux Obole)(.*)? Nom_S
-ouverain[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--335
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--335
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 338--343
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--343
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--343
-
- []
-
-
-Overfull \hbox (13.6647pt too wide) in paragraph at lines 363--363
-[]\OT1/cmtt/m/n/10.95 (?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+
-?\s?(.*)[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--372
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--372
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 375--381
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--402
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--402
-
- []
-
-[16]
-Overfull \hbox (17.4713pt too wide) in paragraph at lines 408--410
-\OT1/cmr/m/n/10.95 pitre" est donc le nom de l'ate-lier. Ce nom cor-res-pond ^^
-Ra un en-droit g^^Seographique.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 408--410
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
-
- []
-
-[17] [18
+[6] [7
 
 ]
-Chapitre 4.
-[19] (./memoire.aux) ) 
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 192.
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 193.
+
+[8] [9
+
+]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 203.
+
+
+Overfull \hbox (0.4613pt too wide) in paragraph at lines 205--205
+[]\OT1/cmr/bx/n/14.4 D^^Sefinition des di-men-sions d'an-no-ta-tion et leur
+ []
+
+[10] [11
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+ (./memoire.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
+Package rerunfilecheck Info: File `memoire.out' has not changed.
+(rerunfilecheck)             Checksum: 5E0D83A189C23BDE9C2459592B53AC76;1276.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+ ) 
 Here is how much of TeX's memory you used:
- 5365 strings out of 494958
- 70720 string characters out of 6179213
- 165285 words of memory out of 5000000
- 8501 multiletter control sequences out of 15000+600000
- 13949 words of font info for 51 fonts, out of 8000000 for 9000
+ 8641 strings out of 494958
+ 122533 string characters out of 6179213
+ 244146 words of memory out of 5000000
+ 11720 multiletter control sequences out of 15000+600000
+ 15231 words of font info for 57 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 41i,10n,40p,450b,1805s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb>
-Output written on memoire.pdf (19 pages, 212694 bytes).
+ 41i,5n,40p,451b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmtt9.pfb>
+Output written on memoire.pdf (12 pages, 155950 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 202 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
+ 34 named destinations out of 1000 (max. 500000)
+ 150 words of extra memory for PDF output out of 10000 (max. 10000000)
 
