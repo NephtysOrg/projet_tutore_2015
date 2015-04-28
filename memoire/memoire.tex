@@ -29,11 +29,14 @@
  \colorlet{shadecolor}{gray!7}
 
 %% Parametres
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 \setlength{\parindent}{0pt}
 \partfont{\color{part_color}}
 \sectionfont{\color{section_color}}
 \subsectionfont{\color{subsection_color}}
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother  
 
 
 %% Commandes
@@ -153,19 +156,21 @@ Nous tenons à remercier nos tuteurs pour leur pédagogie et leur encadrement. M
 \tableofcontents
 
 \part{Introduction}
-Avec l'évolution de manière significative des volumes d'informations sur internet, on peut observer une évolution du web vers une approche dans laquelle chaque donnée acquiert un sens afin de rendre possible une interprétation du contenu des pages web par des machines. Cette extension constitue le web sémantique.L'une des principales motivations du web sémantique est la recherche d’information sémantique.
+L'évolution des volumes d'informations sur internet provoque une évolution du web vers une approche dans laquelle chaque donnée acquiert un sens afin de rendre possible une interprétation du contenu par des machines. Cette évolution constitue le web sémantique.\\
+Sa principale motivation  est la recherche d’information sémantique.\\
 
-C'est donc dans ce cadre que nous sommes intervenus pour répondre à l'appel d'offre de nos encadrants. L'objectif est l'annotation sémantique d'un document texte spécifique, qui constitue effectivement la première étape dans un processus d'indexation et de recherche d'information sémantique.\\
+Dans ce cadre, nous sommes intervenus pour répondre à l'appel d'offre de la maîtrise d'ouvrage. \\
+L'objectif correspond à la première étape dans un processus de recherche d'informations sémantiques et d'indexation : l'annotation sémantique d'un document texte spécifique.\\
 
-Au regard de ce qui a été exprimé en amont, se pose les problématiques suivantes:
+En découle les problématiques suivantes :
 \begin{itemize}
 \item Existe-t-il des outils qui se prêtent aisément à l'annotation sémantique ?
-\item Quelle approche de conception peut nous permettre de réaliser cette étape d'annotation sur un document texte non-structuré ?
+\item Quelle approche de conception nous permet de réaliser cette étape d'annotation sur un document texte non-structuré ?
 \end{itemize}
 	~\\
 	
-La résolution de ces différentes problématiques, nous à donc amené à organiser ce document comme suit: /*Il faut caller notre plan ici */ :)
-Une première partie dans laquelle nous présenterons le cahier des charges. Ensuite une seconde partie décrira quelques connaissances existantes sur le sujet avec les technologies utilisées au sein du projet.
+La résolution de ces différentes problématiques nous a amenés à organiser notre réflexion :\\
+Premièrement, nous définirons clairement les demandes et leurs contextes à travers le cahier des charges. Deuxièmement, nous présenterons l'état des connaissances actuelles sur le sujet. Troisièmement, nous détaillerons notre principe de résolution du projet. Nous finirons le bilan et le retour d’expérience de ce projet.
 \part{Cahier des charges}
 	\section{Contexte}
 
@@ -199,7 +204,7 @@ En résumé, les caractéristiques du projet sont :
 	
 	La chaine de traitement prend un document textuel en entrée, produit un document XML en sortie et le met en forme pour une meilleure lisibilité.\\
 	\begin{exemple}
-Illustrons par un scénario les objectifs de la chaine de traitement.
+\noindent Illustrons par un scénario les objectifs de la chaîne de traitement.
 Elle prend par exemple en entrée le texte suivant
 
 \begin{figure}[h!]
@@ -214,7 +219,7 @@ et l'annote
 \includegraphics[scale=.5]{img/exemple_text_ann.png} 
 \end{figure}\\
 Chaque information pertinente est annotée. En bleu la période d'émission de la monnaie (Temporel), en vert les souverains qui l'ont faite produire (Thématique), en cyan la nature de la monnaie (Thématique) et en rouge la légende (Thématique).\\
-Afin de développer cette chaîne,nous avons du planifier notre travail et nos réunions avec la maîtrise d'ouvrage. Cette planification sera présentée dans la partie suivante.
+Afin de développer cette chaîne,nous avons dû planifier notre travail et nos réunions avec la maîtrise d'ouvrage. Cette planification sera présentée dans la partie suivante.
 
 	\section{Diagramme de Gantt prévisionnel}
 	
@@ -238,15 +243,79 @@ Afin de développer cette chaîne,nous avons du planifier notre travail et nos r
 
 \part{Développement}
 	\section*{Introduction}
-	
+	Avant de démarrer le développement de la chaîne de traitement, nous devons nous familiariser avec notre environnement de travail. Celui-ci comprend l'outil GATE et le Numéraire carolingien. Ensuite, nous allons pouvoir définir nos annotations, leur domaine et choisir de quelle façon nous allons les capturer.
 	\section{Prise en main de l'environnement}
+	\subsection{GATE}
 
+	\subsection{Numéraire Carolingien}
+	Au lancement du projet, la seule ressource a disposition été le Numéraire Carolingien au format papier. Il fallait le numériser et l'OCRiser.\\
+    Nous avons numérisé une cinquantaine de pages à la main pour les OCRiser automatiquement par la suite à l'aide de l'outil \texttt{tesseract}.\\
+
+    L'OCRisation s'est déroulée de la façon suivante : 
+    \begin{figure}[h]
+    \centering
+    \includegraphics[scale=.3]{img/OCRisation.png}
+    \end{figure}\\
+    La scanner que nous avons utilisé permettait d'obtenir une image pour chacune des pages au format PDF. Ensuite, étant donné que  \texttt{tesseract} est plus performant et précis avec des fichiers TIFF, il a fallu convertir les fichiers PDF en TIFF. Cependant, quelques erreurs d'OCRisation sont apparues. Pour finir,  \texttt{tesseract} nous donnait des fichiers TXT.\\
+    Les étapes de conversion du schéma précédent ont été réalisées à l'aide de script en langage SHELL:
+    \begin{enumerate}
+        \item \begin{enumerate}
+    	      \item	
+           \begin{verbatim}
+for file in *.pdf
+do
+  convert -density 300 ../pdf/$file -depth 8 `basename $file .pdf`.tiff
+done
+           \end{verbatim}
+          \item les pages impaires ont été numérisée à l'envers, il fallait les mettre dans le bon sens.
+          \begin{verbatim}
+for file in *.tiff
+do
+    if [ $((`basename $file .tiff` % 2 )) = 1 ]; then
+        convert $file -rotate 180 $file;
+    fi
+done
+          \end{verbatim}
+       \end{enumerate}
+    \item 
+    \begin{verbatim}
+for file in img/*.tiff
+do
+  tesseract $file txt/`basename $file .tiff` -l fra
+done 
+    \end{verbatim}
+    \end{enumerate}
+    
 	\section{Définition des dimensions d'annotation et leur contenu}
+    Dans l'introduction, nous avons vu qu'il y a trois dimensions d'annotation.\\
 
+
+    
+    \subsection{Dimension spatiale}
+    \subsubsection{Définition}
+     La dimension spatiale contient toutes les informations de lieux. Peu spécifique au domaine considéré.
+    \subsubsection{Contenu}
+       Le contenu de cette dimension est minime. Hormis les ateliers, les lieux présents dans le document n'intéressent que très peu la maîtrise d'ouvrage.
+	\subsection{Dimension temporelle}
+	    \subsubsection{Définition}
+    La dimension temporelle contient toutes les informations de temps et de durées. Peu spécifique au domaine considéré.\\
+    \subsubsection{Contenu}
+    \begin{description}
+    \item[les périodes d'émission]... TODO
+    \end{description}
+    
+
+	\subsection{Dimension thématique}
+	    \subsubsection{Définition}
+    La dimension thématique contient toutes les informations du domaine considéré. 
+    \subsubsection{Contenu}	
+    
+    
+    
 	\section{Première recherche d'entités nommées avec les gazetiers}
 	\subsubsection{Ateliers}
 \begin{vulgarisation}
-	L'ouvrage est décomposé en ateliers, chaque début de "partie" ou "chapitre" est donc le nom de l'atelier. Ce nom correspond à un endroit géographique de France ou de ses pays limitrophes. Ce lieu peut être une ville, un lieu-dit, ... Il peut porter un nom qui n'existe plus aujourd'hui. Pour cela, il est difficile de trouver un pattern via les expressions régulières. Nous avons construit ce gazetier grâce partir du début de l'ouvrage qui recense tous les ateliers.
+	L'ouvrage est décomposé en ateliers qui donnent leur nom à chaque début de "partie" ou "chapitre". Ce nom correspond à un endroit de France ou pays limitrophes dans lequel est produite la monnaie. Ce lieu peut être une ville, un lieu-dit dont le nom peut ne plus exister. Il fût donc difficile de trouver un pattern via les expressions régulières. Nous avons alors dû construire ce gazetier à partir de la liste en début d'ouvrage qui recense tous les ateliers.
 \end{vulgarisation}
 \begin{formalisation}
 \begin{verbatim}
@@ -261,7 +330,7 @@ Amiens (Somme)
 
 \subsubsection{Souverains}
 \begin{vulgarisation}
-	Les souverains ont des formats aussi diverses que variés.Ils comportent des majuscules, des chiffres romains... Il serait difficile d'utiliser une expression régulière pour espérer annoter cette information. Il est plus judicieux d'utiliser un gazetier. Il sera construit à partir du début du numéraire. 
+	Le nom des souverains ont des formats aussi divers que variés.Ils comportent des majuscules, des chiffres romains... Il serait difficile d'utiliser une expression régulière pour espérer annoter cette information. Il est plus judicieux d'utiliser un gazetier. Il sera construit à partir du début du numéraire. 
 \end{vulgarisation}
 \begin{formalisation}
 \begin{verbatim}
@@ -281,7 +350,7 @@ Bérenger II:valeur=Bérenger II:periode=950-961
 		\textit{757/8-786}
 	\end{exemple}
 	
-	Une période est un intervalle entre deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. Chacune d'elle peut, en cas d’ambiguïté, être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la date.\\
+	Une période est un intervalle entre deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. En cas d'ambiguïté,Chacune d'elle peut être suivie d'un \og/\fg{} et d'un chiffre traduisant l'indétermination de la date.\\
 	\begin{exemple}
 		\textit{757/8}
 	\end{exemple}
@@ -336,8 +405,8 @@ Rule: PeriodeRule
 \newpage
 \subsubsection{Périodes d'émission}
 \begin{vulgarisation}
-	Une période d'émission à la forme suivante :  \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).\\
-	Il faut sécuriser la capture de la période d'émission pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à l’émission de monnaie en ajoutant la contrainte "précédée de Type de".
+	Une période d'émission a la forme suivante :  \og Type de \{Période\} : \fg{} (Période étant l'annotation définie précédemment).\\
+	Il faut sécuriser la capture de la période d'émission en ajoutant la contrainte précédée de "Type de" afin de ne pas récupérer toutes les périodes du documents.
 \end{vulgarisation}
 \begin{formalisation}
 	\begin{verbatim}
@@ -370,8 +439,8 @@ Rule: PeriodeEmissionRule
 
 \subsubsection{Périodes de règne}
 \begin{vulgarisation}
-	Une période de règne à la forme suivant : \og Nom\_souverain (\{Période\}) : \fg{}.\\
-	Il faut sécuriser la capture de la période de règne pour ne pas récupérer toutes les périodes du document mais seulement celles correspondants à la période de règne d'un souverain en ajoutant la contrainte "précédée de Souverain".\\
+	Une période de règne a la forme suivante : \og Nom\_souverain (\{Période\}) : \fg{}.\\
+	Il faut sécuriser la capture de la période de règne en ajoutant la contrainte précédée de "Souverain" afin de ne pas récupérer toutes les périodes du documents.\\
 	\begin{exemple}
 		"\emph{Type de 771-793/4: Charlemagne (768-814)...}" 
 	\end{exemple}
@@ -391,7 +460,7 @@ Nom_souverain ([0-9]{3}(\/[0-9])?)-([0-9]{3}(\/[0-9])?)
 
 \subsubsection{Nature de la monnaie}
 \begin{vulgarisation}
-	La nature de la monnaie est toujours un élément de l'ensemble \{Denier, Obole, Monnaie D'Or, Faux obole, Monnaies de type indéterminé\} suivi du nom d'un souverain. Il suffit donc d'utiliser une expression composé de tous les mots de l'ensemble.
+	La nature de la monnaie est toujours un élément de l'ensemble \{Denier, Obole, Monnaie D'Or, Faux obole, Monnaies de type indéterminé\} suivi du nom d'un souverain. Il suffit donc d'utiliser une expression composée de tous les mots de l'ensemble.
 	
 	\begin{exemple}
 		"\emph{Obole de Charles le Chauve}" \\
@@ -412,7 +481,7 @@ Monnaies de type indéterminé)(.*)? Nom_Souverain
 
 \subsubsection{Légende}
 \begin{vulgarisation}
-	La légende est toujours placée à la ligne qui suit la nature de la monnaie. Le droit est situé au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite d'espaces. Enfin, le revers vient se placer après zéro ou un caractère +.\\
+	La légende est toujours placée sous la ligne de la nature de la monnaie. La légende du droit est située au début de cette ligne et commence par zéro ou un caractère +. Ensuite, vient une suite d'espaces. Enfin, la légende du revers vient se placer après zéro ou un caractère +.\\
 	\begin{exemple}
 		\emph{"Denier de Charlemagne ..... \\+ CARLO  45E~~~~~~~~~~~~~ CROIX SIMPLE"}\\
 	\end{exemple}
@@ -424,11 +493,11 @@ Monnaies de type indéterminé)(.*)? Nom_Souverain
 		      \begin{verbatim}
 (?:Denier|Obole|Monnaie d'or).*\n
 		\end{verbatim}
-		\item Capturer l'ensemble des caractères entre 0 ou 1 symbole + et 2 ou plus espaces. C'est la légende du droit.
+		\item Capturer l'ensemble des caractères entre 0 ou 1 fois le symbole + et 2 espaces ou plus. C'est la légende du droit.
 		      \begin{verbatim}
 \+?\s?(.*)[ ]{2,}
 		\end{verbatim}
-		\item Capture l'ensemble des caractères entre 0 ou 1 symbole + et la fin de ligne. C'est la légende du revers.
+		\item Capturer l'ensemble des caractères entre 0 ou 1 fois le symbole + et la fin de ligne. C'est la légende du revers.
 		      \begin{verbatim}
 \+?\s?(.*)\n
 		\end{verbatim}
@@ -448,7 +517,7 @@ Monnaies de type indéterminé)(.*)? Nom_Souverain
 
 \subsubsection{Types monétaire}
 \begin{vulgarisation}
-	Le type monétaire est la concaténation de "Type de" avec la période d'émission. Cette annotation est similaire à la période d'émission mais appartient à une dimension différente.\\
+	Le type monétaire est la concaténation de "Type de" avec la période d'émission. Cette annotation est similaire à la période d'émission mais appartient à la dimension thématique.\\
 	\begin{exemple}
 		"\emph{Type de 771-793/4: Charlemagne (768-814),...}"
 	\end{exemple}
@@ -465,8 +534,8 @@ Monnaies de type indéterminé)(.*)? Nom_Souverain
 
 \subsubsection{Collections, Trésors, Trouvailles}
 \begin{vulgarisation}
-Les collections, trésors et trouvailles sont chacun des ensembles d'information à annoter séparément.
-	Les \textit{mots} Collections, Trésors et Trouvailles sont chacun suivis de deux points. Ensuite, vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivis d'un retour à la ligne ou bien un autre \textit{mot} suivi de deux points.
+Les collections, trésors et trouvailles sont chacun des ensembles d'informations à annoter séparément.
+	Les \textit{mots} Collections, Trésors et Trouvailles sont chacun suivis de deux points. Ensuite, vient le contenus concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivi d'un retour à la ligne ou bien un autre \textit{mot} suivi de deux points.
 \end{vulgarisation}
 \begin{formalisation}
 	\begin{verbatim}

@@ -1,18 +1,14 @@
 \BOOKMARK [-1][-]{part.1}{I Introduction}{}% 1
 \BOOKMARK [-1][-]{part.2}{II Cahier des charges}{}% 2
-\BOOKMARK [0][-]{section.0.1}{Contexte}{part.2}% 3
-\BOOKMARK [1][-]{section.0.2}{Description}{section.0.1}% 4
-\BOOKMARK [1][-]{section.0.3}{Diagramme de Gantt pr\351visionnel}{section.0.1}% 5
+\BOOKMARK [0][-]{section.2.1}{Contexte}{part.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Description}{section.2.1}% 4
+\BOOKMARK [1][-]{section.2.3}{Diagramme de Gantt pr\351visionnel}{section.2.1}% 5
 \BOOKMARK [-1][-]{part.3}{III Cadre d'analyse}{}% 6
-\BOOKMARK [0][-]{section.0.4}{D\351finition de concepts}{part.3}% 7
-\BOOKMARK [1][-]{subsection.0.4.1}{Gazetier}{section.0.4}% 8
-\BOOKMARK [2][-]{subsection.0.4.2}{Entit\351 nomm\351e}{subsection.0.4.1}% 9
-\BOOKMARK [2][-]{subsection.0.4.3}{Expression r\351guli\350re}{subsection.0.4.1}% 10
-\BOOKMARK [1][-]{section.0.5}{Outil}{section.0.4}% 11
-\BOOKMARK [2][-]{subsection.0.5.1}{L'environnement Gate}{section.0.5}% 12
-\BOOKMARK [-1][-]{part.4}{IV D\351veloppement}{}% 13
-\BOOKMARK [0][-]{section.0.6}{Prise en main de l'environnement}{part.4}% 14
-\BOOKMARK [1][-]{section.0.7}{D\351finition des dimensions d'annotation et leur contenu}{section.0.6}% 15
-\BOOKMARK [1][-]{section.0.8}{Premi\350re recherche d'entit\351s nomm\351es avec les gazetiers}{section.0.6}% 16
-\BOOKMARK [1][-]{section.0.9}{Deuxi\350me recherche d'entit\351s nomm\351es avec les r\350gles JAPE}{section.0.6}% 17
-\BOOKMARK [-1][-]{part.5}{V Conclusion}{}% 18
+\BOOKMARK [0][-]{section.3.1}{D\351finition de concepts}{part.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Outil}{section.3.1}% 8
+\BOOKMARK [-1][-]{part.4}{IV D\351veloppement}{}% 9
+\BOOKMARK [0][-]{section.4.1}{Prise en main de l'environnement}{part.4}% 10
+\BOOKMARK [1][-]{section.4.2}{D\351finition des dimensions d'annotation et leur contenu}{section.4.1}% 11
+\BOOKMARK [1][-]{section.4.3}{Premi\350re recherche d'entit\351s nomm\351es avec les gazetiers}{section.4.1}% 12
+\BOOKMARK [1][-]{section.4.4}{Deuxi\350me recherche d'entit\351s nomm\351es avec les r\350gles JAPE}{section.4.1}% 13
+\BOOKMARK [-1][-]{part.5}{V Conclusion}{}% 14
