@@ -18,7 +18,8 @@ Macro: MONNAIE
 	({Token.string == "Obole"})|
 	({Token.string == "Denier"})|
 	({Token.string == "Monnaie d'or"})|
-	({Token.string == "Faux Obole"})
+	({Token.string == "Faux Obole"})|
+    ({Token.string == "Monnaies de type indéterminé"})
 )
 
 

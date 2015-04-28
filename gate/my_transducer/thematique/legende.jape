@@ -10,7 +10,7 @@ Macro:FIN_LIGNE
 
 Macro:EXEMPLAIRES
 (
-((({Token})({SpaceToken})?)*)
+((({Token})|({SpaceToken.kind == space}))*)
 )
 
 Macro: LIGNE_PRECEDENTE
@@ -67,4 +67,3 @@ newFeatures.put("Revers",legendre_revers);
             //Validation de l'annotation et sortie
 outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Legende",newFeatures);
         }
-

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  27 APR 2015 19:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  28 APR 2015 14:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -504,31 +504,31 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 ) (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Info: Redefining \degres on input line 94.
-LaTeX Info: Redefining \dots on input line 94.
-LaTeX Info: Redefining \up on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Info: Redefining \degres on input line 103.
+LaTeX Info: Redefining \dots on input line 103.
+LaTeX Info: Redefining \up on input line 103.
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 94.
+(frenchb.ldf)                of your document, on input line 103.
 
 \c@lstlisting=\count112
 \AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 94.
+Package hyperref Info: Link coloring OFF on input line 103.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -537,9 +537,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count113
 )
-LaTeX Info: Redefining \ref on input line 94.
-LaTeX Info: Redefining \pageref on input line 94.
-LaTeX Info: Redefining \nameref on input line 94.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
 
 (./memoire.out) (./memoire.out)
 \@outlinefile=\write3
@@ -577,7 +577,7 @@ e
 <./logo.png, id=76, 204.765pt x 92.0238pt>
 File: ./logo.png Graphic file (type png)
  <use ./logo.png>
-Package pdftex.def Info: ./logo.png used on input line 104.
+Package pdftex.def Info: ./logo.png used on input line 113.
 (pdftex.def)             Requested size: 90.0pt x 40.44707pt.
  [1
 
@@ -586,7 +586,7 @@ Package pdftex.def Info: ./logo.png used on input line 104.
 sed, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \tableofcontents
+l.153 \tableofcontents
                        [1] (./memoire.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
@@ -606,24 +606,24 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [3
 
 ]
-Overfull \hbox (21.66875pt too wide) in paragraph at lines 147--148
+Overfull \hbox (21.66875pt too wide) in paragraph at lines 156--157
 \OT1/cmr/m/n/10.95 consti-tue le web s^^Semantique.L'une des prin-ci-pales mo-t
 i-va-tions du web s^^Semantique
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
 
-Overfull \hbox (7.67717pt too wide) in paragraph at lines 153--154
+Overfull \hbox (7.67717pt too wide) in paragraph at lines 162--163
 []\OT1/cmr/m/n/10.95 Existe-t-il des ou-tils qui se pr^etent ais^^Sement ^^Ra l
 'an-no-ta-tion s^^Semantique? 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
@@ -632,77 +632,274 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--157
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 161.
+(hyperref)                than one, level fixed on input line 170.
 
 
-Overfull \hbox (50.83998pt too wide) in paragraph at lines 163--163
+Overfull \hbox (50.83998pt too wide) in paragraph at lines 172--172
 [][][]\OT1/cmr/m/n/9 .[][][]$\OT1/cmtt/m/n/9 http : / / www . cgb . fr / le-[]n
 umeraire-[]carolingien-[]moneta-[]77-[]3e-[]edition-[]depeyrot-[]georges ,[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--175
+Underfull \hbox (badness 10000) in paragraph at lines 181--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--179
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[6] [7
+[6] <img/exemple_text.png, id=141, 430.60875pt x 93.34875pt>
+File: img/exemple_text.png Graphic file (type png)
+
+<use img/exemple_text.png>
+Package pdftex.def Info: img/exemple_text.png used on input line 207.
+(pdftex.def)             Requested size: 215.30383pt x 46.67426pt.
+
+<img/exemple_text_ann.png, id=142, 429.605pt x 90.3375pt>
+File: img/exemple_text_ann.png Graphic file (type png)
+
+<use img/exemple_text_ann.png>
+Package pdftex.def Info: img/exemple_text_ann.png used on input line 214.
+(pdftex.def)             Requested size: 214.80197pt x 45.16862pt.
+ [7 <./img/exemple_text.png> <./img/exemple_text_ann.png>] [8
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 192.
+(hyperref)                than one, level fixed on input line 224.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 193.
+(hyperref)                than one, level fixed on input line 226.
 
-[8] [9
+[9] [10
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 203.
+(hyperref)                than one, level fixed on input line 242.
 
 
-Overfull \hbox (0.4613pt too wide) in paragraph at lines 205--205
+Overfull \hbox (0.4613pt too wide) in paragraph at lines 244--244
 []\OT1/cmr/bx/n/14.4 D^^Sefinition des di-men-sions d'an-no-ta-tion et leur
  []
 
-[10] [11
+
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
+
+ []
+
+[11]
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 270--270
+[]\OT1/cmtt/m/n/10.95 Amoul roi de Germanie:valeur=Amoul roi de Germanie:period
+e=887-899[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
+
+ []
+
+
+Overfull \hbox (19.91039pt too wide) in paragraph at lines 284--288
+\OT1/cmr/m/n/10.95 cas d'am-bigu^^?^^Pt^^Se, ^etre sui-vie d'un [] / [] et d'un
+ chiffre tra-dui-sant l'ind^^Setermination
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--308
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--308
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+[13]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 339.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 339.
+
+Overfull \hbox (1.05197pt too wide) in paragraph at lines 339--343
+[]\OT1/cmr/m/n/10.95 Une p^^Seriode d'^^Semission ^^Ra la forme sui-vante : [] 
+Type de \OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 P^^Seriode\OMS/cmsy/m/n/10.95 g
+ \OT1/cmr/m/n/10.95 : [] (P^^Seriode
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--351
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--379
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--379
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 384--391
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--391
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--400
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--412
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--412
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--412
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 415--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--420
+
+ []
+
+
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 439--439
+[]\OT1/cmtt/m/n/10.95 (?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+
+?\s?(.*)\n 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--448
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--448
+
+ []
+
+[16]
+Overfull \hbox (11.47919pt too wide) in paragraph at lines 451--457
+[]\OT1/cmr/m/n/10.95 Le type mon^^Setaire est la concat^^Senation de "Type de" 
+avec la p^^Seriode d'^^Semission.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 451--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--465
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 460--465
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--483
+
+ []
+
+[17] [18] [19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 487.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 487.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 213.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 487.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 487.
 Package rerunfilecheck Info: File `memoire.out' has not changed.
 (rerunfilecheck)             Checksum: 5E0D83A189C23BDE9C2459592B53AC76;1276.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 487.
  ) 
 Here is how much of TeX's memory you used:
- 8641 strings out of 494958
- 122533 string characters out of 6179213
- 244146 words of memory out of 5000000
- 11720 multiletter control sequences out of 15000+600000
- 15231 words of font info for 57 fonts, out of 8000000 for 9000
+ 9084 strings out of 494958
+ 126834 string characters out of 6179213
+ 254146 words of memory out of 5000000
+ 12095 multiletter control sequences out of 15000+600000
+ 15913 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 41i,5n,40p,451b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,8n,40p,501b,1195s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -710,12 +907,16 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt9.pfb>
-Output written on memoire.pdf (12 pages, 155950 bytes).
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on memoire.pdf (20 pages, 254216 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 324 PDF objects out of 1000 (max. 8388607)
+ 281 compressed objects within 3 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 160 words of extra memory for PDF output out of 10000 (max. 10000000)
 
