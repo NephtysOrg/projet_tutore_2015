@@ -224,30 +224,157 @@ Afin de développer cette chaîne,nous avons dû planifier notre travail et nos 
 	\section{Diagramme de Gantt prévisionnel}
 	
 \part{Cadre d'analyse}
-	\section*{Introduction}
-	
-	\section{Définition de concepts}
-	
-		\subsection{Gazetier}
-		
-		\subsection{Entité nommée}
-		
-		\subsection{Expression régulière}
-		
-	\section{Outil}
-	
-		\subsection{L'environnement Gate}
+\section*{Introduction}
+Pour cerner le l'environnement du projet, nous allons d'abord, définir quelques connaissances actuelles liées au domaine de l'annotation sémantique qui nous ont permis d'aborder notre problématique. Ensuite, viendra une description des outils qui ont étés nécessaires lors de la phase de développement.
+\section{Définition de concepts}
+L'annotation sémantique peut se définir comme une activité qui va mettre une "note" sur une partie d'un texte. Elle permet de travailler plus facilement sur un texte en apportant une sur-couche d'informations, qui va donner un sens aux textes. Comme nous l'avons indiqué en introduction, cette activité fait partie intégrante du Web sémantique.
+Mais, qu'es ce que le web sémantique ?
+
+\subsection{Le web sémantique}
+Le Web sémantique, ou toile sémantique, est un mouvement collaboratif mené par le World Wide Web Consortium (W3C) qui favorise des méthodes communes pour échanger des données.\\
+Il vise à aider l'émergence de nouvelles connaissances en s'appuyant sur les connaissances déjà présentes sur Internet. Pour y parvenir, le Web sémantique met en œuvre le Web des données qui consiste à lier et structurer l'information sur Internet pour accéder simplement à la connaissance qu'elle contient déjà.
+Selon le W3C, « le Web sémantique fournit un Modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs ».
+L'expression a été inventée par Tim Berners-Lee, l'inventeur du World Wide Web et directeur du World Wide Web Consortium (« W3C »), qui supervise le développement des technologies communes du Web sémantique. Il définit le Web sémantique comme « un web de données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances ».
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{img/Sw-horz-w3c-v.png} 
+\end{center}
+\caption{Logo du W3C pour le Web sémantique}
+\end{figure}
+\subsection{Les entités nommées}
+On peut définir les entités nommées comme étant des objets textuels (c'est-à-dire un mot, ou un groupe de mots) catégorisantes dans des classes telles que noms de personnes, noms d'organisations ou d'entreprises, noms de lieux, quantités, distances, valeurs, dates, etc, auxquelles ont associe un identifiant unique. Les entités nommées sont en effet "associés à des expressions linguistiques sollicités par des applications qui manipulent des documents textuels".\\Voici l'illustration d'une recherche d'entités nommées :
+\begin{verbatim}
+Henri a acheté 300 actions de la société AMD en 2006
+<ENAMEX TYPE="PERSON">Henri</ENAMEX> a acheté 
+<NUMEX TYPE="QUANTITY">300</NUMEX> actions de la société 
+<ENAMEX TYPE="ORGANIZATION">AMD</ENAMEX> en 
+<TIMEX TYPE="DATE">2006</TIMEX>.
+\end{verbatim}
+En revanche, il est important de noter que la reconnaissance et la résolution d'entités nommées, peut s'avérer difficile dans la mesures où elles sont sujettes à des ambiguïtés liées aux phénomènes linguistiques tel que: La synonymie, l'homonymie ou encore la métonymie.\\
+Voici un exemple avec l'entitée nommée "Paris" au sein des énoncés suivants:
+\begin{itemize}
+\item "La star \textbf{Paris} Hilton s'est achetée un nouveau chien." (Personne)
+\item "Je suis parti en vacances à \textbf{Paris}." (Lieu)
+\item "Le \textbf{Paris} Saint-Germain a battu Marseille à domicile." (Organisation sportive)
+\end{itemize}
+
+\subsection{Les gazetiers}
+Un gazetier peut être assimilé à un ensemble de listes contenant des noms d'entités telles que les villes, les organisations, les jours de la semaine, les métiers, etc. Ces listes sont utilisés pour trouver des occurrences de ces noms dans un texte donné, par exemple pour l'activité de recherche d'entités nommées. Le terme Gazetier est souvent utilisé de manière interchangeable pour l'ensemble des listes d'entités et la ressource de traitement qui permet l'utilisation de ces listes pour trouver des occurrences de noms dans le texte.\\ Chaque gazetier est fichier texte d'extension "lst" avec une entrée par ligne. %%% online gazetteer %%%
+Ci-dessous un exemple de Gazetier:
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{img/exGazetier.png}
+\end{center}
+\caption{Exemple de Gazetier}
+\end{figure}
+Sur chaque entrée du gazetier, on distingue plusieurs colonnes de par des séparateurs (: , ;, ect). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType de l'entité et la troisième le MinorType.
+ /* If you want to add some things here, as you want */
+
+\subsection{Les expressions régulières}
+Les expressions régulières (en anglais "regular expressions" dont l'abrégé est regex) sont une famille de notations compactes et puissantes pour décrire certains ensembles de chaînes de caractères. Elles permettent de rechercher automatiquement des morceaux de texte ayant certaines formes, et éventuellement remplacer ces morceaux de texte par d'autre.
+Les expressions régulières sont utilisées par un grand nombre d'éditeurs de textes et utilitaires (particulierement sous Unix), par exemple Vim, Emacs, sed ou awk. On les retrouve également dans la majorité des langages de programmation modernes, soit sous forme de bibliothèque externe, soit directement implémentées dans le langage.\\
+Exemple d'utilisation d'une expression régulière sur un bout de texte:
+\begin{itemize}
+\item Expression : \verb|(?:\d*\.)?\d+|
+\item Texte: \textbf{10}rats + \textbf{.36}geese = \textbf{3.14}cows
+\end{itemize}
+\section{Outils}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Il est indiqué dans notre cahier de charge, que l'annotation des textes, devra se faire dans l'environnement GATE. Il est donc impératif pour nous, de présenter cet outil.
+\subsection{L'environnement GATE}
+GATE est un logiciel développé en Java à l’université de Sheffield en 1995 et utilisé pour
+le traitement du langage naturel, y compris l’extraction d’information dans de nombreuses
+langues. 
+\subsubsection{Fonctionnement général}
+C'est un outil qui repose sur le principe d'une chaîne de traitement ("pipeline") composé de plusieurs modules (dits "Processing ressources" PR) appliqués successivement sur un ou plusieurs textes (dits "langages Ressources" LR). Les documents donnés en entrée peuvent être un simple texte ou un corpus en local (cf. figure), que l'on charge avec une URL. Les différents composants annotent chacun à leur tour le texte en prenant en compte les annotations précédentes puis le document est retourné a l'utilisateur au format XML.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{img/exempleAnnotationGATE.png} 
+\end{center}
+\caption{Exemple de texte annoté dans l'outil GATE}
+\end{figure}
+Par un système de plugins, GATE met à disposition de ses utilisateurs un grand nombre de
+modules dédiés à l'analyse textuelle. Les plus courants sont les segmenteurs (Tokenizers), les
+étiqueteurs morpho-syntaxiques (Part Of Speech Taggers), les lexiques (Gazetteers) ou encore les
+transducteurs (JAPE transducers). L'interface graphique permet de charger de nouveaux plugins et
+ressources, de les paramétrer et de les combiner au sein d'une même chaine de traitement (cf. figure).
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{img/exempleChaineTraitement.png}
+\end{center}
+\caption{Processus d'annotation}
+\end{figure}
+GATE comprend entre autres un système d'extraction d'information nommé ANNIE. Il est constitué d'un certains nombre de modules, y compris ceux énoncé dans le paragraphe précédent. ANNIE est une chaîne de traitement par défaut et peut servir de point de départ pour des tâches plus spécifiques. Ci-dessous une représentation de ANNIE: 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.5]{img/annieChaine.png} 
+\end{center}
+\caption{Représentation de la chaîne de traitement ANNIE}
+\end{figure}
+\subsection{Le formalisme JAPE}
+Une partie des différents modules proposés dans GATE est basé sur le formalise JAPE (Java Annotation Patterns Engine), un transduceur à états finis permettant de reconnaître des expressions régulières sur les annotations. ce système s'avère très utile en extraction de l'information car il permet de définir les contextes d'apparition des éléments à extraire pour ensuite les repérer et les annoter. le principe consiste a combiner différentes annotations dites basiques (tokens, relations syntaxiques, etc) pour en créer de nouvelles plus complexes (entités nommées, relations, événements, etc.): Cela revient à l'écriture de règles de production et donc à l'élaboration d'une grammaire régulière.\\
+Une grammaire JAPE se décompose en plusieurs phases exécutées consécutivement et
+formant une cascade d'automates à états finis. Chaque phase correspond à un fichier « .jape » et
+peut être constituée d'une ou plusieurs règle(s) écrite(s) selon le formalisme associé à JAPE. Classiquement, ces règles sont divisées en deux blocs : une partie gauche (« Left Hand
+Side » ou LHS) définissant un motif d'annotations à repérer et une partie droite (« Right Hand
+Side » ou RHS) contenant les opérations à effectuer sur ce motif. Le lien entre ces deux parties se
+fait par l'attribution d'une étiquette au motif (ou à ses constituants) en LHS et par sa réutilisation en
+RHS pour y appliquer les opérations nécessaires. Pour plus de clarté, prenons l'exemple d'une règle
+simple :
+\begin{verbatim}
+1.	Rule: OrgAccronym
+2.	((
+3.		{Organisation}
+4.		{Token.string == "("}
+5.		({Token.orth == "allCaps"}):org
+6.		{Token.string == ")"}
+7.	 )
+8.	 -->
+9.	:org.Organisation = {rule = "OrgAcronym"}
+\end{verbatim}
+L'objectif de cette règle est d'annoter en tant qu'organisation les acronymes entre parenthèses positionnés après une annotation de type "Organisation". Tout d'abord, l'on commence par donner un nom à la règle (l1). Les lignes 2 à 7 définissent le motif à repérer dans le texte. Le signe \verb|-->| (ligne 8) sert de séparateur entre LHS et RHS. Enfin, la dernière ligne (ligne 9) exprime l'opération souhaitée. Précisons quelques règles syntaxiques de base du formalisme JAPE:
+\begin{itemize}
+	\item La partie gauche de la règle est toujours entre parenthèses
+	\item La partie droite commence par le signe \verb|"-->"|
+	\item Les types d'annotation sont encadrés par des accolades
+	\item \verb|"Token.string"| permet d'obtenir la valeur de la propriété \verb|"string"| associé à l'annotation \verb|"Token"|
+	\item \verb|":org"| permet d'identifier une partie du motif en LHS pour l'utiliser en RHS
+	\item La ligne 9 attribue une annotation de type "Organisation" au segment étiqueté "org" en LHS; l'ajout de la propriété "rule" à cette annotation permet d'indiquer quelle règle en est à l'origine.
+\end{itemize}
+La liste des annotations utilisées en LHS de la règle est déclarée en début de phase grâce à
+l'attribut « Input » : par exemple, « Input : Lookup, Token, Person ». Par ailleurs, l'attribut
+« Control » permet de définir l'ordre d'exécution des différentes règles d'une phase et « Debug »
+d'obtenir un affichage des éventuels conflits rencontrés entre règles.
+Pour finir, précisons qu'un système de macros est également disponible : une macro permet
+de définir et de nommer une séquence d'annotations afin de la réutiliser plus rapidement par la suite.Ci-dessous un exemple de règle JAPE plus complet:
+\begin{verbatim}
+1.	Phase: MatchingStyles
+2.	Input: Lookup
+3.	Options: control = first
+4.	Rule: Test1
+5.	(
+6.		{Lookup.majorType == location}
+7.		({Lookup.majorType == loc_key})?
+8.	):match
+9.	-->
+9.	:match.Location = {rule=Test1}
+\end{verbatim}
+\newpage
+\subsection{RegexEr : Outil en ligne pour manipuler des expressions régulières}
+L'avantage de cet outil est le fait de pouvoir prendre en main, assez rapidement et de manière aisée la manipulation des expressions régulières.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{img/regexr.png} 
+\end{center}
+\caption{Exemple de manipulation d'expression régulière dans RegExr}
+\end{figure}
 		
 
 
 
 \part{Développement}
 	\section*{Introduction}
-	Avant de démarrer le développement de la chaîne de traitement, nous devons nous familiariser avec notre environnement de travail. Celui-ci comprend l'outil GATE et le Numéraire carolingien. Ensuite, nous allons pouvoir définir nos annotations, leur domaine et choisir de quelle façon nous allons les capturer.
+	Avant de démarrer le développement de la chaîne de traitement, nous devons nous familiariser avec notre environnement de travail. Ensuite, nous allons pouvoir définir nos annotations, leur domaine et choisir de quelle façon nous allons les capturer.
 	\section{Prise en main de l'environnement}
-	\subsection{GATE}
-
-	\subsection{Numéraire Carolingien}
 	Au lancement du projet, la seule ressource a disposition été le Numéraire Carolingien au format papier. Il fallait le numériser et l'OCRiser.\\
     Nous avons numérisé une cinquantaine de pages à la main pour les OCRiser automatiquement par la suite à l'aide de l'outil \texttt{tesseract}.\\
 
@@ -287,29 +414,34 @@ done
     \end{enumerate}
     
 	\section{Définition des dimensions d'annotation et leur contenu}
-    Dans l'introduction, nous avons vu qu'il y a trois dimensions d'annotation.\\
-
-
-    
+    Dans l'introduction, nous avons vu qu'il y a trois dimensions d'annotation mais ne les avons pas définies.\\
+	\textit{Note : Le détail du de chaque annotation peut être trouvé dans les parties II et IV.}
     \subsection{Dimension spatiale}
     \subsubsection{Définition}
      La dimension spatiale contient toutes les informations de lieux. Peu spécifique au domaine considéré.
     \subsubsection{Contenu}
-       Le contenu de cette dimension est minime. Hormis les ateliers, les lieux présents dans le document n'intéressent que très peu la maîtrise d'ouvrage.
+       Le contenu de cette dimension est minime. Hormis les ateliers appartenant à la dimension thématique, les lieux présents dans le document n'intéressent que très peu la maîtrise d'ouvrage. Nous n'avons donc pas de contenu pour cette dimension.
 	\subsection{Dimension temporelle}
 	    \subsubsection{Définition}
     La dimension temporelle contient toutes les informations de temps et de durées. Peu spécifique au domaine considéré.\\
     \subsubsection{Contenu}
     \begin{description}
-    \item[les périodes d'émission]... TODO
+    \item[les périodes d'émission] des monnaies,
+    \item[les périodes de règne] des souverains.
     \end{description}
     
-
 	\subsection{Dimension thématique}
 	    \subsubsection{Définition}
-    La dimension thématique contient toutes les informations du domaine considéré. 
+    La dimension thématique contient toutes les informations spécifiques domaine considéré. 
     \subsubsection{Contenu}	
-    
+    \begin{description}
+    \item[La nature] des monnaies,
+    \item[La légende] des monnaies
+    \item[Le type] des monnaies,
+    \item[Les collections] des monnaies,
+    \item[Les trésors] des monnaies,
+    \item[Les trouvailles] des monnaies.
+    \end{description}
     
     
 	\section{Première recherche d'entités nommées avec les gazetiers}
