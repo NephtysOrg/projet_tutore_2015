@@ -8,6 +8,7 @@
 \usepackage{verbatim}
 \usepackage{listings}
 \usepackage[hidelinks]{hyperref}
+\usepackage{float}
 
 \usepackage[usenames,dvipsnames,table,xcdraw]{xcolor}
 \usepackage[pdftex]{graphicx}
@@ -100,7 +101,7 @@
     \textit{\textcolor{orange}{
     Exemple : \\}}
     }
-    {\\
+    {~\\
     }
 
 \begin{document}
@@ -222,27 +223,33 @@ Chaque information pertinente est annotée. En bleu la période d'émission de l
 Afin de développer cette chaîne,nous avons dû planifier notre travail et nos réunions avec la maîtrise d'ouvrage. Cette planification sera présentée dans la partie suivante.
 
 	\section{Diagramme de Gantt prévisionnel}
+	\begin{figure}[H]
+
+	\includegraphics[scale=.3]{img/ganttPrev.png}
+	\end{figure}
 	
 \part{Cadre d'analyse}
 \section*{Introduction}
-Pour cerner le l'environnement du projet, nous allons d'abord, définir quelques connaissances actuelles liées au domaine de l'annotation sémantique qui nous ont permis d'aborder notre problématique. Ensuite, viendra une description des outils qui ont étés nécessaires lors de la phase de développement.
-\section{Définition de concepts}
-L'annotation sémantique peut se définir comme une activité qui va mettre une "note" sur une partie d'un texte. Elle permet de travailler plus facilement sur un texte en apportant une sur-couche d'informations, qui va donner un sens aux textes. Comme nous l'avons indiqué en introduction, cette activité fait partie intégrante du Web sémantique.
-Mais, qu'es ce que le web sémantique ?
+Pour cerner l'environnement du projet, nous allons, définir quelques connaissances actuelles liées au domaine de l'annotation sémantique. Ensuite, viendra une description des outils qui ont étés nécessaires lors de la phase de développement.\\
 
+\section{Définition de concepts}
+(L'annotation sémantique peut se définir comme une activité qui va mettre une "note" sur une partie d'un texte. Elle permet de travailler plus facilement sur un texte en apportant une sur-couche d'informations, qui va donner un sens aux textes.)
 \subsection{Le web sémantique}
-Le Web sémantique, ou toile sémantique, est un mouvement collaboratif mené par le World Wide Web Consortium (W3C) qui favorise des méthodes communes pour échanger des données.\\
-Il vise à aider l'émergence de nouvelles connaissances en s'appuyant sur les connaissances déjà présentes sur Internet. Pour y parvenir, le Web sémantique met en œuvre le Web des données qui consiste à lier et structurer l'information sur Internet pour accéder simplement à la connaissance qu'elle contient déjà.
-Selon le W3C, « le Web sémantique fournit un Modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs ».
-L'expression a été inventée par Tim Berners-Lee, l'inventeur du World Wide Web et directeur du World Wide Web Consortium (« W3C »), qui supervise le développement des technologies communes du Web sémantique. Il définit le Web sémantique comme « un web de données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances ».
+Le Web sémantique, ou toile sémantique, est un mouvement collaboratif mené par le World Wide Web Consortium (W3C) qui met en place des méthodes communes pour échanger des données.\\
+Il favorise l'émergence de nouvelles connaissances en s'appuyant sur celles déjà présentes sur Internet en les structurant et en les liant.\\
+Selon le W3C, « le Web sémantique fournit un Modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs ».\\
+L'expression a été inventée par Tim Berners-Lee, inventeur du World Wide Web et directeur du World Wide Web Consortium (« W3C ») qui supervise le développement des technologies communes du Web sémantique. \\
+Le directeur du W3C définit le Web sémantique comme « un web des données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances ».
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.5]{img/Sw-horz-w3c-v.png} 
+\includegraphics[scale=0.3]{img/Sw-horz-w3c-v.png} 
 \end{center}
 \caption{Logo du W3C pour le Web sémantique}
 \end{figure}
 \subsection{Les entités nommées}
-On peut définir les entités nommées comme étant des objets textuels (c'est-à-dire un mot, ou un groupe de mots) catégorisantes dans des classes telles que noms de personnes, noms d'organisations ou d'entreprises, noms de lieux, quantités, distances, valeurs, dates, etc, auxquelles ont associe un identifiant unique. Les entités nommées sont en effet "associés à des expressions linguistiques sollicités par des applications qui manipulent des documents textuels".\\Voici l'illustration d'une recherche d'entités nommées :
+Les entités nommées sont des objets textuels (mot, ou groupe de mots) catégorisés dans des classes. Celles-ci peuvent être les noms de personnes, noms d'organisations, noms de lieux, quantités, distances, dates, auxquelles ont associe un identifiant unique.\\
+Les entités nommées sont "associés à des expressions linguistiques sollicités par des applications qui manipulent des documents textuels".\\
+Voici l'illustration d'une recherche d'entités nommées :
 \begin{verbatim}
 Henri a acheté 300 actions de la société AMD en 2006
 <ENAMEX TYPE="PERSON">Henri</ENAMEX> a acheté 
@@ -250,29 +257,32 @@ Henri a acheté 300 actions de la société AMD en 2006
 <ENAMEX TYPE="ORGANIZATION">AMD</ENAMEX> en 
 <TIMEX TYPE="DATE">2006</TIMEX>.
 \end{verbatim}
-En revanche, il est important de noter que la reconnaissance et la résolution d'entités nommées, peut s'avérer difficile dans la mesures où elles sont sujettes à des ambiguïtés liées aux phénomènes linguistiques tel que: La synonymie, l'homonymie ou encore la métonymie.\\
-Voici un exemple avec l'entitée nommée "Paris" au sein des énoncés suivants:
+La reconnaissance et la résolution d'entités nommées peut s'avérer difficile dans la mesures où elles sont sujettes à des ambiguïtés liées aux phénomènes linguistiques tel que: la synonymie, l'homonymie ou encore la métonymie.\\
+\begin{exemple}
+Avec l’entité nommée "Paris" au sein des énoncés suivants:
 \begin{itemize}
 \item "La star \textbf{Paris} Hilton s'est achetée un nouveau chien." (Personne)
 \item "Je suis parti en vacances à \textbf{Paris}." (Lieu)
 \item "Le \textbf{Paris} Saint-Germain a battu Marseille à domicile." (Organisation sportive)
 \end{itemize}
+\end{exemple}
+
 
 \subsection{Les gazetiers}
-Un gazetier peut être assimilé à un ensemble de listes contenant des noms d'entités telles que les villes, les organisations, les jours de la semaine, les métiers, etc. Ces listes sont utilisés pour trouver des occurrences de ces noms dans un texte donné, par exemple pour l'activité de recherche d'entités nommées. Le terme Gazetier est souvent utilisé de manière interchangeable pour l'ensemble des listes d'entités et la ressource de traitement qui permet l'utilisation de ces listes pour trouver des occurrences de noms dans le texte.\\ Chaque gazetier est fichier texte d'extension "lst" avec une entrée par ligne. %%% online gazetteer %%%
+Un gazetier peut être assimilé à un ensemble de listes contenant des noms d'entités. Elles peuvent être des villes, des organisations, des jours de la semaine, des métiers, etc. Ces listes sont utilisés pour trouver des occurrences de ces noms dans un texte, comme pour l'activité de recherche d'entités nommées.\\
+Le terme Gazetier est souvent utilisé de manière interchangeable pour un ensemble de listes d'entités et de ressources permettant de trouver des occurrences de noms dans un texte.\\
+Chaque gazetier est fichier texte d'extension "lst" avec une entrée par ligne. %%% online gazetteer %%%
 Ci-dessous un exemple de Gazetier:
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.3]{img/exGazetier.png}
+\includegraphics[scale=0.5]{img/exGazetier.png}
 \end{center}
 \caption{Exemple de Gazetier}
 \end{figure}
-Sur chaque entrée du gazetier, on distingue plusieurs colonnes de par des séparateurs (: , ;, ect). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType de l'entité et la troisième le MinorType.
- /* If you want to add some things here, as you want */
-
+Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (: , ;, ect). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation).
 \subsection{Les expressions régulières}
-Les expressions régulières (en anglais "regular expressions" dont l'abrégé est regex) sont une famille de notations compactes et puissantes pour décrire certains ensembles de chaînes de caractères. Elles permettent de rechercher automatiquement des morceaux de texte ayant certaines formes, et éventuellement remplacer ces morceaux de texte par d'autre.
-Les expressions régulières sont utilisées par un grand nombre d'éditeurs de textes et utilitaires (particulierement sous Unix), par exemple Vim, Emacs, sed ou awk. On les retrouve également dans la majorité des langages de programmation modernes, soit sous forme de bibliothèque externe, soit directement implémentées dans le langage.\\
+Les expressions régulières sont une famille de notations compactes et puissantes pour décrire certains ensembles de chaînes de caractères. Elles permettent de rechercher automatiquement des morceaux de texte ayant certaines formes, et éventuellement remplacer ces morceaux par d'autres.
+Les expressions régulières sont utilisées par un grand nombre d'éditeurs de textes et utilitaires (particulierement sous Unix), par exemple Vim, Emacs, sed ou awk. On les retrouve également dans la majorité des langages de programmation modernes.\\
 Exemple d'utilisation d'une expression régulière sur un bout de texte:
 \begin{itemize}
 \item Expression : \verb|(?:\d*\.)?\d+|
@@ -684,5 +694,10 @@ Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
 
 
 \part{Conclusion}
+\section{Bilan du projet}
+\begin{figure}[hbtp]
+\includegraphics[scale=.3]{img/ganttEff.png}
+\end{figure}
 
+\section{Expériences acquises}
 \end{document}

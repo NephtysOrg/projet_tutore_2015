@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  29 APR 2015 12:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  29 APR 2015 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,6 +437,14 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip47
 )
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count110
+\float@exts=\toks21
+\float@box=\box28
+\@float@everytoks=\toks22
+\@floatcapt=\box29
+)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
@@ -448,7 +456,7 @@ Package xcolor Info: Driver file: pdftex.def on input line 225.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count110
+\Gread@gobject=\count111
 )
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
@@ -457,14 +465,14 @@ Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen118
 \extrarowheight=\dimen119
-\NC@list=\toks21
+\NC@list=\toks23
 \extratabsurround=\skip48
 \backup@length=\skip49
 )
-\everycr=\toks22
+\everycr=\toks24
 \minrowclearance=\skip50
 )
-\rownum=\count111
+\rownum=\count112
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -504,42 +512,42 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 ) (./memoire.aux)
 \openout1 = `memoire.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
-LaTeX Font Info:    ... okay on input line 106.
-LaTeX Info: Redefining \degres on input line 106.
-LaTeX Info: Redefining \dots on input line 106.
-LaTeX Info: Redefining \up on input line 106.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Info: Redefining \degres on input line 107.
+LaTeX Info: Redefining \dots on input line 107.
+LaTeX Info: Redefining \up on input line 107.
 
 Package frenchb.ldf Warning: OT1 encoding should not be used for French. 
 (frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 106.
+(frenchb.ldf)                of your document, on input line 107.
 
-\c@lstlisting=\count112
-\AtBeginShipoutBox=\box28
-Package hyperref Info: Link coloring OFF on input line 106.
+\c@lstlisting=\count113
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 107.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count113
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 106.
-LaTeX Info: Redefining \pageref on input line 106.
-LaTeX Info: Redefining \nameref on input line 106.
+LaTeX Info: Redefining \ref on input line 107.
+LaTeX Info: Redefining \pageref on input line 107.
+LaTeX Info: Redefining \nameref on input line 107.
 
 (./memoire.out) (./memoire.out)
 \@outlinefile=\write3
@@ -548,17 +556,17 @@ LaTeX Info: Redefining \nameref on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
+\scratchcounter=\count115
 \scratchdimen=\dimen122
-\scratchbox=\box29
-\nofMPsegments=\count115
-\nofMParguments=\count116
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count117
+\scratchbox=\box31
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count118
 \MPscratchDim=\dimen123
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
-\everyMPtoPDFconversion=\toks24
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -574,10 +582,10 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./logo.png, id=60, 204.765pt x 92.0238pt>
+<./logo.png, id=68, 204.765pt x 92.0238pt>
 File: ./logo.png Graphic file (type png)
  <use ./logo.png>
-Package pdftex.def Info: ./logo.png used on input line 116.
+Package pdftex.def Info: ./logo.png used on input line 117.
 (pdftex.def)             Requested size: 90.0pt x 40.44707pt.
  [1
 
@@ -586,7 +594,7 @@ Package pdftex.def Info: ./logo.png used on input line 116.
 sed, duplicate ignored
 <to be read again> 
                    \relax 
-l.156 \tableofcontents
+l.157 \tableofcontents
                        [1] (./memoire.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
@@ -606,23 +614,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 159--161
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
  []
 
 
-Overfull \hbox (7.67717pt too wide) in paragraph at lines 167--168
+Overfull \hbox (7.67717pt too wide) in paragraph at lines 168--169
 []\OT1/cmr/m/n/10.95 Existe-t-il des ou-tils qui se pr^etent ais^^Sement ^^Ra l
 'an-no-ta-tion s^^Semantique? 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
@@ -631,108 +639,128 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--171
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 175.
+(hyperref)                than one, level fixed on input line 176.
 
 
-Overfull \hbox (50.83998pt too wide) in paragraph at lines 177--177
+Overfull \hbox (50.83998pt too wide) in paragraph at lines 178--178
 [][][]\OT1/cmr/m/n/9 .[][][]$\OT1/cmtt/m/n/9 http : / / www . cgb . fr / le-[]n
 umeraire-[]carolingien-[]moneta-[]77-[]3e-[]edition-[]depeyrot-[]georges ,[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--189
+Underfull \hbox (badness 10000) in paragraph at lines 187--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-[6] <img/exemple_text.png, id=121, 430.60875pt x 93.34875pt>
+[6] <img/exemple_text.png, id=131, 430.60875pt x 93.34875pt>
 File: img/exemple_text.png Graphic file (type png)
 
 <use img/exemple_text.png>
-Package pdftex.def Info: img/exemple_text.png used on input line 212.
+Package pdftex.def Info: img/exemple_text.png used on input line 213.
 (pdftex.def)             Requested size: 215.30383pt x 46.67426pt.
 
-<img/exemple_text_ann.png, id=122, 429.605pt x 90.3375pt>
+<img/exemple_text_ann.png, id=132, 429.605pt x 90.3375pt>
 File: img/exemple_text_ann.png Graphic file (type png)
 
 <use img/exemple_text_ann.png>
-Package pdftex.def Info: img/exemple_text_ann.png used on input line 219.
+Package pdftex.def Info: img/exemple_text_ann.png used on input line 220.
 (pdftex.def)             Requested size: 214.80197pt x 45.16862pt.
- [7 <./img/exemple_text.png> <./img/exemple_text_ann.png>] [8
+
+<img/ganttPrev.png, id=133, 1352.05125pt x 312.16624pt>
+File: img/ganttPrev.png Graphic file (type png)
+
+<use img/ganttPrev.png>
+Package pdftex.def Info: img/ganttPrev.png used on input line 228.
+(pdftex.def)             Requested size: 405.6185pt x 93.65059pt.
+
+Overfull \hbox (45.6185pt too wide) in paragraph at lines 228--229
+[][] 
+ []
+
+[7 <./img/exemple_text.png> <./img/exemple_text_ann.png> <./img/ganttPrev.png>]
+[8
 
 ]
-Overfull \hbox (5.5479pt too wide) in paragraph at lines 228--229
-[]\OT1/cmr/m/n/10.95 Pour cer-ner le l'en-vi-ron-ne-ment du pro-jet, nous al-lo
-ns d'abord, d^^Sefinir quelques
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 229.
+(hyperref)                than one, level fixed on input line 235.
 
-<img/Sw-horz-w3c-v.png, id=132, 328.427pt x 65.043pt>
+<img/Sw-horz-w3c-v.png, id=143, 328.427pt x 65.043pt>
 File: img/Sw-horz-w3c-v.png Graphic file (type png)
 
 <use img/Sw-horz-w3c-v.png>
-Package pdftex.def Info: img/Sw-horz-w3c-v.png used on input line 240.
-(pdftex.def)             Requested size: 164.21309pt x 32.52141pt.
+Package pdftex.def Info: img/Sw-horz-w3c-v.png used on input line 245.
+(pdftex.def)             Requested size: 98.52885pt x 19.51305pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1
+}) has been already used, duplicate ignored
 
-Overfull \hbox (3.32742pt too wide) in paragraph at lines 234--244
-\OT1/cmr/m/n/10.95 connais-sances d^^Sej^^Ra pr^^Sesentes sur In-ter-net. Pour 
-y par-ve-nir, le Web s^^Semantique
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.253 \begin{verbatim}
+                       <./img/Sw-horz-w3c-v.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
  []
 
-[9 <./img/Sw-horz-w3c-v.png>]
-<img/exGazetier.png, id=143, 686.565pt x 433.62pt>
+<img/exGazetier.png, id=154, 239.89626pt x 249.93375pt>
 File: img/exGazetier.png Graphic file (type png)
- <use img/exGazetier.png>
-Package pdftex.def Info: img/exGazetier.png used on input line 266.
-(pdftex.def)             Requested size: 205.97108pt x 130.087pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10] <img/exempleAnnotationGATE.png, id=151, 1042.89626pt x 616.3025pt>
+<use img/exGazetier.png>
+Package pdftex.def Info: img/exGazetier.png used on input line 278.
+(pdftex.def)             Requested size: 119.94783pt x 124.96657pt.
+ [10]
+<img/exempleAnnotationGATE.png, id=162, 1042.89626pt x 616.3025pt>
 File: img/exempleAnnotationGATE.png Graphic file (type png)
 
 <use img/exempleAnnotationGATE.png>
-Package pdftex.def Info: img/exempleAnnotationGATE.png used on input line 291.
+Package pdftex.def Info: img/exempleAnnotationGATE.png used on input line 301.
 (pdftex.def)             Requested size: 312.87129pt x 184.89217pt.
 
-<img/exempleChaineTraitement.png, id=152, 680.5425pt x 682.55pt>
+<img/exempleChaineTraitement.png, id=163, 680.5425pt x 682.55pt>
 File: img/exempleChaineTraitement.png Graphic file (type png)
 
 <use img/exempleChaineTraitement.png>
-Package pdftex.def Info: img/exempleChaineTraitement.png used on input line 302
+Package pdftex.def Info: img/exempleChaineTraitement.png used on input line 312
 .
 (pdftex.def)             Requested size: 204.16432pt x 204.76657pt.
 
-<img/annieChaine.png, id=153, 730.73pt x 306.14375pt>
+<img/annieChaine.png, id=164, 730.73pt x 306.14375pt>
 File: img/annieChaine.png Graphic file (type png)
 
 <use img/annieChaine.png>
-Package pdftex.def Info: img/annieChaine.png used on input line 309.
+Package pdftex.def Info: img/annieChaine.png used on input line 319.
 (pdftex.def)             Requested size: 365.3641pt x 153.07149pt.
 
-Overfull \hbox (5.3641pt too wide) in paragraph at lines 309--310
+Overfull \hbox (5.3641pt too wide) in paragraph at lines 319--320
  [] 
  []
 
-[11 <./img/exGazetier.png (PNG copy)>]
+[11pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.323 \subsection
+                 {Le formalisme JAPE} <./img/exGazetier.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -740,258 +768,294 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (28.84589pt too wide) in paragraph at lines 314--323
+Overfull \hbox (28.84589pt too wide) in paragraph at lines 324--333
 \OT1/cmr/m/n/10.95 Une gram-maire JAPE se d^^Secompose en plu-sieurs phases ex^
 ^Secut^^Sees cons^^Secutivement
  []
 
-[12 <./img/exempleAnnotationGATE.png (PNG copy)>] [13 <./img/exempleChaineTrait
-ement.png (PNG copy)>] [14 <./img/annieChaine.png>] [15]
-<img/regexr.png, id=184, 1367.1075pt x 744.7825pt>
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.0.3
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.333 \begin{verbatim}
+                       <./img/exempleAnnotationGATE.png (PNG copy)>] [13pdfTeX 
+warning (ext4): destination with the same identifier (name{figure.0.4}) has bee
+n already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.339 6.		{Token.string == ")"}
+                                <./img/exempleChaineTraitement.png (PNG copy)>]
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.0.5
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.359 \begin{verbatim}
+                       <./img/annieChaine.png>] [15]
+<img/regexr.png, id=195, 1016.79875pt x 606.265pt>
 File: img/regexr.png Graphic file (type png)
  <use img/regexr.png>
-Package pdftex.def Info: img/regexr.png used on input line 366.
-(pdftex.def)             Requested size: 410.13542pt x 223.43648pt.
+Package pdftex.def Info: img/regexr.png used on input line 376.
+(pdftex.def)             Requested size: 305.04198pt x 181.8809pt.
 
-Overfull \hbox (50.13542pt too wide) in paragraph at lines 366--367
- [] 
- []
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.0.6
+}) has been already used, duplicate ignored
 
-[16 <./img/regexr.png (PNG copy)>] [17
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.384 \part
+           {Développement} <./img/regexr.png>] [17
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 377.
+(hyperref)                than one, level fixed on input line 387.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
 
  []
 
-<img/OCRisation.png, id=195, 632.3625pt x 132.495pt>
+<img/OCRisation.png, id=206, 632.3625pt x 132.495pt>
 File: img/OCRisation.png Graphic file (type png)
  <use img/OCRisation.png>
-Package pdftex.def Info: img/OCRisation.png used on input line 384.
+Package pdftex.def Info: img/OCRisation.png used on input line 394.
 (pdftex.def)             Requested size: 189.7102pt x 39.7488pt.
 
-Overfull \hbox (97.43193pt too wide) in paragraph at lines 394--394
+Overfull \hbox (97.43193pt too wide) in paragraph at lines 404--404
  []  \OT1/cmtt/m/n/10.95 convert -density 300 ../pdf/$file -depth 8 `basename $
 file .pdf`.tiff[] 
  []
 
 [18 <./img/OCRisation.png>]
-Overfull \hbox (2.05pt too wide) in paragraph at lines 421--422
+Overfull \hbox (2.05pt too wide) in paragraph at lines 431--432
 []\OT1/cmr/m/n/10.95 La di-men-sion spa-tiale contient toutes les in-for-ma-tio
 ns de lieux. Peu sp^^Secifique
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--427
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
 
 [20]
-Overfull \hbox (19.41339pt too wide) in paragraph at lines 471--471
+Overfull \hbox (19.41339pt too wide) in paragraph at lines 481--481
 []\OT1/cmtt/m/n/10.95 Amoul roi de Germanie:valeur=Amoul roi de Germanie:period
 e=887-899[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 475--476
+Underfull \hbox (badness 10000) in paragraph at lines 485--486
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--484
+Underfull \hbox (badness 10000) in paragraph at lines 490--494
 
  []
 
 
-Overfull \hbox (12.1179pt too wide) in paragraph at lines 485--489
+Overfull \hbox (12.1179pt too wide) in paragraph at lines 495--499
 \OT1/cmr/m/n/10.95 sont constitu^^Sees de trois et seule-ment trois chiffres. E
 n cas d'am-bigu^^?^^Pt^^Se,Chacune
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--489
+Underfull \hbox (badness 10000) in paragraph at lines 495--499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--509
+Underfull \hbox (badness 10000) in paragraph at lines 510--519
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--509
+Underfull \hbox (badness 10000) in paragraph at lines 510--519
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
 
  []
 
 [22]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 540.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 550.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 540.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 550.
 
-Overfull \hbox (1.05197pt too wide) in paragraph at lines 540--544
+Overfull \hbox (1.05197pt too wide) in paragraph at lines 550--554
 []\OT1/cmr/m/n/10.95 Une p^^Seriode d'^^Semission a la forme sui-vante : [] Typ
 e de \OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 P^^Seriode\OMS/cmsy/m/n/10.95 g \O
 T1/cmr/m/n/10.95 : [] (P^^Seriode
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--552
+Underfull \hbox (badness 10000) in paragraph at lines 557--562
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--571
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--580
+Underfull \hbox (badness 10000) in paragraph at lines 584--590
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--580
+Underfull \hbox (badness 10000) in paragraph at lines 584--590
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 585--592
+Underfull \hbox (badness 10000) in paragraph at lines 595--602
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 585--592
+Underfull \hbox (badness 10000) in paragraph at lines 595--602
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--601
+Underfull \hbox (badness 10000) in paragraph at lines 607--611
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--601
+Underfull \hbox (badness 10000) in paragraph at lines 607--611
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--601
+Underfull \hbox (badness 10000) in paragraph at lines 607--611
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--613
+Underfull \hbox (badness 10000) in paragraph at lines 617--623
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--613
+Underfull \hbox (badness 10000) in paragraph at lines 617--623
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--613
+Underfull \hbox (badness 10000) in paragraph at lines 617--623
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 616--621
+Underfull \hbox (badness 10000) in paragraph at lines 626--631
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--621
+Underfull \hbox (badness 10000) in paragraph at lines 626--631
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--621
+Underfull \hbox (badness 10000) in paragraph at lines 626--631
 
  []
 
 
-Overfull \hbox (25.16208pt too wide) in paragraph at lines 640--640
+Overfull \hbox (25.16208pt too wide) in paragraph at lines 650--650
 []\OT1/cmtt/m/n/10.95 (?:Denier|Obole|Monnaie d'or).*\n \s*\+?\s?(.*)[ ]{2,} \+
 ?\s?(.*)\n 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--649
+Underfull \hbox (badness 10000) in paragraph at lines 653--659
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--649
+Underfull \hbox (badness 10000) in paragraph at lines 653--659
 
  []
 
 [25]
-Overfull \hbox (11.47919pt too wide) in paragraph at lines 652--658
+Overfull \hbox (11.47919pt too wide) in paragraph at lines 662--668
 []\OT1/cmr/m/n/10.95 Le type mon^^Setaire est la concat^^Senation de "Type de" 
 avec la p^^Seriode d'^^Semission.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 652--658
+Underfull \hbox (badness 10000) in paragraph at lines 662--668
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--666
+Underfull \hbox (badness 10000) in paragraph at lines 671--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 661--666
+Underfull \hbox (badness 10000) in paragraph at lines 671--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--684
+Underfull \hbox (badness 10000) in paragraph at lines 686--694
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 676--684
+Underfull \hbox (badness 10000) in paragraph at lines 686--694
 
  []
 
 [26] [27] [28
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 688.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 688.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 697.
+
+<img/ganttEff.png, id=322, 1314.9125pt x 309.155pt>
+File: img/ganttEff.png Graphic file (type png)
+ <use img/ganttEff.png>
+Package pdftex.def Info: img/ganttEff.png used on input line 699.
+(pdftex.def)             Requested size: 394.47679pt x 92.74721pt.
+
+Overfull \hbox (34.47679pt too wide) in paragraph at lines 699--700
+[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 703.
+[29 <./img/ganttEff.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 703.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 688.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 688.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 703.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 703.
 Package rerunfilecheck Info: File `memoire.out' has not changed.
-(rerunfilecheck)             Checksum: 30442F2E4855CB2E47264CC0F2B65749;978.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 688.
+(rerunfilecheck)             Checksum: 8402EF8F2D01089C48F6CA8B205A9499;1109.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
  ) 
 Here is how much of TeX's memory you used:
- 9150 strings out of 494958
- 127964 string characters out of 6179213
- 254159 words of memory out of 5000000
- 12122 multiletter control sequences out of 15000+600000
+ 9219 strings out of 494958
+ 128916 string characters out of 6179213
+ 255499 words of memory out of 5000000
+ 12182 multiletter control sequences out of 15000+600000
  15913 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  41i,8n,40p,760b,1193s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1008,10 +1072,10 @@ msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on memoire.pdf (29 pages, 1048589 bytes).
+Output written on memoire.pdf (30 pages, 980627 bytes).
 PDF statistics:
- 385 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
- 126 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 129 named destinations out of 1000 (max. 500000)
+ 189 words of extra memory for PDF output out of 10000 (max. 10000000)
 
