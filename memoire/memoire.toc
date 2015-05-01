@@ -4,40 +4,42 @@
 \contentsline {section}{\numberline {I}Contexte}{6}{section.2.1}
 \contentsline {section}{\numberline {II}Description}{7}{section.2.2}
 \contentsline {section}{\numberline {III}Diagramme de Gantt pr\IeC {\'e}visionnel}{7}{section.2.3}
-\contentsline {part}{III\hspace {1em}Cadre d'analyse}{8}{part.3}
-\contentsline {section}{\numberline {I}D\IeC {\'e}finition de concepts}{9}{section.3.1}
-\contentsline {subsection}{\numberline {1}Le web s\IeC {\'e}mantique}{9}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {2}Les entit\IeC {\'e}s nomm\IeC {\'e}es}{9}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3}Les gazetiers}{10}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {4}Les expressions r\IeC {\'e}guli\IeC {\`e}res}{11}{subsection.3.1.4}
-\contentsline {section}{\numberline {II}Outils}{11}{section.3.2}
-\contentsline {subsection}{\numberline {1}L'environnement GATE}{11}{subsection.3.2.1}
+\contentsline {part}{III\hspace {1em}Cadre d'analyse}{9}{part.3}
+\contentsline {section}{\numberline {I}D\IeC {\'e}finition de concepts}{10}{section.3.1}
+\contentsline {subsection}{\numberline {1}Le web s\IeC {\'e}mantique}{10}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {2}Les entit\IeC {\'e}s nomm\IeC {\'e}es}{10}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3}Les gazetiers}{11}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {4}Les expressions r\IeC {\'e}guli\IeC {\`e}res}{12}{subsection.3.1.4}
+\contentsline {section}{\numberline {II}Outils}{12}{section.3.2}
+\contentsline {subsection}{\numberline {1}L'environnement GATE}{12}{subsection.3.2.1}
 \contentsline {subsubsection}{Fonctionnement g\IeC {\'e}n\IeC {\'e}ral}{12}{section*.4}
-\contentsline {subsection}{\numberline {2}Le formalisme JAPE}{12}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3}RegexEr : Outil en ligne pour manipuler des expressions r\IeC {\'e}guli\IeC {\`e}res}{16}{subsection.3.2.3}
-\contentsline {part}{IV\hspace {1em}D\IeC {\'e}veloppement}{17}{part.4}
-\contentsline {section}{\numberline {I}Prise en main de l'environnement}{18}{section.4.1}
-\contentsline {section}{\numberline {II}D\IeC {\'e}finition des dimensions d'annotation et leur contenu}{19}{section.4.2}
-\contentsline {subsection}{\numberline {1}Dimension spatiale}{19}{subsection.4.2.1}
-\contentsline {subsubsection}{D\IeC {\'e}finition}{19}{section*.6}
-\contentsline {subsubsection}{Contenu}{19}{section*.7}
-\contentsline {subsection}{\numberline {2}Dimension temporelle}{19}{subsection.4.2.2}
-\contentsline {subsubsection}{D\IeC {\'e}finition}{19}{section*.8}
-\contentsline {subsubsection}{Contenu}{19}{section*.9}
-\contentsline {subsection}{\numberline {3}Dimension th\IeC {\'e}matique}{19}{subsection.4.2.3}
-\contentsline {subsubsection}{D\IeC {\'e}finition}{19}{section*.10}
-\contentsline {subsubsection}{Contenu}{20}{section*.11}
-\contentsline {section}{\numberline {III}Premi\IeC {\`e}re recherche d'entit\IeC {\'e}s nomm\IeC {\'e}es avec les gazetiers}{20}{section.4.3}
-\contentsline {subsubsection}{Ateliers}{20}{section*.12}
-\contentsline {subsubsection}{Souverains}{20}{section*.13}
-\contentsline {section}{\numberline {IV}Deuxi\IeC {\`e}me recherche d'entit\IeC {\'e}s nomm\IeC {\'e}es avec les r\IeC {\`e}gles JAPE}{21}{section.4.4}
-\contentsline {subsubsection}{P\IeC {\'e}riodes}{21}{section*.14}
-\contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{23}{section*.15}
-\contentsline {subsubsection}{P\IeC {\'e}riodes de r\IeC {\`e}gne}{23}{section*.16}
-\contentsline {subsubsection}{Nature de la monnaie}{24}{section*.17}
-\contentsline {subsubsection}{L\IeC {\'e}gende}{25}{section*.18}
-\contentsline {subsubsection}{Types mon\IeC {\'e}taire}{26}{section*.19}
-\contentsline {subsubsection}{Collections, Tr\IeC {\'e}sors, Trouvailles}{26}{section*.20}
-\contentsline {part}{V\hspace {1em}Conclusion}{28}{part.5}
-\contentsline {section}{\numberline {I}Bilan du projet}{29}{section.5.1}
-\contentsline {section}{\numberline {II}Exp\IeC {\'e}riences acquises}{29}{section.5.2}
+\contentsline {subsubsection}{La cha\IeC {\^\i }ne de traitement ANNIE}{14}{section*.5}
+\contentsline {subsection}{\numberline {2}Le formalisme JAPE}{14}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3}RegExr : Outil en ligne pour manipuler des expressions r\IeC {\'e}guli\IeC {\`e}res}{17}{subsection.3.2.3}
+\contentsline {part}{IV\hspace {1em}D\IeC {\'e}veloppement}{18}{part.4}
+\contentsline {section}{\numberline {I}Prise en main de l'environnement}{19}{section.4.1}
+\contentsline {section}{\numberline {II}D\IeC {\'e}finition des dimensions d'annotation et leur contenu}{20}{section.4.2}
+\contentsline {subsection}{\numberline {1}Dimension spatiale}{20}{subsection.4.2.1}
+\contentsline {subsubsection}{D\IeC {\'e}finition}{20}{section*.7}
+\contentsline {subsubsection}{Contenu}{20}{section*.8}
+\contentsline {subsection}{\numberline {2}Dimension temporelle}{20}{subsection.4.2.2}
+\contentsline {subsubsection}{D\IeC {\'e}finition}{20}{section*.9}
+\contentsline {subsubsection}{Contenu}{20}{section*.10}
+\contentsline {subsection}{\numberline {3}Dimension th\IeC {\'e}matique}{20}{subsection.4.2.3}
+\contentsline {subsubsection}{D\IeC {\'e}finition}{20}{section*.11}
+\contentsline {subsubsection}{Contenu}{21}{section*.12}
+\contentsline {section}{\numberline {III}Premi\IeC {\`e}re recherche d'entit\IeC {\'e}s nomm\IeC {\'e}es avec les gazetiers}{21}{section.4.3}
+\contentsline {subsubsection}{Ateliers}{21}{section*.13}
+\contentsline {subsubsection}{Souverains}{21}{section*.14}
+\contentsline {section}{\numberline {IV}Deuxi\IeC {\`e}me recherche d'entit\IeC {\'e}s nomm\IeC {\'e}es avec les r\IeC {\`e}gles JAPE}{22}{section.4.4}
+\contentsline {subsubsection}{P\IeC {\'e}riodes}{22}{section*.15}
+\contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{24}{section*.16}
+\contentsline {subsubsection}{P\IeC {\'e}riodes de r\IeC {\`e}gne}{24}{section*.17}
+\contentsline {subsubsection}{Nature de la monnaie}{25}{section*.18}
+\contentsline {subsubsection}{L\IeC {\'e}gende}{26}{section*.19}
+\contentsline {subsubsection}{Types mon\IeC {\'e}taire}{27}{section*.20}
+\contentsline {subsubsection}{Collections, Tr\IeC {\'e}sors, Trouvailles}{27}{section*.21}
+\contentsline {section}{\numberline {V}Bilan du d\IeC {\'e}veloppement}{28}{section.4.5}
+\contentsline {part}{V\hspace {1em}Conclusion}{29}{part.5}
+\contentsline {section}{\numberline {I}Bilan du projet}{30}{section.5.1}
+\contentsline {section}{\numberline {II}Exp\IeC {\'e}riences acquises}{30}{section.5.2}
