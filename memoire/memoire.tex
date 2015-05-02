@@ -13,7 +13,6 @@
 \usepackage[usenames,dvipsnames,table,xcdraw]{xcolor}
 \usepackage[pdftex]{graphicx}
 \usepackage{sectsty}
-
 %% Couleurs
  \definecolor{orange}{HTML}{E74C3C}
  \definecolor{dark-blue}{HTML}{1A2530}
@@ -22,10 +21,9 @@
  \definecolor{gray}{rgb}{0.5,0.5,0.5}
  \definecolor{mauve}{rgb}{0.58,0,0.82}
  
-  \definecolor{part_color}{HTML}{E74C3C}
-   \definecolor{section_color}{HTML}{2C3E50}
-    \definecolor{subsection_color}{HTML}{34495E}
- 
+ \definecolor{part_color}{HTML}{E74C3C}
+ \definecolor{section_color}{HTML}{2C3E50}
+ \definecolor{subsection_color}{HTML}{34495E}
  
  \colorlet{shadecolor}{gray!7}
 
@@ -186,7 +184,7 @@ Sur celui-ci, la maîtrise d'ouvrage a besoin d'effectuer des recherches :
 
 Répondre à cette demande implique de définir puis d'explorer les dimensions temporelles, spatiales et thématiques de l'ouvrage.\\
 Pour cela, il est nécessaire de connaître le domaine et l'ouvrage afin de savoir quelle information correspond à quelle dimension.\\
-Une fois cet apprentissage fait, nous pouvons construire des règles dans une chaine de traitement permettant d'annoter chaque information en fonction de sa dimension. \\
+Une fois cet apprentissage fait, nous pouvons construire des règles dans une chaîne de traitement permettant d'annoter chaque information en fonction de sa dimension. \\
 
 Les monnaies carolingiennes sont le domaine central pour la réalisation du projet. Les ressources nécessaires à l'annotation (ici sous forme de gazetiers) ont été construites à partir des données de l'ouvrage.\\
 
@@ -202,7 +200,6 @@ En résumé, les caractéristiques du projet sont :
 
 \newpage
 	\section{Description}
-	
 	La chaine de traitement prend un document textuel en entrée, produit un document XML en sortie et le met en forme pour une meilleure lisibilité.\\
 	\begin{exemple}
 \noindent Illustrons par un scénario les objectifs de la chaîne de traitement.
@@ -235,17 +232,17 @@ Ensuite, nous avions la phase de développement durant laquelle nous allions met
 Pour cerner l'environnement du projet, nous allons, définir quelques connaissances actuelles liées au domaine de l'annotation sémantique. Ensuite, viendra une description des outils qui ont été nécessaires lors de la phase de développement.\\
 
 \section{Définition de concepts}
-L'annotation sémantique peut se définir comme une activité i va mettre une "note" sur une partie d'un texte. Elle permet de travailler plus facilement sur un texte en apportant une sur-couche d'informations, qui va donner un sens aux textes.
+L'annotation sémantique peut se définir comme une activité qui va mettre une "note" sur une partie d'un texte. Elle permet de travailler plus facilement sur un texte en apportant une sur-couche d'informations, qui va donner un sens aux textes.\cite{GLNS09}
 \subsection{Le web sémantique}
 Le Web sémantique, ou toile sémantique, est un mouvement collaboratif mené par le World Wide Web Consortium (W3C) qui met en place des méthodes communes pour échanger des données.\\
 Il favorise l'émergence de nouvelles connaissances en s'appuyant sur celles déjà présentes sur Internet en les structurant et en les liant.\\
-Selon le W3C, « le Web sémantique fournit un Modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs ».\\
-L'expression a été inventée par Tim Berners-Lee, inventeur du World Wide Web et directeur du World Wide Web Consortium (« W3C ») qui supervise le développement des technologies communes du Web sémantique. \\
-Le directeur du W3C définit le Web sémantique comme « un web des données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances ».
+Selon le W3C, ``le Web sémantique fournit un Modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs''.\\
+L'expression a été inventée par Tim Berners-Lee, inventeur du World Wide Web et directeur du World Wide Web Consortium qui supervise le développement des technologies communes du Web sémantique. \\
+Le directeur du W3C définit le Web sémantique comme ``un web des données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances''.\cite{W1}
 
 \subsection{Les entités nommées}
-Les entités nommées sont des objets textuels (mot, ou groupe de mots) catégorisés dans des classes. Celles-ci peuvent être les noms de personnes, noms d'organisations, noms de lieux, quantités, distances, dates, auxquelles ont associe un identifiant unique.\\
-Les entités nommées sont "associés à des expressions linguistiques sollicités par des applications qui manipulent des documents textuels".\\
+Les entités nommées sont des objets textuels (mot, ou groupe de mots) catégorisés dans des classes. Celles-ci peuvent être les noms de personnes, noms d'organisations, noms de lieux, quantités, distances, dates, auxquelles ont associe un identifiant unique.\cite{W2}\\
+Les entités nommées sont "associés à des expressions linguistiques sollicités par des applications qui manipulent des documents textuels".p33 \cite{DN12}\\
 Voici l'illustration d'une recherche d'entités nommées :
 \begin{verbatim}
 Henri a acheté 300 actions de la société AMD en 2006
@@ -254,7 +251,7 @@ Henri a acheté 300 actions de la société AMD en 2006
 <ENAMEX TYPE="ORGANIZATION">AMD</ENAMEX> en 
 <TIMEX TYPE="DATE">2006</TIMEX>.
 \end{verbatim}
-La reconnaissance et la résolution d'entités nommées peut s'avérer difficile dans la mesures où elles sont sujettes à des ambiguïtés liées aux phénomènes linguistiques tel que: la synonymie, l'homonymie ou encore la métonymie.\\
+La reconnaissance et la résolution d'entités nommées peut s'avérer difficile dans la mesures où elles sont sujettes à des ambiguïtés liées aux phénomènes linguistiques tel que: la synonymie, l'homonymie ou encore la métonymie. p44\cite{DN12}\\
 \begin{exemple}
 Avec l’entité nommée "Paris" au sein des énoncés suivants:
 \begin{itemize}
@@ -264,11 +261,10 @@ Avec l’entité nommée "Paris" au sein des énoncés suivants:
 \end{itemize}
 \end{exemple}
 
-
 \subsection{Les gazetiers}
 Un gazetier peut être assimilé à un ensemble de listes contenant des noms d'entités. Elles peuvent être des villes, des organisations, des jours de la semaine, des métiers, etc. Ces listes sont utilisés pour trouver des occurrences de ces noms dans un texte, comme pour l'activité de recherche d'entités nommées.\\
 Le terme Gazetier est souvent utilisé de manière interchangeable pour un ensemble de listes d'entités et de ressources permettant de trouver des occurrences de noms dans un texte.\\
-Chaque gazetier est fichier un texte d'extension "lst" avec une entrée par ligne.
+Chaque gazetier est fichier un texte d'extension "lst" avec une entrée par ligne.\cite{w4}
 Ci-dessous un exemple de Gazetier:
 \begin{figure}[H]
 \begin{center}
@@ -276,10 +272,10 @@ Ci-dessous un exemple de Gazetier:
 \end{center}
 \caption{Exemple de Gazetier}
 \end{figure}
-Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (: , ;, ect). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation).
+Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (: , ;, ect). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation).\cite{w4}
 \subsection{Les expressions régulières}
 Les expressions régulières sont une famille de notations compactes et puissantes pour décrire certains ensembles de chaînes de caractères. Elles permettent de rechercher automatiquement des morceaux de texte ayant certaines formes, et éventuellement remplacer ces morceaux par d'autres.
-Les expressions régulières sont utilisées par un grand nombre d'éditeurs de textes et utilitaires (particulierement sous Unix), par exemple Vim, Emacs, sed ou awk. On les retrouve également dans la majorité des langages de programmation modernes.\\
+Les expressions régulières sont utilisées par un grand nombre d'éditeurs de textes et utilitaires (particulièrement sous Unix), par exemple Vim, Emacs, sed ou awk. On les retrouve également dans la majorité des langages de programmation modernes.\cite{w3}\
 Exemple d'utilisation d'une expression régulière sur un bout de texte:
 \begin{itemize}
 \item Expression : \verb|(?:\d*\.)?\d+|
@@ -292,7 +288,7 @@ GATE est un logiciel développé en Java à l’université de Sheffield en 1995
 le traitement du langage naturel, y compris l’extraction d’information dans de nombreuses
 langues. 
 \subsubsection{Fonctionnement général}
-C'est un outil qui repose sur le principe d'une chaîne de traitement ("pipeline") composé de plusieurs modules (dits "Processing ressources" PR) appliqués successivement sur un ou plusieurs textes (dits "langages Ressources" LR). Les documents donnés en entrée peuvent être un simple texte ou un corpus en local (cf. figure), que l'on charge avec une URL. Les différents composants annotent chacun à leur tour le texte en prenant en compte les annotations précédentes puis le document est retourné a l'utilisateur au format XML.
+C'est un outil qui repose sur le principe d'une chaîne de traitement ("pipeline") composé de plusieurs modules (dits "Processing ressources" PR) appliqués successivement sur un ou plusieurs textes (dits "langages Ressources" LR). Les documents donnés en entrée peuvent être un simple texte ou un corpus en local (cf. figure), que l'on charge avec une URL. Les différents composants annotent chacun à leur tour le texte en prenant en compte les annotations précédentes puis le document est retourné a l'utilisateur au format XML.\cite{SL10}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.3]{img/exempleAnnotationGATE.png} 
@@ -303,7 +299,7 @@ Par un système de plugins, GATE met à disposition de ses utilisateurs un grand
 modules dédiés à l'analyse textuelle. Les plus courants sont les segmenteurs (Tokenizers), les
 étiqueteurs morpho-syntaxiques (Part Of Speech Taggers), les lexiques (Gazetteers) ou encore les
 transducteurs (JAPE transducers). L'interface graphique permet de charger de nouveaux plugins et
-ressources, de les paramétrer et de les combiner au sein d'une même chaine de traitement (cf. figure).
+ressources, de les paramétrer et de les combiner au sein d'une même chaine de traitement (cf. figure).\cite{SL10}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.3]{img/exempleChaineTraitement.png}
@@ -311,7 +307,6 @@ ressources, de les paramétrer et de les combiner au sein d'une même chaine de 
 \caption{Processus d'annotation}
 \end{figure}
 GATE comprend entre autres un système d'extraction d'information nommé ANNIE. Il est constitué d'un certains nombre de modules, y compris ceux énoncés dans le paragraphe précédent. ANNIE est une chaîne de traitement par défaut et peut servir de point de départ pour des tâches plus spécifiques.
-
 \subsubsection{La chaîne de traitement ANNIE}
 \begin{figure}[H]
 \begin{center}
@@ -331,12 +326,9 @@ phrases.
 \item[NE Transducer] tente de trouver les entités nommées inconnus en fonction de modèles d'extraction écrits dans le langage JAPE (expliqué dans la sous-partie suivante).
 \item[OrthoMatcher] ajoute une relations d'identité entre les entités nommées trouvées par le NE Transducer, afin d'effectuer une coréférence.
 \end{description}
-
-
-
 \subsection{Le formalisme JAPE}
 Une partie des différents modules proposés dans GATE est basé sur le formalise JAPE (Java Annotation Patterns Engine), un transduceur à états finis permettant de reconnaître des expressions régulières sur les annotations. Ce système s'avère très utile en extraction d'informations car il permet de définir les contextes d'apparition des éléments à extraire pour ensuite les repérer et les annoter. Le principe consiste a combiner différentes annotations dites basiques (tokens, relations syntaxiques, etc) pour en créer de nouvelles plus complexes (entités nommées, relations, événements, etc.): Cela revient à l'écriture de règles de production et donc à l'élaboration d'une grammaire régulière.\\
-Une grammaire JAPE se décompose en plusieurs phases exécutées consécutivement et formant une cascade d'automates à états finis. Chaque phase correspond à un fichier « .jape » et peut être constituée d'une ou plusieurs règle(s) écrite(s) selon le formalisme associé à JAPE. \\
+Une grammaire JAPE se décompose en plusieurs phases exécutées consécutivement et formant une cascade d'automates à états finis. Chaque phase correspond à un fichier « .jape » et peut être constituée d'une ou plusieurs règle(s) écrite(s) selon le formalisme associé à JAPE.\cite{SL10}\\
 Classiquement, ces règles sont divisées en deux blocs : 
 \begin{itemize}
 \item une partie gauche (« Left Hand Side » ou LHS) définissant un motif d'annotations à repérer,
@@ -372,7 +364,7 @@ Précisons quelques règles syntaxiques de base du formalisme JAPE:
 La liste des annotations utilisées en LHS de la règle est déclarée en début de phase grâce à l'attribut « Input » : par exemple, « Input : Lookup, Token, Person ». Par ailleurs, l'attribut « Control » permet de définir l'ordre d'exécution des différentes règles d'une phase et « Debug »
 d'obtenir un affichage des éventuels conflits rencontrés entre règles.
 Pour finir, précisons qu'un système de macros est également disponible : une macro permet
-de définir et de nommer une séquence d'annotations afin de la réutiliser plus rapidement par la suite.\\
+de définir et de nommer une séquence d'annotations afin de la réutiliser plus rapidement par la suite.\cite{SL10}\\
 Ci-dessous un exemple de règle JAPE plus complet:\\
 \begin{exemple}
 \begin{verbatim}
@@ -405,10 +397,6 @@ Les avantages de cet outil sont :
 \end{center}
 \caption{Exemple de manipulation d'expression régulière dans RegExr}
 \end{figure}
-		
-
-
-
 \part{Développement}
 	\section*{Introduction}
 	Avant de démarrer le développement de la chaîne de traitement, nous devons nous familiariser avec notre environnement de travail. Ensuite, nous allons pouvoir définir nos annotations, leur domaine et choisir de quelle façon nous allons les capturer.
@@ -738,6 +726,13 @@ N'ayant besoin que de repérer les mots (Token) pour notre annotation, nous n'av
 \begin{figure}[hbtp]
 \includegraphics[scale=.3]{img/ganttEff.png}
 \end{figure}
-
+En comparant notre planning effectif au planning prévisionnel, il ressort que nous avons respecté le planning prévisionnel pour la première phase du projet et aussi toute la phase de rédaction des différents comptes rendus de réunion. La première phase comprend la documentation, la prise en main des outils de travail, la formalisation du cahier de charge et l'étape de conception. Ce fût une phase de recherche pendant laquelle il nous est paru nécessaire de de bien cerner le domaine d'étude et aussi de mettre en place une bonne conception. Nous avions donc prévu pour cette phase une période de travail plus longue. En revanche, nous a été impossible de respecter le planning prévisionnel pour la phase de développement.En effet Notre chaîne de traitement est aboutie mais L'interface web de visualisation des résultats d'annotation quant à elle est toujours en cours de développement et sera présentée lors de la soutenance du projet.
 \section{Expériences acquises}
+Il est important de noter plusieurs retours d'expérience.\\D'abord la gestion du temps pour suivre convenablement un planning prévisionnel:Nous retenons qu'il est assez improbable de respecter un planning prévisionnel, surtout pendant la phase de développement en raison du fait qu'on peut être confronté à des difficultés techniques (code) dans cette étape.\\
+Ensuite la capacité de pouvoir fournir un produit final à un client qui respecte au mieux les spécification exprimées dans un cahier de charges. On peut noter qu'il est primordial d'être fréquemment en contact avec le client pour mieux cerner et comprendre ses besoins. En effet, sur ce projet, le rôle de client fût joué par nos encadrants et celui du prestataire joué par nous.
+Enfin, la préparation des réunions de travail qui passe par la rédaction d'ordres du jour et de comptes rendus, est une expérience supplémentaire que nous avons acquis.\\
+Nous pensons que toutes ces expériences pourront nous être utiles à l'avenir dans le monde professionnel.
+\newpage
+\bibliography{biblio}
+\bibliographystyle{plain}
 \end{document}
