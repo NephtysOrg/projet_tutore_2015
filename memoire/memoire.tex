@@ -249,11 +249,11 @@ L'annotation sémantique peut se définir comme une activité qui va mettre une 
 Le Web sémantique, ou toile sémantique, est un mouvement collaboratif mené par le World Wide Web Consortium (W3C) qui met en place des méthodes communes pour échanger des données.\\
 Il favorise l'émergence de nouvelles connaissances en s'appuyant sur celles déjà présentes sur Internet en les structurant et en les liant.\\
 Selon le W3C, ``le Web sémantique fournit un Modèle qui permet aux données d'être partagées et réutilisées entre plusieurs applications, entreprises et groupes d'utilisateurs''.\\
-L'expression a été inventée par Tim Berners-Lee, inventeur du World Wide Web et directeur du World Wide Web Consortium qui supervise le développement des technologies communes du Web sémantique. \\
-Le directeur du W3C définit le Web sémantique comme ``un web des données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances''.\cite{W1}
+L'expression a été inventée par Tim Berners-Lee, inventeur du World Wide Web et directeur du World Wide Web Consortium qui supervise le développement des technologies communes du Web sémantique.\\
+Le directeur du W3C définit le Web sémantique comme ``un web des données qui peuvent être traitées directement et indirectement par des machines pour aider leurs utilisateurs à créer de nouvelles connaissances''. \cite{w1ws}
 
 \subsection{Les entités nommées}
-Les entités nommées sont des objets textuels (mot, ou groupe de mots) catégorisés dans des classes. Celles-ci peuvent être les noms de personnes, noms d'organisations, noms de lieux, quantités, distances, dates, auxquelles on associe un identifiant unique.\cite{W2}\\
+Les entités nommées sont des objets textuels (mot, ou groupe de mots) catégorisés dans des classes. Celles-ci peuvent être les noms de personnes, noms d'organisations, noms de lieux, quantités, distances, dates, auxquelles on associe un identifiant unique.\cite{w2re}\\
 Les entités nommées sont "associées à des expressions linguistiques sollicitées par des applications qui manipulent des documents textuels".p33 \cite{DN12}\\
 Voici l'illustration d'une recherche d'entités nommées :
 \begin{verbatim}
@@ -276,7 +276,7 @@ Avec l’entité nommée "Paris" au sein des énoncés suivants:
 \subsection{Les gazetiers}
 Un gazetier peut être assimilé à un ensemble de listes contenant des noms d'entités. Elles peuvent être des villes, des organisations, des jours de la semaine, des métiers, etc. Ces listes sont utilisées pour trouver des occurrences de ces noms dans un texte, comme pour l'activité de recherche d'entités nommées.\\
 Le terme Gazetier est souvent utilisé de manière interchangeable pour un ensemble de listes d'entités et de ressources permettant de trouver des occurrences de noms dans un texte.\\
-Chaque gazetier est fichier texte d'extension "lst" avec une entrée par ligne.\cite{w4}
+Chaque gazetier est fichier texte d'extension "lst" avec une entrée par ligne.\cite{w4gaz}
 Ci-dessous un exemple de Gazetier:
 \begin{figure}[H]
 \begin{center}
@@ -284,7 +284,7 @@ Ci-dessous un exemple de Gazetier:
 \end{center}
 \caption{Exemple de Gazetier}
 \end{figure}
-Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (\textbf{:} , \textbf{;} , ...). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation).\cite{w4}
+Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (\textbf{:} , \textbf{;} , ...). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation).\cite{w4gaz}
 \subsection{Les expressions régulières}
 Les expressions régulières sont une famille de notations compactes et puissantes pour décrire certains ensembles de chaînes de caractères. Elles permettent de rechercher automatiquement des morceaux de texte ayant certaines formes, et éventuellement remplacer ces morceaux par d'autres.
 Les expressions régulières sont utilisées par un grand nombre d'éditeurs de textes et utilitaires (particulièrement sous Unix), par exemple Vim, Emacs, sed ou awk. On les retrouve également dans la majorité des langages de programmation modernes.\cite{w3}\
@@ -300,7 +300,7 @@ GATE est un logiciel développé en Java à l’université de Sheffield en 1995
 le traitement du langage naturel, y compris l’extraction d’information dans de nombreuses
 langues. 
 \subsubsection{Fonctionnement général}
-C'est un outil qui repose sur le principe d'une chaîne de traitement ("pipeline") constituée de plusieurs modules (dits "Processing ressources" PR) appliqués successivement sur un ou plusieurs textes (dits "Languages Ressources" LR). Les documents donnés en entrée peuvent être un simple texte ou un corpus en local (cf. figure 2), que l'on charge avec une URL. Les différents composants annotent chacun à leur tour le texte en prenant en compte les annotations précédentes puis le document est retourné à l'utilisateur au format XML.\cite{SL10}
+C'est un outil qui repose sur le principe d'une chaîne de traitement ("pipeline") constituée de plusieurs modules (dits "Processing ressources" PR) appliqués successivement sur un ou plusieurs textes (dits "Languages Ressources" LR). Les documents donnés en entrée peuvent être un simple texte ou un corpus en local (cf. figure 2), que l'on charge avec une URL. Les différents composants annotent chacun à leur tour le texte en prenant en compte les annotations précédentes puis le document est retourné à l'utilisateur au format XML. pp19-20\cite{SL10}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.3]{img/exempleAnnotationGATE.png} 
@@ -311,7 +311,7 @@ Par un système de plugins, GATE met à disposition de ses utilisateurs un grand
 modules dédiés à l'analyse textuelle. Les plus courants sont les segmenteurs (Tokenizers), les
 étiqueteurs morpho-syntaxiques (Part Of Speech Taggers), les lexiques (Gazetteers) ou encore les
 transducteurs (JAPE transducers). L'interface graphique permet de charger de nouveaux plugins et
-ressources, de les paramétrer et de les combiner au sein d'une même chaîne de traitement (cf.figure 3).\cite{SL10}
+ressources, de les paramétrer et de les combiner au sein d'une même chaîne de traitement (cf.figure 3). p22\cite{SL10}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale=0.3]{img/exempleChaineTraitement.png}
@@ -336,17 +336,17 @@ signes de ponctuation et des mots.
 phrases.
 \item[POS Tagger] attribue une catégorie linguistique à un token (Ex: NNP pour les noms propres au singulier).
 \item[NE Transducer] tente de trouver les entités nommées inconnus en fonction de modèles d'extraction écrits dans le langage JAPE (expliqué dans la sous-partie suivante).
-\item[OrthoMatcher] ajoute une relations d'identité entre les entités nommées trouvées par le NE Transducer, afin d'effectuer une coréférence.
+\item[OrthoMatcher] ajoute une relations d'identité entre les entités nommées trouvées par le NE Transducer, afin d'effectuer une coréférence. p24 \cite{SL10}
 \end{description}
 \subsection{Le formalisme JAPE}
 Une partie des différents modules proposés dans GATE est basé sur le formalise JAPE (Java Annotation Patterns Engine), un transduceur à états finis permettant de reconnaître des expressions régulières sur les annotations. Ce système s'avère très utile en extraction d'informations car il permet de définir les contextes d'apparition des éléments à extraire pour ensuite les repérer et les annoter. Le principe consiste à combiner différentes annotations dites basiques (tokens, relations syntaxiques, etc) pour en créer de nouvelles plus complexes (entités nommées, relations, événements, etc.). Cela revient à l'écriture de règles de production et donc à l'élaboration d'une grammaire régulière.\\
-Une grammaire JAPE se décompose en plusieurs phases exécutées consécutivement et formant une cascade d'automates à états finis. Chaque phase correspond à un fichier « .jape » et peut être constituée d'une ou plusieurs règle(s) écrite(s) selon le formalisme associé à JAPE.\cite{SL10}\\
+Une grammaire JAPE se décompose en plusieurs phases exécutées consécutivement et formant une cascade d'automates à états finis. Chaque phase correspond à un fichier « .jape » et peut être constituée d'une ou plusieurs règle(s) écrite(s) selon le formalisme associé à JAPE. p23\cite{SL10}\\
 Classiquement, ces règles sont divisées en deux blocs : 
 \begin{itemize}
 \item une partie gauche (« Left Hand Side » ou LHS) définissant un motif d'annotations à repérer,
 \item une partie droite (« Right Hand Side » ou RHS) contenant les opérations à effectuer sur ce motif.
 \end{itemize}
-Le lien entre ces deux parties se fait par l'attribution d'une étiquette au motif (ou à ses constituants) en LHS et par sa réutilisation en RHS pour y appliquer les opérations nécessaires.\\
+Le lien entre ces deux parties se fait par l'attribution d'une étiquette au motif (ou à ses constituants) en LHS et par sa réutilisation en RHS pour y appliquer les opérations nécessaires.\cite{SL10}\\
 Pour plus de clarté, prenons l'exemple d'une règle simple :\\
 \begin{exemple}
 \begin{verbatim}
@@ -376,7 +376,7 @@ Précisons quelques règles syntaxiques de base du formalisme JAPE:
 La liste des annotations utilisées en LHS de la règle est déclarée en début de phase grâce à l'attribut « Input » : par exemple, « Input : Lookup, Token, Person ». Par ailleurs, l'attribut « Control » permet de définir l'ordre d'exécution des différentes règles d'une phase et « Debug »
 d'obtenir un affichage des éventuels conflits rencontrés entre règles.
 Pour finir, précisons qu'un système de macros est également disponible : une macro permet
-de définir et de nommer une séquence d'annotations afin de la réutiliser plus rapidement par la suite.\cite{SL10}\\
+de définir et de nommer une séquence d'annotations afin de la réutiliser plus rapidement par la suite. p23 \cite{SL10}\\
 Ci-dessous un exemple de règle JAPE plus complet incluant l'utilisation des macros:\\
 \begin{exemple}
 \begin{verbatim}
@@ -423,7 +423,7 @@ Rule: Percent_number
 Pour formuler une règle JAPE, il est utile de connaître le formalisme des expressions régulières présentées en amont. Il est également utile de pouvoir tester et vérifier syntaxiquement et sémantiquement les expressions régulières réalisées.
 \newpage
 \subsection{RegExr : Outil en ligne pour manipuler des expressions régulières}
-RegExr est un outil de manipulation d’expressions régulières écrit en Javascript.
+RegExr\footnote{http://www.regexr.com/} est un outil de manipulation d’expressions régulières écrit en Javascript.
 Les avantages de cet outil sont : 
 \begin{itemize}
 \item la coloration syntaxique,
@@ -777,8 +777,8 @@ Ensuite la capacité de pouvoir fournir un produit final à un client qui respec
 Enfin, la préparation des réunions de travail qui passe par la rédaction d'ordres du jour et de comptes rendus, est une expérience supplémentaire que nous avons acquise.\\
 Nous pensons que toutes ces expériences pourront nous être utiles à l'avenir dans le monde professionnel.
 \newpage
-\bibliography{biblio}
-\bibliographystyle{plain}
+\bibliography{latestbib}
+\bibliographystyle{alpha}
 \appendix
 \chapter{Règles JAPE}
 periode.jape
@@ -797,5 +797,4 @@ trouvailles.jape
 \includecode{code/thematique/trouvailles.jape}
 trouvailles\_details.jape
 \includecode{code/thematique/trouvailles_details.jape}
-
 \end{document}

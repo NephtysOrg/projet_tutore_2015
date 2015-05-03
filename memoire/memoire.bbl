@@ -1,32 +1,33 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{GFAS09}
 
-\bibitem{w3}
-Culot.
-
-\bibitem{GLNS09}
+\bibitem[GFAS09]{GLNS09}
 A.~Guissé, F.Lévy, A.Nazarenko, and S.Szulman.
-\newblock {\em Annotation sémantique pour l'indexation de règles métiers}.
-\newblock PhD thesis, Université Paris 13, CNRS, 2009.
+\newblock Annotation sémantique pour l'indexation de règles métiers, 2009.
 
-\bibitem{SL10}
+\bibitem[Lau10]{SL10}
 SERRANO Laurie.
-\newblock {\em Modélisation d'une ontologie de domaine et des outils
-  d'extraction de l'information associés pour l'anglais et le français}.
-\newblock PhD thesis, Université Sendhal, Grenoble 3, 2010.
+\newblock Modélisation d'une ontologie de domaine et des outils d'extraction
+  de l'information associés pour l'anglais et le français, 2010.
 
-\bibitem{DN12}
+\bibitem[Nov12]{DN12}
 Damien Novel.
-\newblock {\em Reconnaissance des entitées nommées par exploration de règles
-  d’annotation}.
-\newblock PhD thesis, École Doctorale MIPTIS, 2012.
+\newblock Reconnaissance des entitées nommées par exploration de règles
+  d’annotation, 2012.
 
-\bibitem{w4}
-Gate Uk.
+\bibitem[oS]{w4gaz}
+The~University of~Sheffield.
+\newblock Gazetteers.
+\newblock \url{https://gate.ac.uk/sale/tao/splitch13.html}.
 
-\bibitem{W1}
+\bibitem[Wika]{w2re}
 Wikipedia.
+\newblock Reconnaissance d'entités nommées.
+\newblock
+  \url{http://fr.wikipedia.org/wiki/Reconnaissance_d%27entit%C3%A9s_nomm%C3%A9es}.
 
-\bibitem{W2}
+\bibitem[Wikb]{w1ws}
 Wikipedia.
+\newblock Web sémantique.
+\newblock \url{http://fr.wikipedia.org/wiki/Web_s%C3%A9mantique}.
 
 \end{thebibliography}
