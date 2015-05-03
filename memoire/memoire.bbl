@@ -3,23 +3,22 @@
 \bibitem{w3}
 Culot.
 
-\bibitem{DN12}
-school = {École Doctorale MIPTIS} year = {2012} OPTkey = {} OPTtype = {}
-  OPTaddress = {} OPTmonth = {} OPTnote = {} OPTannote =~{} Damien~Novel, title
-  =~{Reconnaissance des entitées nommées par exploration de règles
-  d’annotation}.
-\newblock PhD thesis.
-
 \bibitem{GLNS09}
 A.~Guissé, F.Lévy, A.Nazarenko, and S.Szulman.
 \newblock {\em Annotation sémantique pour l'indexation de règles métiers}.
-\newblock PhD thesis, Université Paris 13 & CNRS, 2009.
+\newblock PhD thesis, Université Paris 13, CNRS, 2009.
 
 \bibitem{SL10}
 SERRANO Laurie.
 \newblock {\em Modélisation d'une ontologie de domaine et des outils
   d'extraction de l'information associés pour l'anglais et le français}.
 \newblock PhD thesis, Université Sendhal, Grenoble 3, 2010.
+
+\bibitem{DN12}
+Damien Novel.
+\newblock {\em Reconnaissance des entitées nommées par exploration de règles
+  d’annotation}.
+\newblock PhD thesis, École Doctorale MIPTIS, 2012.
 
 \bibitem{w4}
 Gate Uk.
