@@ -1,0 +1,72 @@
+Phase: periode
+Input: Token
+Options: control = appelt
+
+Macro: TROIS_NOMBRES
+({Token.kind==number,Token.length == 3})
+
+Macro: UN_NOMBRE
+({Token.kind==number,Token.length == 1})
+
+Macro:SLASH
+({Token.string=="/"})
+
+Macro:DATE_PRECISE
+(TROIS_NOMBRES)
+
+Macro:DATE_IMPRECISE
+(TROIS_NOMBRES SLASH UN_NOMBRE)
+
+Macro:DATE
+(DATE_PRECISE | DATE_IMPRECISE)
+
+/**
+* Description : Capture une période 
+* 
+* Exemple : 758-542 , 758/9-762, ... 
+*/
+Rule: PeriodeRule
+(
+	(DATE):d1({Token.string =="-"})(DATE):d2
+    ):Periode -->
+:Periode{
+			//En entree
+ OffsetComparator comparator = new OffsetComparator();
+ gate.AnnotationSet matchedD1 = (gate.AnnotationSet)bindings.get("d1");
+ gate.AnnotationSet matchedD2 = (gate.AnnotationSet)bindings.get("d2");
+ List<Annotation>   listD1 = new ArrayList<Annotation>(matchedD1);
+ List<Annotation>   listD2 = new ArrayList<Annotation>(matchedD2);
+ Collections.sort(listD1, comparator);
+ Collections.sort(listD2, comparator);
+
+ String date_1 = "";
+ String date_2 = "";
+
+		//On récupere toute la chaine D1, while necessaire pour récuperer les /
+ for (Annotation ann :  listD1) {
+  date_1 += (String)ann.getFeatures().get("string");
+}
+for (Annotation ann :  listD2) {
+  date_2 += (String)ann.getFeatures().get("string");
+}
+
+    	// Traitement des deux chaines. on prend le min si D1 est imprecise et le max si d2 est imprécise
+if (date_1.contains("/")) {
+  date_1 = date_1.substring(0, date_1.indexOf("/"));
+}
+if (date_2.contains("/")) {
+  date_2 = date_2.substring(0, date_2.indexOf("/")-1) + date_2.substring(date_2.indexOf("/") + 1);
+}
+
+			//declaration d'annotation vide
+gate.AnnotationSet matchedInter = (gate.AnnotationSet)bindings.get("Periode");
+gate.FeatureMap newFeatures = Factory.newFeatureMap();
+			//MAJ de l'annotation initialement vide
+newFeatures.put("Kind","Periode");
+newFeatures.put("Rule","PeriodeRule");
+newFeatures.put("D1",date_1);
+newFeatures.put("D2",date_2);
+
+			//Validation de l'annotation et sortie
+outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"Periode",newFeatures);
+}

@@ -1,0 +1,50 @@
+Phase: collections_details
+Input: Token Collections Tresors Trouvailles PeriodeEmission NatureMonnaie Atelier
+Options: control = appelt
+
+/**
+* Description : Capture le contenu d'une collection
+* 
+* Exemple : Collections: Lorem ipsum Ut; ea Ut; Excepteur do; aute.
+*/
+Rule: CollectionsDetails
+(
+    ({Collections})
+    (({Token,!Tresors,!Trouvailles,!Atelier,!PeriodeEmission,!NatureMonnaie})+):ad
+    ({Tresors}|{Trouvailles}|{Atelier}|{PeriodeEmission}|{NatureMonnaie})
+    )
+-->
+: ad{
+        //En entree
+   OffsetComparator comparator            = new OffsetComparator();
+
+   gate.AnnotationSet matchedCollec  = (gate.AnnotationSet)bindings.get("ad");
+   List<Annotation>   listCollec     = new ArrayList<Annotation>(matchedCollec);
+
+   Collections.sort(listCollec, comparator);
+
+   String collec = "";
+
+            //On récupere chaque token séparés par les expaces
+   for (Annotation ann :  listCollec) {
+      collec += (String)ann.getFeatures().get("string");
+  }
+
+  String dellimiter = ";";
+  String splittedCollec[] = collec.split(dellimiter);
+
+            //declaration d'annotation vide
+  gate.AnnotationSet matchedInter    = (gate.AnnotationSet)bindings.get("ad");
+  gate.FeatureMap newFeatures        = Factory.newFeatureMap();
+            //MAJ de l'annotation initialement vide
+  newFeatures.put("Kind","collec");
+  newFeatures.put("Rule","CollecRule");
+  for (int i = 0; i < splittedCollec.length ; i++) {
+    newFeatures.put("Detail "+i,splittedCollec[i]);
+  }
+  newFeatures.put("Details",collec);
+
+            //Validation de l'annotation et sortie
+  outputAS.add(matchedInter.firstNode(),matchedInter.lastNode(),"CollectionsDetails",newFeatures);
+}
+

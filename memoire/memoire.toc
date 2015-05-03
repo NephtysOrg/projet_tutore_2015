@@ -25,12 +25,12 @@
 \contentsline {subsection}{\numberline {2}Dimension temporelle}{21}{subsection.4.2.2}
 \contentsline {subsubsection}{D\IeC {\'e}finition}{21}{section*.9}
 \contentsline {subsubsection}{Contenu}{21}{section*.10}
-\contentsline {subsection}{\numberline {3}Dimension th\IeC {\'e}matique}{21}{subsection.4.2.3}
-\contentsline {subsubsection}{D\IeC {\'e}finition}{21}{section*.11}
+\contentsline {subsection}{\numberline {3}Dimension th\IeC {\'e}matique}{22}{subsection.4.2.3}
+\contentsline {subsubsection}{D\IeC {\'e}finition}{22}{section*.11}
 \contentsline {subsubsection}{Contenu}{22}{section*.12}
 \contentsline {section}{\numberline {III}Premi\IeC {\`e}re recherche d'entit\IeC {\'e}s nomm\IeC {\'e}es avec les gazetiers}{22}{section.4.3}
 \contentsline {subsubsection}{Ateliers}{22}{section*.13}
-\contentsline {subsubsection}{Souverains}{22}{section*.14}
+\contentsline {subsubsection}{Souverains}{23}{section*.14}
 \contentsline {section}{\numberline {IV}Deuxi\IeC {\`e}me recherche d'entit\IeC {\'e}s nomm\IeC {\'e}es avec les r\IeC {\`e}gles JAPE}{23}{section.4.4}
 \contentsline {subsubsection}{P\IeC {\'e}riodes}{23}{section*.15}
 \contentsline {subsubsection}{P\IeC {\'e}riodes d'\IeC {\'e}mission}{25}{section*.16}
@@ -43,3 +43,4 @@
 \contentsline {part}{V\hspace {1em}Conclusion}{30}{part.5}
 \contentsline {section}{\numberline {I}Bilan du projet}{31}{section.5.1}
 \contentsline {section}{\numberline {II}Exp\IeC {\'e}riences acquises}{31}{section.5.2}
+\contentsline {chapter}{\numberline {A}R\IeC {\`e}gles JAPE}{33}{appendix.A}

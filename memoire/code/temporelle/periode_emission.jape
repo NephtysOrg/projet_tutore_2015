@@ -1,0 +1,22 @@
+Phase: periode_emission
+Input: Token Periode SpaceToken
+Options: control = appelt
+
+Macro: CHAINE_DEBUT
+(
+    ({Token.string =="Type"})({SpaceToken})
+    ({Token.string =="de"})({SpaceToken})
+)
+
+
+/**
+* Description : Capture une période d'emission
+* 
+* Exemple : Type de 758/9-762
+*/
+Rule: PeriodeEmissionRule
+(
+    CHAINE_DEBUT ({Periode}):p
+):PeriodeEmission
+-->
+:PeriodeEmission.PeriodeEmission = { Kind = "PeriodeEmission" ,D1 = :p.Periode.D1, D2 = :p.Periode.D2}
