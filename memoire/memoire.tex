@@ -156,7 +156,7 @@ Christian \textsc{Sallaberry}
 \end{center}
 \end{titlepage}
 \section*{Remerciements}
-Nous tenons à remercier nos tuteurs pour leur pédagogie et leur encadrement. Monsieur Royer pour sa précision et sa connaissance pointue du domaine. Madame Lacayrelle pour son soutien et sa clarté. Monsieur Sallaberry pour nous avoir remis sur de bonnes pistes quand nous nous égarions. Et enfin, madame Bessagnet pour avoir assuré la coordination et le suivi de ce projet.
+Nous tenons à remercier nos tuteurs pour leur pédagogie et leur encadrement. Monsieur Royer pour sa précision et sa connaissance pointue du domaine. Madame Lacayrelle pour son soutien et sa clarté. Monsieur Sallaberry pour nous avoir remis sur de bonnes pistes quand nous nous égarions. Et enfin, Madame Bessagnet pour avoir assuré la coordination et le suivi de ce projet.
 \tableofcontents
 
 \part{Introduction}
@@ -198,7 +198,7 @@ Répondre à cette demande implique de définir puis d'explorer les dimensions t
 Pour cela, il est nécessaire de connaître le domaine et l'ouvrage afin de savoir quelle information correspond à quelle dimension.\\
 Une fois cet apprentissage fait, nous pouvons construire des règles dans une chaîne de traitement permettant d'annoter chaque information en fonction de sa dimension. \\
 
-Les monnaies carolingiennes sont le domaine central pour la réalisation du projet. Les ressources nécessaires à l'annotation (ici sous forme de gazetiers) ont été construites à partir des données de l'ouvrage.\\
+Les monnaies carolingiennes sont le domaine central pour la réalisation du projet. Les ressources nécessaires à l'annotation (ici sous forme de gazetiers présentés dans la partie Cadre d'analyse) ont été construites à partir des données de l'ouvrage.\\
 
 Forte de son expérience dans le domaine, la maîtrise d'ouvrage nous a demandé d'utiliser la boîte à outils logicielle GATE qui sera utile pour le traitement du langage naturel.\\~\\
 
@@ -283,7 +283,7 @@ Exemple d'utilisation d'une expression régulière sur un bout de texte:
 \item Texte résultat: \textbf{10}rats + \textbf{.36}geese = \textbf{3.14}cows (en gras les informations trouvées par l’expression)
 \end{itemize}
 \section{Outils}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Il est indiqué dans notre cahier de charge, que l'annotation des textes, devra se faire dans l'environnement GATE. Il est donc impératif pour nous, de présenter cet outil.
+Il est indiqué dans notre cahier des charges, que l'annotation des textes, devra se faire dans l'environnement GATE. Il est donc impératif pour nous, de présenter cet outil.
 \subsection{L'environnement GATE}
 GATE est un logiciel développé en Java à l’université de Sheffield en 1995 et utilisé pour
 le traitement du langage naturel, y compris l’extraction d’information dans de nombreuses
@@ -299,7 +299,7 @@ C'est un outil qui repose sur le principe d'une chaîne de traitement ("pipeline
 Par un système de plugins, GATE met à disposition de ses utilisateurs un grand nombre de
 modules dédiés à l'analyse textuelle. Les plus courants sont les segmenteurs (Tokenizers), les
 étiqueteurs morpho-syntaxiques (Part Of Speech Taggers), les lexiques (Gazetteers) ou encore les
-transducteurs (JAPE transducers). L'interface graphique permet de charger de nouveaux plugins et
+transducters (JAPE transducers). L'interface graphique permet de charger de nouveaux plugins et
 ressources, de les paramétrer et de les combiner au sein d'une même chaîne de traitement (cf.figure 3)~\cite{SL10}.
 \begin{figure}[H]
 \begin{center}
@@ -342,7 +342,7 @@ Ci-dessous un exemple de Gazetier:
 Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (\textbf{:} , \textbf{;} , ...). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation)~\cite{w4gaz}.
 
 \subsection{Le formalisme JAPE}
-Une partie des différents modules proposés dans GATE est basé sur le formalise JAPE (Java Annotation Patterns Engine), un transduceur à états finis permettant de reconnaître des expressions régulières sur les annotations. Ce système s'avère très utile en extraction d'informations car il permet de définir les contextes d'apparition des éléments à extraire pour ensuite les repérer et les annoter. Le principe consiste à combiner différentes annotations dites basiques (tokens, relations syntaxiques, etc) pour en créer de nouvelles plus complexes (entités nommées, relations, événements, etc.). Cela revient à l'écriture de règles de production et donc à l'élaboration d'une grammaire régulière.\\
+Une partie des différents modules proposés dans GATE est basé sur le formalisme JAPE (Java Annotation Patterns Engine), un transduceur à états finis permettant de reconnaître des expressions régulières sur les annotations. Ce système s'avère très utile en extraction d'informations car il permet de définir les contextes d'apparition des éléments à extraire pour ensuite les repérer et les annoter. Le principe consiste à combiner différentes annotations dites basiques (tokens, relations syntaxiques, etc) pour en créer de nouvelles plus complexes (entités nommées, relations, événements, etc.). Cela revient à l'écriture de règles de production et donc à l'élaboration d'une grammaire régulière.\\
 Une grammaire JAPE se décompose en plusieurs phases exécutées consécutivement et formant une cascade d'automates à états finis. Chaque phase correspond à un fichier « .jape » et peut être constituée d'une ou plusieurs règle(s) écrite(s) selon le formalisme associé à JAPE~\cite{SL10}.\\
 Classiquement, ces règles sont divisées en deux blocs : 
 \begin{itemize}
@@ -370,7 +370,7 @@ Pour plus de clarté, prenons l'exemple d'une règle simple :\\
 9.  :org.Organisation = {rule = "OrgAcronym"}
 \end{verbatim}
 
-L'objectif de cette règle est d'annoter en tant qu'organisation les acronymes entre parenthèses positionnés après une annotation de type "Organisation". Tout d'abord, l'on commence par donner un nom à la règle (l1). Les lignes 2 à 7 définissent le motif à repérer dans le texte. Le signe \verb|-->| (ligne 8) sert de séparateur entre LHS et RHS. Enfin, la dernière ligne (ligne 9) exprime l'opération souhaitée.\\
+L'objectif de cette règle est d'annoter en tant qu'organisation les acronymes entre parenthèses positionnés après une annotation de type "Organisation". On commence par donner un nom à la règle (l1). Les lignes 2 à 7 définissent le motif à repérer dans le texte. Le signe \verb|-->| (ligne 8) sert de séparateur entre LHS et RHS. Enfin, la dernière ligne (ligne 9) exprime l'opération souhaitée.\\
 Notons que : 
 \begin{itemize}
     \item \verb|"Token.string"| permet d'obtenir la valeur de la propriété \verb|"string"| associé à l'annotation \verb|"Token"|
@@ -506,7 +506,7 @@ done
     
     \subsection{Dimension thématique}
         \subsubsection{Définition}
-    La dimension thématique contient toutes les informations spécifiques au domaine considéré.  C'est à dire les informations propres aux monnaies carolingiennes.
+    La dimension thématique contient toutes les informations spécifiques au domaine considéré.  C'est-à-dire les informations propres aux monnaies carolingiennes.
     \subsubsection{Contenu} 
     \begin{description}
     \item[Les ateliers] de production,
@@ -537,7 +537,7 @@ Amiens (Somme)
 
 \subsubsection{Souverains}
 \begin{vulgarisation}
-    Les nom des souverains ont des formats aussi divers que variés. Ils comportent des majuscules, des chiffres romains... Il serait difficile d'utiliser une expression régulière pour espérer annoter cette information. Il est plus judicieux d'utiliser un gazetier. Il sera construit à partir du début du numéraire. 
+    Les noms des souverains ont des formats aussi divers que variés. Ils comportent des majuscules, des chiffres romains... Il serait difficile d'utiliser une expression régulière pour espérer annoter cette information. Il est plus judicieux d'utiliser un gazetier. Il sera construit à partir du début du numéraire. 
 \end{vulgarisation}
 \begin{formalisation}
 \begin{verbatim}
@@ -742,7 +742,7 @@ Monnaies de type indéterminé)(.*)? Nom_Souverain
 \subsubsection{Collections, Trésors, Trouvailles}
 \begin{vulgarisation}
 Les collections, trésors et trouvailles sont chacun des ensembles d'informations à annoter séparément.
-    Les \textit{mots} Collections, Trésors et Trouvailles sont chacun suivis de deux points. Ensuite, vient le contenu concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivi d'un retour à la ligne ou bien un autre \textit{mot} suivi de deux points.
+    Les mots Collections, Trésors et Trouvailles sont chacun suivis de deux points. Ensuite, vient le contenu concernant ces mots. Le contenu s'arrête lorsqu'on rencontre un point suivi d'un retour à la ligne ou bien un autre mot suivi de deux points.
 \end{vulgarisation}
 \begin{formalisation}
     \begin{verbatim}
@@ -758,7 +758,7 @@ Mot_a_trouver:((?:.|\n)+?)(?:\.\s?\n|\w:)
 \end{formalisation}
 
 \subsubsection*{Conclusion}
-Toutes les règles JAPE sont faites, il faut maintenant les placer dans le bon ordre. C'est à dire, mettre en premier les règles qui ne dépendent d'aucune autre puis les règles restantes. Une fois fait, on est à même d'annoter l'ensemble d'informations voulu grâce à notre chaîne de traitement présentée dans la partie suivante.
+Toutes les règles JAPE sont faites, il faut maintenant les placer dans le bon ordre. C'est-à-dire, mettre en premier les règles qui ne dépendent d'aucune autre puis les règles restantes. Une fois fait, on est à même d'annoter l'ensemble d'informations voulu grâce à notre chaîne de traitement présentée dans la partie suivante.
 
 \section{Bilan du développement}
 Nous arrivons aux termes de notre développement. Deux gazetiers ont été crées et une douzaine de règles JAPE.\\
@@ -778,10 +778,10 @@ N'ayant besoin que de repérer les mots (Token) pour notre annotation, nous n'av
 \begin{figure}[hbtp]
 \includegraphics[scale=.3]{img/ganttEff.png}
 \end{figure}
-En comparant notre planning effectif au planning prévisionnel, il ressort que nous avons respecté le planning prévisionnel pour la première phase du projet et aussi toute la phase de rédaction des différents comptes rendus de réunion. La première phase comprenant la documentation, la prise en main des outils de travail, la formalisation du cahier de charge et l'étape de conception. Ce fut une phase de recherche pendant laquelle il nous est paru nécessaire de de bien cerner le domaine d'étude et aussi de mettre en place une bonne conception. Nous avions donc prévu pour cette phase une période de travail plus longue. En revanche, nous fut impossible de respecter le planning prévisionnel pour la phase de développement. En effet, notre chaîne de traitement est aboutie mais l'interface web de visualisation des résultats d'annotation quant à elle est toujours en cours de développement et sera présentée lors de la soutenance du projet.
+En comparant notre planning effectif au planning prévisionnel, il ressort que nous avons respecté le planning prévisionnel pour la première phase du projet et aussi toute la phase de rédaction des différents comptes rendus de réunion. La première phase comprenant la documentation, la prise en main des outils de travail, la formalisation du cahier des charges et l'étape de conception. Ce fut une phase de recherche pendant laquelle il nous est paru nécessaire de de bien cerner le domaine d'étude et aussi de mettre en place une bonne conception. Nous avions donc prévu pour cette phase une période de travail plus longue. En revanche, nous fut impossible de respecter le planning prévisionnel pour la phase de développement. En effet, notre chaîne de traitement est aboutie mais l'interface web de visualisation des résultats d'annotation quant à elle est toujours en cours de développement et sera présentée lors de la soutenance du projet.
 \section{Expériences acquises}
 Il est important de noter plusieurs retours d'expérience.\\D'abord la gestion du temps pour suivre convenablement un planning prévisionnel: nous retenons qu'il est assez improbable de respecter un planning prévisionnel, surtout pendant la phase de développement en raison du fait qu'on peut être confronté à des difficultés techniques (code) dans cette étape.\\
-Ensuite la capacité de pouvoir fournir un produit final à un client qui respecte au mieux les spécifications exprimées dans un cahier de charges. On peut noter qu'il est primordial d'être fréquemment en contact avec le client pour mieux cerner et comprendre ses besoins. En effet, sur ce projet, le rôle de client fût joué par nos encadrants et celui du prestataire joué par nous.
+Ensuite la capacité de pouvoir fournir un produit final à un client qui respecte au mieux les spécifications exprimées dans un cahier des charges. On peut noter qu'il est primordial d'être fréquemment en contact avec le client pour mieux cerner et comprendre ses besoins. En effet, sur ce projet, le rôle de client fût joué par nos encadrants et celui du prestataire joué par nous.
 Enfin, la préparation des réunions de travail qui passe par la rédaction d'ordres du jour et de comptes rendus, est une expérience supplémentaire que nous avons acquise.\\
 Nous pensons que toutes ces expériences pourront nous être utiles à l'avenir dans le monde professionnel.
 \newpage
