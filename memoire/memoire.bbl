@@ -1,5 +1,10 @@
 \begin{thebibliography}{GFAS09}
 
+\bibitem[Fre]{w3reg}
+Culot Frederic.
+\newblock Regexp - introduction aux expressions rationnelles.
+\newblock \url{http://culot.org/public/Docs/regexp.html}.
+
 \bibitem[GFAS09]{GLNS09}
 A.~Guissé, F.Lévy, A.Nazarenko, and S.Szulman.
 \newblock Annotation sémantique pour l'indexation de règles métiers, 2009.

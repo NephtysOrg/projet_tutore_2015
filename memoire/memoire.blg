@@ -9,46 +9,45 @@ Warning--entry type for "DN12" isn't style-file defined
 --line 8 of file latestbib.bib
 Warning--entry type for "SL10" isn't style-file defined
 --line 16 of file latestbib.bib
-Warning--I didn't find a database entry for "w3"
-You've used 6 entries,
+You've used 7 entries,
             2543 wiz_defined-function locations,
-            588 strings with 5195 characters,
-and the built_in function-call counts, 1723 in all, are:
-= -- 156
-> -- 71
-< -- 5
-+ -- 23
-- -- 22
-* -- 82
-:= -- 284
-add.period$ -- 15
-call.type$ -- 6
-change.case$ -- 33
-chr.to.int$ -- 5
-cite$ -- 6
-duplicate$ -- 65
-empty$ -- 151
-format.name$ -- 32
-if$ -- 355
+            591 strings with 5308 characters,
+and the built_in function-call counts, 1986 in all, are:
+= -- 181
+> -- 79
+< -- 6
++ -- 25
+- -- 24
+* -- 92
+:= -- 325
+add.period$ -- 18
+call.type$ -- 7
+change.case$ -- 38
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 76
+empty$ -- 176
+format.name$ -- 36
+if$ -- 411
 int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 30
-num.names$ -- 18
-pop$ -- 64
+newline$ -- 35
+num.names$ -- 21
+pop$ -- 75
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 45
 quote$ -- 0
-skip$ -- 66
+skip$ -- 76
 stack$ -- 0
-substring$ -- 42
-swap$ -- 6
-text.length$ -- 5
-text.prefix$ -- 4
+substring$ -- 49
+swap$ -- 7
+text.length$ -- 6
+text.prefix$ -- 5
 top$ -- 0
-type$ -- 48
+type$ -- 56
 warning$ -- 0
-while$ -- 13
-width$ -- 9
-write$ -- 65
-(There were 4 warnings)
+while$ -- 15
+width$ -- 10
+write$ -- 76
+(There were 3 warnings)
