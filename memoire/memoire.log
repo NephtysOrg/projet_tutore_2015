@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  5 MAY 2015 13:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.12.1)  5 MAY 2015 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -698,339 +698,345 @@ File: img/depeyrotExemple.png Graphic file (type png)
 Package pdftex.def Info: img/depeyrotExemple.png used on input line 184.
 (pdftex.def)             Requested size: 391.46155pt x 129.9853pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--199
+Underfull \hbox (badness 10000) in paragraph at lines 197--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
-[6 <./img/depeyrotExemple.png>]
-<img/exemple_text.png, id=143, 430.60875pt x 93.34875pt>
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.0.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.213 \newpage
+               <./img/depeyrotExemple.png>]
+<img/exemple_text.png, id=144, 430.60875pt x 93.34875pt>
 File: img/exemple_text.png Graphic file (type png)
 
 <use img/exemple_text.png>
-Package pdftex.def Info: img/exemple_text.png used on input line 221.
+Package pdftex.def Info: img/exemple_text.png used on input line 222.
 (pdftex.def)             Requested size: 215.30383pt x 46.67426pt.
 
-<img/exemple_text_ann.png, id=144, 429.605pt x 90.3375pt>
+<img/exemple_text_ann.png, id=145, 429.605pt x 90.3375pt>
 File: img/exemple_text_ann.png Graphic file (type png)
 
 <use img/exemple_text_ann.png>
-Package pdftex.def Info: img/exemple_text_ann.png used on input line 228.
+Package pdftex.def Info: img/exemple_text_ann.png used on input line 229.
 (pdftex.def)             Requested size: 214.80197pt x 45.16862pt.
 
-<img/ganttPrev.png, id=145, 1352.05125pt x 312.16624pt>
+<img/ganttPrev.png, id=146, 1352.05125pt x 312.16624pt>
 File: img/ganttPrev.png Graphic file (type png)
 
 <use img/ganttPrev.png>
-Package pdftex.def Info: img/ganttPrev.png used on input line 235.
+Package pdftex.def Info: img/ganttPrev.png used on input line 236.
 (pdftex.def)             Requested size: 405.6185pt x 93.65059pt.
  [7 <./img/exemple_text.png> <./img/exemple_text_ann.png> <./img/ganttPrev.png>
 ] [8
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 245.
+(hyperref)                than one, level fixed on input line 246.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
-[9] <img/exempleAnnotationGATE.png, id=175, 1042.89626pt x 616.3025pt>
+[9] <img/exempleAnnotationGATE.png, id=176, 1042.89626pt x 616.3025pt>
 File: img/exempleAnnotationGATE.png Graphic file (type png)
 
 <use img/exempleAnnotationGATE.png>
-Package pdftex.def Info: img/exempleAnnotationGATE.png used on input line 294.
+Package pdftex.def Info: img/exempleAnnotationGATE.png used on input line 295.
 (pdftex.def)             Requested size: 312.87129pt x 184.89217pt.
  [10]
-<img/exempleChaineTraitement.png, id=186, 680.5425pt x 682.55pt>
+<img/exempleChaineTraitement.png, id=187, 680.5425pt x 682.55pt>
 File: img/exempleChaineTraitement.png Graphic file (type png)
 
 <use img/exempleChaineTraitement.png>
-Package pdftex.def Info: img/exempleChaineTraitement.png used on input line 305
+Package pdftex.def Info: img/exempleChaineTraitement.png used on input line 306
 .
 (pdftex.def)             Requested size: 204.16432pt x 204.76657pt.
 
-<img/annieChaine.png, id=187, 730.73pt x 306.14375pt>
+<img/annieChaine.png, id=188, 730.73pt x 306.14375pt>
 File: img/annieChaine.png Graphic file (type png)
 
 <use img/annieChaine.png>
-Package pdftex.def Info: img/annieChaine.png used on input line 313.
+Package pdftex.def Info: img/annieChaine.png used on input line 314.
 (pdftex.def)             Requested size: 365.3641pt x 153.07149pt.
  [11pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
-1}) has been already used, duplicate ignored
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.318 \item[Document Reset] n
+l.319 \item[Document Reset] n
                              ettoie toutes les annotations précédentes et ...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.0.2}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.0.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.318 \item[Document Reset] n
+l.319 \item[Document Reset] n
                              ettoie toutes les annotations précédentes et ...
  <./img/exempleAnnotationGATE.png (PNG copy)> <./img/exempleChaineTraitement.pn
-g (PNG copy)>] <img/exGazetier.png, id=195, 239.89626pt x 249.93375pt>
+g (PNG copy)>] <img/exGazetier.png, id=196, 239.89626pt x 249.93375pt>
 File: img/exGazetier.png Graphic file (type png)
 
 <use img/exGazetier.png>
-Package pdftex.def Info: img/exGazetier.png used on input line 337.
+Package pdftex.def Info: img/exGazetier.png used on input line 338.
 (pdftex.def)             Requested size: 119.94783pt x 124.96657pt.
  [12pdfTeX warning (ext4): destination with the same identifier (name{figure.0.
-3}) has been already used, duplicate ignored
+4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.341 S
+l.342 S
        ur chaque ligne, on distingue plusieurs colonnes de par des séparate...
  <./img/annieChaine.png>] [13pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.0.4}) has been already used, duplicate ignored
+dentifier (name{figure.0.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.365 5.      ({Token.orth == "allCaps"}):org
+l.366 5.      ({Token.orth == "allCaps"}):org
                                               <./img/exGazetier.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 379--380
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
 
  []
 
 [14]
-Overfull \hbox (0.18707pt too wide) in paragraph at lines 426--428
+Overfull \hbox (0.18707pt too wide) in paragraph at lines 427--429
 \OT1/cmr/m/n/10.95 Pour for-mu-ler une r^^Regle JAPE, il est utile de conna^^^P
 tre le for-ma-lisme des ex-pres-sions r^^Seguli^^Reres
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 430--432
+Underfull \hbox (badness 10000) in paragraph at lines 431--433
 
  []
 
-<img/regexr.png, id=225, 1016.79875pt x 606.265pt>
+<img/regexr.png, id=226, 1016.79875pt x 606.265pt>
 File: img/regexr.png Graphic file (type png)
  <use img/regexr.png>
-Package pdftex.def Info: img/regexr.png used on input line 440.
+Package pdftex.def Info: img/regexr.png used on input line 441.
 (pdftex.def)             Requested size: 305.04198pt x 181.8809pt.
 
-Overfull \hbox (7.39462pt too wide) in paragraph at lines 445--446
+Overfull \hbox (7.39462pt too wide) in paragraph at lines 446--447
 []\OT1/cmr/m/n/10.95 A l'aide des ou-tils que nous ve-nons de pr^^Sesenter, nou
 s al-lons pou-voir d^^Semarrer le d^^Seveloppement
  []
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.0.5
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.0.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.446 \part
+l.447 \part
            {Développement} <./img/regexr.png>] [17
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 449.
+(hyperref)                than one, level fixed on input line 450.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--452
+Underfull \hbox (badness 10000) in paragraph at lines 451--453
 
  []
 
-<img/OCRisation.png, id=238, 632.3625pt x 132.495pt>
+<img/OCRisation.png, id=239, 632.3625pt x 132.495pt>
 File: img/OCRisation.png Graphic file (type png)
  <use img/OCRisation.png>
-Package pdftex.def Info: img/OCRisation.png used on input line 456.
+Package pdftex.def Info: img/OCRisation.png used on input line 457.
 (pdftex.def)             Requested size: 189.7102pt x 39.7488pt.
 
 [18 <./img/OCRisation.png>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 554--558
+Underfull \hbox (badness 10000) in paragraph at lines 555--559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 559--563
+Underfull \hbox (badness 10000) in paragraph at lines 560--564
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--583
+Underfull \hbox (badness 10000) in paragraph at lines 575--584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--583
+Underfull \hbox (badness 10000) in paragraph at lines 575--584
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
 
  []
 
 [22]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 614.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 615.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 614.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 615.
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--626
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
+Underfull \hbox (badness 10000) in paragraph at lines 622--627
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--654
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--654
+Underfull \hbox (badness 10000) in paragraph at lines 649--655
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--655
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 659--666
+Underfull \hbox (badness 10000) in paragraph at lines 660--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 659--666
+Underfull \hbox (badness 10000) in paragraph at lines 660--667
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--675
+Underfull \hbox (badness 10000) in paragraph at lines 672--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--675
+Underfull \hbox (badness 10000) in paragraph at lines 672--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 671--675
+Underfull \hbox (badness 10000) in paragraph at lines 672--676
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--687
+Underfull \hbox (badness 10000) in paragraph at lines 682--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--687
+Underfull \hbox (badness 10000) in paragraph at lines 682--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 681--687
+Underfull \hbox (badness 10000) in paragraph at lines 682--688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--695
+Underfull \hbox (badness 10000) in paragraph at lines 691--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--695
+Underfull \hbox (badness 10000) in paragraph at lines 691--696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--695
+Underfull \hbox (badness 10000) in paragraph at lines 691--696
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 717--723
+Underfull \hbox (badness 10000) in paragraph at lines 718--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--723
+Underfull \hbox (badness 10000) in paragraph at lines 718--724
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 726--732
+Underfull \hbox (badness 10000) in paragraph at lines 727--733
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 735--740
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 735--740
+Underfull \hbox (badness 10000) in paragraph at lines 736--741
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 750--758
+Underfull \hbox (badness 10000) in paragraph at lines 751--759
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--758
+Underfull \hbox (badness 10000) in paragraph at lines 751--759
 
  []
 
-<img/notreChaine.png, id=343, 657.45625pt x 93.34875pt>
+<img/notreChaine.png, id=344, 657.45625pt x 93.34875pt>
 File: img/notreChaine.png Graphic file (type png)
 
 <use img/notreChaine.png>
-Package pdftex.def Info: img/notreChaine.png used on input line 767.
+Package pdftex.def Info: img/notreChaine.png used on input line 768.
 (pdftex.def)             Requested size: 328.72733pt x 46.67426pt.
  [26 <./img/notreChaine.png>] [27
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 776.
+(hyperref)                than one, level fixed on input line 777.
 
-<img/ganttEff.png, id=355, 1314.9125pt x 309.155pt>
+<img/ganttEff.png, id=356, 1314.9125pt x 309.155pt>
 File: img/ganttEff.png Graphic file (type png)
  <use img/ganttEff.png>
-Package pdftex.def Info: img/ganttEff.png used on input line 778.
+Package pdftex.def Info: img/ganttEff.png used on input line 779.
 (pdftex.def)             Requested size: 394.47679pt x 92.74721pt.
 
 [28 <./img/ganttEff.png>] (./memoire.bbl) [29
@@ -1047,7 +1053,7 @@ Overfull \hbox (23.89359pt too wide) in paragraph at lines 33--35
  []
 
 )
-Overfull \hbox (78.29431pt too wide) in paragraph at lines 37--798
+Overfull \hbox (78.29431pt too wide) in paragraph at lines 37--799
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][] 
  []
@@ -1091,20 +1097,20 @@ Overfull \hbox (82.54437pt too wide) in paragraph at lines 14--15
  []
 
 [35])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 808.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 809.
  [36]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 808.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 809.
  (./memoire.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 808.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 808.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 809.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 809.
 Package rerunfilecheck Info: File `memoire.out' has not changed.
-(rerunfilecheck)             Checksum: EC0D9B9C838F1F5F5784ED4780B97451;1240.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 808.
+(rerunfilecheck)             Checksum: A390F7C06F11C51228163494FE6BC5A7;1243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 809.
  ) 
 Here is how much of TeX's memory you used:
- 10261 strings out of 494958
- 143886 string characters out of 6179213
- 290813 words of memory out of 5000000
+ 10262 strings out of 494958
+ 143896 string characters out of 6179213
+ 289813 words of memory out of 5000000
  12772 multiletter control sequences out of 15000+600000
  15913 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -1123,10 +1129,10 @@ ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on memoire.pdf (37 pages, 1243283 bytes).
+Output written on memoire.pdf (37 pages, 1243417 bytes).
 PDF statistics:
- 968 PDF objects out of 1000 (max. 8388607)
- 887 compressed objects within 9 object streams
- 545 named destinations out of 1000 (max. 500000)
+ 969 PDF objects out of 1000 (max. 8388607)
+ 888 compressed objects within 9 object streams
+ 546 named destinations out of 1000 (max. 500000)
  210 words of extra memory for PDF output out of 10000 (max. 10000000)
 

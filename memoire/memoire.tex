@@ -160,10 +160,10 @@ Nous tenons à remercier nos tuteurs pour leur pédagogie et leur encadrement. M
 \tableofcontents
 
 \part{Introduction}
-L'évolution des volumes d'informations sur internet provoque une évolution du web vers une approche dans laquelle chaque donnée acquiert un sens afin de rendre possible une interprétation du contenu par des machines. Cette évolution constitue le web sémantique.\\
+L'évolution des volumes d'informations sur internet provoque une extension du web vers une approche dans laquelle chaque donnée acquiert un sens afin de rendre possible une interprétation du contenu par des machines. Cette évolution constitue le web sémantique.\\
 Sa principale motivation  est la recherche d’information sémantique.\\
 
-Dans ce cadre, nous sommes intervenus pour répondre à l'appel d'offre de la maîtrise d'ouvrage. \\
+C'est dans ce cadre que nous sommes intervenus pour répondre à l'appel d'offre de la maîtrise d'ouvrage. \\
 L'objectif correspond à la première étape dans un processus de recherche d'information sémantique et d'indexation : l'annotation sémantique d'un document texte spécifique.\\
 
 En découle les problématiques suivantes :
@@ -178,10 +178,11 @@ Premièrement, nous définirons clairement les demandes et leurs contextes à tr
 \part{Cahier des charges}
     \section{Contexte}
 
-A partir des travaux de Georges DEPEYROT sur les monnaies carolingiennes, nous avons travaillé sur l'annotation du Numéraire Carolingien\footnote{\url{http://www.cgb.fr/le-numeraire-carolingien-moneta-77-3e-edition-depeyrot-georges,Ln71,a.html}}. Dans ce volume, sont inventoriées les très nombreuses émissions monétaires (plus de 1.200 types) effectuées par les ateliers royaux de l'époque carolingienne. Il est organisé comme suit :
+A partir des travaux de Georges DEPEYROT sur les monnaies carolingiennes, nous avons travaillé sur l'annotation du Numéraire Carolingien\footnote{\url{http://www.cgb.fr/le-numeraire-carolingien-moneta-77-3e-edition-depeyrot-georges,Ln71,a.html}}. Dans ce volume sont inventoriées de très nombreuses émissions monétaires (plus de 1.200 types) effectuées par les ateliers royaux de l'époque carolingienne. Il est organisé comme suit :
 \begin{figure}[H]
 \centering
 \includegraphics[scale=.5]{img/depeyrotExemple.png}
+\caption{Extrait du Numéraire Carolingien}
 \end{figure}
 
 
@@ -228,7 +229,7 @@ et l'annote
 \includegraphics[scale=.5]{img/exemple_text_ann.png} 
 \end{figure}\\
 Chaque information pertinente est annotée. En bleu la période d'émission de la monnaie (Temporel), en vert les souverains qui l'ont faite produire (Thématique), en cyan la nature de la monnaie (Thématique) et en rouge la légende (Thématique).\\
-Afin de développer cette chaîne,nous avons dû planifier notre travail et nos réunions avec la maîtrise d'ouvrage. Cette planification sera présentée dans la partie suivante.
+Afin de développer cette chaîne, nous avons planifié notre travail et nos réunions avec la maîtrise d'ouvrage. Cette planification sera présentée dans la partie suivante.
 
     \section{Diagramme de Gantt prévisionnel}
     \begin{figure}[H]
@@ -336,7 +337,7 @@ Ci-dessous un exemple de Gazetier:
 \begin{center}
 \includegraphics[scale=0.5]{img/exGazetier.png}
 \end{center}
-\caption{Exemple de Gazetier}
+\caption{Exemple de Gazetier dans GATE}
 \end{figure}
 Sur chaque ligne, on distingue plusieurs colonnes de par des séparateurs (\textbf{:} , \textbf{;} , ...). La première colonne correspond à la valeur d'une entité, la seconde constitue le MajorType (Type principal d'annotation) de l'entité et la troisième le MinorType (Type secondaire d'annotation)~\cite{w4gaz}.
 
@@ -486,7 +487,7 @@ done
     \end{verbatim}
     \end{enumerate}
     
-    \section{Définition des dimensions d'annotation et leur contenu}
+    \section{Définition des dimensions d'annotation et de leur contenu}
     Dans l'introduction, nous avons vu qu'il y a trois dimensions d'annotation mais ne les avons pas définies. Pour chacune d'entre elles, nous allons proposer une définition et donner leur contenu.\\
     \textit{Note : Le détail de chaque annotation peut être trouvé dans les parties III et IV.}
     \subsection{Dimension spatiale}

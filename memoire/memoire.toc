@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {4}RegExr : Outil en ligne pour manipuler des expressions r\IeC {\'e}guli\IeC {\`e}res}{16}{subsection.3.2.4}
 \contentsline {part}{IV\hspace {1em}D\IeC {\'e}veloppement}{17}{part.4}
 \contentsline {section}{\numberline {I}Prise en main de l'environnement}{18}{section.4.1}
-\contentsline {section}{\numberline {II}D\IeC {\'e}finition des dimensions d'annotation et leur contenu}{19}{section.4.2}
+\contentsline {section}{\numberline {II}D\IeC {\'e}finition des dimensions d'annotation et de leur contenu}{19}{section.4.2}
 \contentsline {subsection}{\numberline {1}Dimension spatiale}{19}{subsection.4.2.1}
 \contentsline {subsubsection}{D\IeC {\'e}finition}{19}{section*.7}
 \contentsline {subsubsection}{Contenu}{19}{section*.8}
