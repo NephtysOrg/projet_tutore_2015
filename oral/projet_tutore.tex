@@ -13,6 +13,7 @@
 
 %Commands
 \newcommand{\up}[1]{\textsuperscript{\textbf{\textsc{#1}}}}
+%\setbeameroption{show notes}
 
 \title{Conception et développement d’une application d’annotation thématique}
 \subtitle{dans l’environnement Gate}
@@ -23,19 +24,25 @@
 \begin{document}
 
 \maketitle
-
+\begin{frame}[fragile]
+  \frametitle{Introduction}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Sommaire}
+  \tableofcontents
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Structure du numeraire %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Structure du numéraire}
 \begin{frame}[fragile]
-\frametitle{~}
+\frametitle{Exemple}
 \begin{scriptsize}
 Agen (Lot-et-Garonne)\\~\\
 
 Type de 793/4-812: Charlemagne (768-814)\\
 Denier de Charlemagne (24 exemplaires étudiés)\\
-+ CARLVS REX FR croix + AGINNO monogramme\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\\
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45;\\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
 (1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60), \\
@@ -43,6 +50,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);\\
 Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \end{scriptsize}
+\note{Numeraire organisé en atelier, un atelier fabrique une ou plusieurs monnaie}
 \end{frame}
 
 
@@ -53,7 +61,7 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \textcolor{light_gray}{
 Type de 793/4-812: Charlemagne (768-814)\\
 Denier de Charlemagne (24 exemplaires étudiés)\\
-+ CARLVS REX FR croix + AGINNO monogramme\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\\
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45; \\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
 (1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60), \\
@@ -61,6 +69,8 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35); \\Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 } 
     \end{scriptsize}
+    
+    \note{Forme : Ville (Dpt|Pays)?}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -71,7 +81,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \textbf{Type de 793/4-812: Charlemagne (768-814)}\\
 \textcolor{light_gray}{
 Denier de Charlemagne (24 exemplaires étudiés)\\
-+ CARLVS REX FR croix + AGINNO monogramme\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\\
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45; \\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
 (1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60), \\
@@ -79,6 +89,8 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35); \\Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 } 
     \end{scriptsize}
+    
+    \note{Forme : Perdiode(souverains)+}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -90,7 +102,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 
 \textbf{Denier de Charlemagne (24 exemplaires étudiés)}\\
 \textcolor{light_gray}{
-+ CARLVS REX FR croix + AGINNO monogramme\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\\
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45; \\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
 (1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60), \\
@@ -98,6 +110,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35); \\Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 } 
     \end{scriptsize}
+        \note{Forme : Denier, Obole, ...}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -108,7 +121,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \textcolor{light_gray}{Type de 793/4-812: Charlemagne (768-814)\\
 Denier de Charlemagne (24 exemplaires étudiés)}\\
 
-\textbf{+ CARLVS REX FR croix + AGINNO monogramme}\\
+\textbf{+ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme}\\
 \textcolor{light_gray}{
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45; \\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
@@ -118,6 +131,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 } 
     \end{scriptsize}
+        \note{Forme :+?LEG droit SPACE  +?LEG revers}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -128,7 +142,7 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \textcolor{light_gray}{
 Type de 793/4-812: Charlemagne (768-814)\\
 Denier de Charlemagne (24 exemplaires étudiés)\\
-+ CARLVS REX FR croix + AGINNO monogramme
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme
 }\\
 \textcolor{light_gray}{
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; }\textbf{Collections: Berlin 1,64, 1,45; \\
@@ -147,7 +161,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \textcolor{light_gray}{
 Type de 793/4-812: Charlemagne (768-814)\\
 Denier de Charlemagne (24 exemplaires étudiés)\\
-+ CARLVS REX FR croix + AGINNO monogramme
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme
 }\\
 \textcolor{light_gray}{
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1;
@@ -170,7 +184,7 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \textcolor{light_gray}{
 Type de 793/4-812: Charlemagne (768-814)\\
 Denier de Charlemagne (24 exemplaires étudiés)\\
-+ CARLVS REX FR croix + AGINNO monogramme
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme
 }\\
 \textcolor{light_gray}{
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1;
@@ -189,7 +203,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 Agen (Lot-et-Garonne)\alert{\up{Atelier}}\\~\\
 Type de 793/4-812: Charlemagne (768-814)\alert{\up{Type}}\\
 Denier de Charlemagne (24 exemplaires étudiés)\alert{\up{Nature}}\\
-+ CARLVS REX FR croix + AGINNO monogramme\alert{\up{Légende}}\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\alert{\up{Légende}}\\
 Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1;
 Collections: Berlin 1,64, 1,45; \\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
@@ -201,8 +215,15 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26)\alert{\up{Trouvailles}}.
 \end{frame}
 
 
-\section{étapes de développement}
-
+\section{Étapes de développement}
+\begin{frame}[fragile]
+  \frametitle{Approche par raffinement}
+\begin{itemize}[<+->]
+    \item{Langage naturel \onslide<4,5,6>{\hfill \textbf{français}}}
+    \item{Langage régulier \onslide<5,6>{\hfill\textbf{expressions régulières}}}
+    \item{Langage de programmation \onslide<6>{\hfill\textbf{\textit{JAPE}}}}
+\end{itemize}
+\end{frame}
 
 
 
