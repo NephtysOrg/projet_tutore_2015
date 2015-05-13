@@ -80,7 +80,7 @@
 
     }
     {
-    ~\\\textcolor{dark-blue}{$\blacksquare$}\\
+    ~\\~\\
     }
     
 \newenvironment{formalisation}
@@ -88,7 +88,7 @@
     \textit{\textcolor{blue}{$\blacksquare$  Formalisation : \\}}
     }
     {
-    ~\\\textcolor{blue}{$\blacksquare$}\\
+    ~\\~\\
     }
     
 \newenvironment{codage}
@@ -96,7 +96,7 @@
     \textit{\textcolor{gray}{$\blacksquare$  Règle JAPE : \\}}
     }
     {
-    ~\\\textcolor{gray}{$\blacksquare$}\\
+    ~\\~\\
     }
     
 \newenvironment{exemple}
@@ -104,7 +104,8 @@
     \textit{\textcolor{orange}{
     Exemple : \\}}
     }
-    {~\\
+    {
+    ~\\
     }
 
 \begin{document}
@@ -119,7 +120,7 @@
 % only works if a paragraph has started.
 \includegraphics[width=0.25\textwidth]{./logo.png}~\\[1cm]
 
-\textsc{\Large Projet Tutoré}\\[0.5cm]
+\textsc{\Large Mémoire de Projet Tutoré}\\[0.5cm]
 \textsc{\Large M1 Technologies de l'Internet}\\[0.5cm]
 
 % Title
@@ -135,7 +136,8 @@ l'environnement Gate \\[0.4cm] }
 \begin{flushleft} \large
 \emph{Auteurs:}\\
 Roland \textsc{Bary}\\
-Charles \textsc{Follet}
+Charles \textsc{Follet}\\
+
 \end{flushleft}
 \end{minipage}%
 \begin{minipage}[t]{0.4\textwidth}
@@ -147,12 +149,12 @@ Albert \textsc{Royer}\\
 Christian \textsc{Sallaberry}
 \end{flushright}
 \end{minipage}
-
 \vfill
 
 % Bottom of the page
 {\large \date{}}
-
+\footnote{
+Projet disponible sur : \url{https://github.com/NephtysOrg/projet_tutore_2015}}
 \end{center}
 \end{titlepage}
 \section*{Remerciements}
