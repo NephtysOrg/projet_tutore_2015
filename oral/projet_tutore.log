@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  13 MAY 2015 17:53
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  14 MAY 2015 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1484,39 +1484,67 @@ Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 \XKV@depth=\count297
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count298
+\lst@gtempboxa=\box78
+\lst@token=\toks53
+\lst@length=\count299
+\lst@currlwidth=\dimen315
+\lst@column=\count300
+\lst@pos=\count301
+\lst@lostspace=\dimen316
+\lst@width=\dimen317
+\lst@newlines=\count302
+\lst@lineno=\count303
+\lst@maxwidth=\dimen318
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count304
+\lst@skipnumbers=\count305
+\lst@framebox=\box79
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.da
 teplot.code.tex (/usr/share/texmf/tex/latex/pgf/utilities/pgfcalendar.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfcalendar.code.tex
 File: pgfcalendar.code.tex 2007/07/23 v2.10 (rcs-revision 1.11)
-\pgfcalendarcurrentjulian=\count298
+\pgfcalendarcurrentjulian=\count306
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
 (./projet_tutore.aux)
 \openout1 = `projet_tutore.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 24.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 42.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 42.
  (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    ... okay on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1553,8 +1581,8 @@ LaTeX Font Info:    ... okay on input line 24.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box78
-Package hyperref Info: Link coloring OFF on input line 24.
+\AtBeginShipoutBox=\box80
+Package hyperref Info: Link coloring OFF on input line 42.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1562,70 +1590,70 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count299
+\c@section@level=\count307
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
-LaTeX Info: Redefining \nameref on input line 24.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
 
 (./projet_tutore.out) (./projet_tutore.out)
 \@outlinefile=\write5
 \openout5 = `projet_tutore.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 24.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 42.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 24.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 42.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmr/m/n on input line 24.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 24.
+(Font)                  OT1/cmss/m/n --> EU1/lmr/m/n on input line 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> EU1/FiraSansLight(0)/bx/n on input lin
-e 24.
+e 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  OT1/cmr/bx/n --> EU1/FiraSansLight(0)/bx/n on input lin
-e 24.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 24.
+e 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> EU1/FiraSansLight(0)/m/n on input line
- 24.
+ 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> EU1/FiraSansLight(0)/m/n on input lin
-e 24.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 24.
+e 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> EU1/FiraSansLight(0)/m/it on input lin
-e 24.
+e 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> EU1/FiraSansLight(0)/m/it on input li
-ne 24.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 24.
+ne 42.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/FiraMono(0)/m/n on input line 24.
+(Font)                  OT1/cmtt/m/n --> EU1/FiraMono(0)/m/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/FiraMono(0)/m/n on input line 24.
+(Font)                  OT1/cmtt/m/n --> EU1/FiraMono(0)/m/n on input line 42.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
 (Font)                  EU1/FiraSansLight(0)/m/n --> EU1/FiraSansLight(0)/bx/n 
-on input line 24.
+on input line 42.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  EU1/FiraSansLight(0)/m/it --> EU1/FiraSansLight(0)/bx/i
-t on input line 24.
+t on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmr/bx/n on input line 24.
+(Font)                  OT1/cmss/bx/n --> EU1/lmr/bx/n on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
 (Font)                  EU1/FiraSansLight(0)/bx/n --> EU1/FiraSansLight(0)/bx/n
- on input line 24.
+ on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  EU1/FiraSansLight(0)/m/n --> EU1/FiraSansLight(0)/bx/n 
-on input line 24.
+on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  EU1/FiraSansLight(0)/m/it --> EU1/FiraSansLight(0)/bx/i
-t on input line 24.
+t on input line 42.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  EU1/FiraMono(0)/m/n --> EU1/FiraMono(0)/bx/n on input l
-ine 24.
+ine 42.
 
 (/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
 onary/translator-basic-dictionary-English.dict
@@ -1651,11 +1679,12 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 24.
+LaTeX Info: Redefining \includegraphics on input line 42.
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.9}).
 
+\c@lstlisting=\count308
 (./projet_tutore.nav) [1
 
 ]
@@ -1738,14 +1767,60 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] (./projet_tutore.vrb) [16
 
-] (./projet_tutore.vrb)
-[17
+] [17
 
-] (./projet_tutore.vrb) [18
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb) [18
 
 ] (./projet_tutore.vrb) [19
 
 ] (./projet_tutore.vrb) [20
+
+]
+(./projet_tutore.vrb) [21
+
+] (./projet_tutore.vrb) [22
+
+] (./projet_tutore.vrb)
+[23
+
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb) [24
+
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb) [25
+
+] (./projet_tutore.vrb) [26
+
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb) [27
+
+] (./projet_tutore.vrb) [28
+
+]
+(./projet_tutore.vrb) [29
+
+] (./projet_tutore.vrb) [30
+
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb)
+[31
+
+] (./projet_tutore.vrb) [32
+
+] (./projet_tutore.vrb) [33
+
+] (./projet_tutore.vrb) [34
 
 ]
 \tf@nav=\write6
@@ -1757,20 +1832,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@snm=\write8
 \openout8 = `projet_tutore.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 230.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 230.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 370.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 370.
  (./projet_tutore.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 230.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 230.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 230.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 370.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 370.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 370.
  ) 
 Here is how much of TeX's memory you used:
- 40823 strings out of 493918
- 887563 string characters out of 6150563
- 1027165 words of memory out of 5000000
- 43321 multiletter control sequences out of 15000+600000
- 6548 words of font info for 68 fonts, out of 8000000 for 9000
+ 42194 strings out of 493918
+ 907833 string characters out of 6150563
+ 1050574 words of memory out of 5000000
+ 44647 multiletter control sequences out of 15000+600000
+ 6572 words of font info for 71 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 59i,13n,91p,10427b,844s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,13n,91p,10427b,1561s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on projet_tutore.pdf (20 pages).
+Output written on projet_tutore.pdf (34 pages).

@@ -1,6 +1,50 @@
-\frametitle{Approche par raffinement}
-\begin{itemize}[<+->]
-    \item{Langage naturel \onslide<4,5,6>{\hfill \textbf{français}}} \\
-    \item{Langage régulier \onslide<5,6>{\hfill\textbf{expressions régulières}}}\\
-    \item{Langage de programmation \onslide<6>{\hfill\textbf{\textit{JAPE}}}}\\
-  \end{itemize}
+\setbeamercovered{transparent}
+  \frametitle{Approche par raffinement}
+\begin{center}
+\onslide<1->{Type de} \onslide<2->{793/4}\onslide<2->{-}\onslide<2->{812}
+\end{center}
+3. \textbf{\textsc{Langage de programmation}}\\
+\begin{columns}[t]
+  \begin{column}{.5\linewidth}
+\onslide<1->
+\begin{lstlisting}
+Macro: CHAINE_DEBUT
+(
+    ({Token.string =="Type"})({SpaceToken})
+    ({Token.string =="de"})({SpaceToken})
+)
+\end{lstlisting}
+\onslide<2->
+\begin{lstlisting}
+Macro: TROIS_NOMBRES
+({Token.kind==number,Token.length == 3})
+Macro: UN_NOMBRE
+({Token.kind==number,Token.length == 1})
+Macro:SLASH
+({Token.string=="/"})
+Macro:DATE_PRECISE
+(TROIS_NOMBRES)
+Macro:DATE_IMPRECISE
+(TROIS_NOMBRES SLASH UN_NOMBRE)
+Macro:DATE
+(DATE_PRECISE | DATE_IMPRECISE)
+\end{lstlisting}
+\end{column}
+
+
+\begin{column}{.5\linewidth}
+\onslide<3->
+\begin{lstlisting}
+Rule: PeriodeRule
+((DATE):d1({Token.string =="-"})(DATE):d2)
+:Periode -->:Periode{/*...*/}
+\end{lstlisting}
+\onslide<4->
+\begin{lstlisting}
+Rule: PeriodeEmissionRule
+(CHAINE_DEBUT ({Periode}):p)
+:PeriodeEmission
+-->:PeriodeEmission.PeriodeEmission = {/*..*/}
+\end{lstlisting}
+\end{column}
+\end{columns}

@@ -5,6 +5,9 @@
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage[scale=2]{ccicons}
+\usepackage{listings}
+
+
 
 \usepgfplotslibrary{dateplot}
 
@@ -14,11 +17,26 @@
 %Commands
 \newcommand{\up}[1]{\textsuperscript{\textbf{\textsc{#1}}}}
 %\setbeameroption{show notes}
+\lstset{language=Java,
+                columns=flexible,
+  basicstyle={\tiny\ttfamily},
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{orange},
+  commentstyle=\color{light_gray},
+  stringstyle=\color{orange},
+  tabsize=2,
+  aboveskip=0pt,
+  belowskip=0pt,
+}
+
+
+
+
 
 \title{Conception et développement d’une application d’annotation thématique}
 \subtitle{dans l’environnement Gate}
 \date{\today}
-\author{Charles Follet \and Rolan Bary}
+\author{Charles Follet \and Roland Bary}
 \institute{Université de Pau et Pays de l'Adour}
 
 \begin{document}
@@ -214,17 +232,139 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26)\alert{\up{Trouvailles}}.
     \end{scriptsize}
 \end{frame}
 
+\section{Annotations}
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Choix d'annotation}
+ \begin{columns}[t]
+ \onslide<1>
+  \begin{column}{.5\linewidth}
+    {\large \textsc{\alert{Gazetier}}}\\
+    \textbf{liste} de valeurs.\\~\\
+\begin{scriptsize}
+    \begin{itemize}
+    \item Type de 754/5-768
+    \item Type de 768-771
+    \item Type de 771-793/4
+    \item Type de 793/4-812
+    \item Type de 812-814
+    \item ...
+    \end{itemize}
+\end{scriptsize}
+  \end{column}
+  \onslide<2>
+  \begin{column}{.5\linewidth}
+    {\large \textsc{\alert{Règle JAPE}}}\\
+    \textbf{règle} basée sur une expression régulière.\\
+    \begin{lstlisting}
+Macro: CHAINE_DEBUT
+(
+    ({Token.string =="Type"})({SpaceToken})
+    ({Token.string =="de"})({SpaceToken})
+)
 
-\section{Étapes de développement}
+// Exemple : Type de 758/9-762
+Rule: PeriodeEmissionRule
+(
+    CHAINE_DEBUT ({Periode}):p
+):PeriodeEmission
+-->:PeriodeEmission.PeriodeEmission = {
+ 	Kind = "PeriodeEmission" ,
+ 	D1 = :p.Periode.D1, D2 = :p.Periode.D2
+}
+\end{lstlisting}
+\end{column}
+ \end{columns}  
+\end{frame}
+
+\section{Construction d'une règle JAPE}
 \begin{frame}[fragile]
   \frametitle{Approche par raffinement}
-\begin{itemize}[<+->]
+\begin{enumerate}[<+->]
     \item{Langage naturel \onslide<4,5,6>{\hfill \textbf{français}}}
     \item{Langage régulier \onslide<5,6>{\hfill\textbf{expressions régulières}}}
     \item{Langage de programmation \onslide<6>{\hfill\textbf{\textit{JAPE}}}}
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Approche par raffinement}
+Annotation : La période d'émission \\
+Exemple : \textit{Type de 793/4-812}
+\end{frame}
 
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Approche par raffinement}
+\begin{center}
+\onslide<2>{Type de} \onslide<1->{793/4-812}
+\end{center}
+1. \textbf{\textsc{Langage naturel}}\\
+\onslide<1->{Une période est un intervalle entre deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. En cas d'ambiguïté, chacune d'entre elles peut être suivie d'un / et d'un chiffre traduisant l'indétermination de la date.}\\
+\onslide<2>{Il faut assurer la capture de la période d'émission en ajoutant la contrainte précédée de "Type de" afin de ne pas récupérer toutes les périodes du document.}
+\end{frame}
+
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Approche par raffinement}
+\begin{center}
+\onslide<4->{Type de} \onslide<1->{793/4}\onslide<2->{-}\onslide<3->{812}
+\end{center}
+2. \textbf{\textsc{Langage régulier}}\\
+\onslide<4->{Type de : }\onslide<1->{([0-9]\{3\}(/[0-9])?)}\onslide<2->{-}\onslide<3->{([0-9]\{3\}(/[0-9])?)}
+\end{frame}
+
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Approche par raffinement}
+\begin{center}
+\onslide<1->{Type de} \onslide<2->{793/4}\onslide<2->{-}\onslide<2->{812}
+\end{center}
+3. \textbf{\textsc{Langage de programmation}}\\
+\begin{columns}[t]
+  \begin{column}{.5\linewidth}
+\onslide<1->
+\begin{lstlisting}
+Macro: CHAINE_DEBUT
+(
+    ({Token.string =="Type"})({SpaceToken})
+    ({Token.string =="de"})({SpaceToken})
+)
+\end{lstlisting}
+\onslide<2->
+\begin{lstlisting}
+Macro: TROIS_NOMBRES
+({Token.kind==number,Token.length == 3})
+Macro: UN_NOMBRE
+({Token.kind==number,Token.length == 1})
+Macro:SLASH
+({Token.string=="/"})
+Macro:DATE_PRECISE
+(TROIS_NOMBRES)
+Macro:DATE_IMPRECISE
+(TROIS_NOMBRES SLASH UN_NOMBRE)
+Macro:DATE
+(DATE_PRECISE | DATE_IMPRECISE)
+\end{lstlisting}
+\end{column}
+
+
+\begin{column}{.5\linewidth}
+\onslide<3->
+\begin{lstlisting}
+Rule: PeriodeRule
+((DATE):d1({Token.string =="-"})(DATE):d2)
+:Periode -->:Periode{/*...*/}
+\end{lstlisting}
+\onslide<4->
+\begin{lstlisting}
+Rule: PeriodeEmissionRule
+(CHAINE_DEBUT ({Periode}):p)
+:PeriodeEmission
+-->:PeriodeEmission.PeriodeEmission = {/*..*/}
+\end{lstlisting}
+\end{column}
+\end{columns}
+\end{frame}
 
 \end{document}
