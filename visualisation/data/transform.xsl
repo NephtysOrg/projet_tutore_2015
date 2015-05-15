@@ -71,10 +71,19 @@
         <xsl:variable name="nom">
             <xsl:value-of select="name(.)"/>
         </xsl:variable>
-        <xsl:element name="div">
+        <xsl:if test="name(.) = 'paragraph'">
+        <xsl:element name="p">
             <xsl:attribute name="class"><xsl:value-of select="$nom"/></xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
+        </xsl:if>
+        <xsl:if test="name(.) != 'paragraph'">
+            <xsl:element name="span">
+            <xsl:attribute name="class"><xsl:value-of select="$nom"/></xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+        </xsl:if>
+        
        
     </xsl:template>
 
