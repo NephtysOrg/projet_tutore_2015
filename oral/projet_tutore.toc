@@ -1,5 +1,10 @@
 \beamer@endinputifotherversion {3.24pt}
-\beamer@sectionintoc {1}{Structure du numéraire}{4}{0}{1}
-\beamer@sectionintoc {2}{Annotations}{14}{0}{2}
-\beamer@sectionintoc {3}{Construction d'une règle JAPE}{17}{0}{3}
-\beamer@sectionintoc {4}{Visualisation}{35}{0}{4}
+\beamer@sectionintoc {1}{Le cahier des charges}{9}{0}{1}
+\beamer@sectionintoc {2}{Cadre d'analyse}{18}{0}{2}
+\beamer@subsectionintoc {2}{1}{L'environnement GATE}{19}{0}{2}
+\beamer@subsectionintoc {2}{2}{Les Gazetiers}{21}{0}{2}
+\beamer@subsectionintoc {2}{3}{Le formalisme JAPE}{22}{0}{2}
+\beamer@sectionintoc {3}{Structure du numéraire}{23}{0}{3}
+\beamer@sectionintoc {4}{Annotations}{33}{0}{4}
+\beamer@sectionintoc {5}{Construction d'une règle JAPE}{36}{0}{5}
+\beamer@sectionintoc {6}{Visualisation}{54}{0}{6}

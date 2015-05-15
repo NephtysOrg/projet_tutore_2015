@@ -6,8 +6,7 @@
 \usepackage{xcolor}
 \usepackage[scale=2]{ccicons}
 \usepackage{listings}
-
-
+\usepackage{graphicx}
 
 \usepgfplotslibrary{dateplot}
 
@@ -29,10 +28,6 @@
   belowskip=5pt,
 }
 
-
-
-
-
 \title{Conception et développement d’une application d’annotation thématique}
 \subtitle{dans l’environnement Gate}
 \date{\today}
@@ -43,11 +38,152 @@
 
 \maketitle
 \begin{frame}[fragile]
-  \frametitle{Introduction}
+	\frametitle{Introduction}
+		\begin{itemize}[<+->]
+  			\setbeamertemplate{itemize item}[square]
+  			\item{Extension du web vers un web de dit de données: le web sémantique}
+  			\item{Recherche sémantique: activité du web sémantique}
+  			\item{Annotation sémantique: Étape du processus de recherche sémantique}
+  			\item{Problème: Comment annoter sémantiquement un document texte non-structuré ?}
+  			\item{Quelles outils pour l'annotation ?}
+  			\item{Quelle approche de conception ?}
+  		\end{itemize}
 \end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Sommaire}
   \tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cahier des charges		%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Le cahier des charges}
+\begin{frame}[fragile]
+	\frametitle{Le cahier des charges}
+	Contexte: Recherche d'informations sur le Numéraire Carolingien de Georges DEPEYROT.
+	\begin{columns}
+		\onslide<1>
+		\column{.4\linewidth}
+			\includegraphics[scale=0.2]{img/depeyrot.jpg}
+		\onslide<1>
+		\column{.6\linewidth}
+		\begin{scriptsize}
+			Exemples de recherches possibles:
+			\begin{itemize}
+				\setbeamertemplate{itemize item}[square]
+				\item{Temporelle: Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
+				\item{Spatiale: Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
+				\item{Thématique: Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?}
+			\end{itemize}	
+		\end{scriptsize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Le cahier des charges}
+	Contexte: Recherche d'informations sur le Numéraire Carolingien de Georges DEPEYROT.
+	\begin{columns}
+		\onslide<1>
+		\column{.4\linewidth}
+			\includegraphics[scale=0.2]{img/depeyrot.jpg}
+		\onslide<1>
+		\column{.6\linewidth}
+		\begin{scriptsize}
+			Exemples de recherches possibles:
+			\begin{itemize}
+				\setbeamertemplate{itemize item}[square]
+				\item{Temporelle: Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
+				\item{Spatiale: Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
+				\item{Thématique: Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?}
+			\end{itemize}	
+		\end{scriptsize}
+	\end{columns}
+	Solution: Utilisation d'un outil de TAL: GATE
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Le cahier des charges}
+	Caractéristiques du projets:
+	\begin{itemize}[<+->]
+	\setbeamertemplate{itemize item}[square]
+		\item{apprentissage et compréhension du domaine considéré}
+		\item{étude des principes d'annotation de documents}
+		\item{développement d'une chaîne d'annotation dans GATE}
+		\item{mise en place d'une interface web de visualisation des résultats}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Le cahier des charges}
+	Scénario attendu:
+	\begin{scriptsize}
+	Texte en entrée de traitement
+	\end{scriptsize}
+	\includegraphics[scale=0.3]{img/beforean.png}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Le cahier des charges}
+	Scénario attendu:
+	\begin{scriptsize}
+	Texte en sortie de traitement
+	\end{scriptsize}
+	\includegraphics[scale=0.3]{img/afteran.png}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Cadre d'analyse			%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cadre d'analyse}
+\subsection{L'environnement GATE}
+\begin{frame}[fragile]
+\frametitle{Cadre d'analyse - GATE}
+\includegraphics[scale=0.3]{img/exempleAnnotationGATE.png} 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Cadre d'analyse - GATE}
+\includegraphics[scale=0.3]{img/exempleChaineTraitement.png} 
+\end{frame}
+
+\subsection{Les Gazetiers}
+\begin{frame}[fragile]
+\frametitle{Cadre d'analyse - Gazetiers}
+\includegraphics[scale=0.2]{img/Gaz.png} 
+\end{frame}
+
+\subsection{Le formalisme JAPE}
+\begin{frame}[fragile]
+\frametitle{Cadre d'analyse - JAPE}
+\begin{scriptsize}
+\begin{lstlisting}
+Phase: pourcent
+Input: Lookup Token
+Options: control = appelt
+Macro: AMOUNT_NUMBER
+(({Token.kind == number}
+(
+({Token.string == ","} | {Token.string == "."})
+{Token.kind == number}
+)?
+({Token.string == "-"}{Token.kind == number})?))
+Macro: PERCENT(
+{Token.string == "%"} |
+{Token.string == "pourcent"}|
+({Token.string == "pour"}{Token.string == "cent"})
+14)
+Macro: LIAISON_PERCENT_DE_ET(
+{Token.string == "de"}|
+{Token.string == "et"}|
+{Token.string == ","})
+Rule: Percent_number
+(((AMOUNT_NUMBER)
+({Token.string == "`
+a"})
+)?(AMOUNT_NUMBER)(PERCENT))
+:pourcent -->:pourcent.Percent = {Kind="pourcent",Rule="Percent_number"}
+\end{lstlisting}
+\end{scriptsize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Structure du numeraire %
@@ -71,7 +207,6 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \note{Le Numeraire est organisé en atelier, un atelier fabrique une ou plusieurs monnaies. On voit ici l'atelier d'Agen. Nous allons détailler tous les éléments à l'écran}
 \end{frame}
 
-
 \begin{frame}[fragile]
   \frametitle{L'atelier}
   \begin{scriptsize}
@@ -86,7 +221,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 794 (1,50) Trésors: Biebrich (790-814), 2 ex. (MG 11, Vôlkers, p. 182) (1,60); Ibersheim (814), 1 ex. \\
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35); \\Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 } 
-    \end{scriptsize}
+\end{scriptsize}
     
     \note{Forme : Ville (Dpt|Pays)?}
 \end{frame}
