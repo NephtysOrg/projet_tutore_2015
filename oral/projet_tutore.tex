@@ -25,8 +25,8 @@
   commentstyle=\color{light_gray},
   stringstyle=\color{orange},
   tabsize=2,
-  aboveskip=0pt,
-  belowskip=0pt,
+  aboveskip=5pt,
+  belowskip=5pt,
 }
 
 
@@ -68,7 +68,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);\\
 Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \end{scriptsize}
-\note{Numeraire organisé en atelier, un atelier fabrique une ou plusieurs monnaie}
+\note{Le Numeraire est organisé en atelier, un atelier fabrique une ou plusieurs monnaies. On voit ici l'atelier d'Agen. Nous allons détailler tous les éléments à l'écran}
 \end{frame}
 
 
@@ -128,7 +128,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35); \\Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 } 
     \end{scriptsize}
-        \note{Forme : Denier, Obole, ...}
+        \note{Forme : Denier, Obole, ... + NOM SOUVERAIN}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -230,12 +230,13 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 (MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);\alert{\up{Trésors}} \\
 Trouvailles: Bolsward, 1 ex. (H. 528) (1,26)\alert{\up{Trouvailles}}.
     \end{scriptsize}
+    \note{Nous avons définis toutes les annotations susceptible d’apparaître, nous allons voir dans la partie suivante les méthodes d’annotation à notre disposition}
 \end{frame}
 
 \section{Annotations}
 \begin{frame}[fragile,t]
 \setbeamercovered{transparent}
-  \frametitle{Choix d'annotation}
+  \frametitle{Deux façons d'annoter}
  \begin{columns}[t]
  \onslide<1>
   \begin{column}{.5\linewidth}
@@ -275,6 +276,8 @@ Rule: PeriodeEmissionRule
 \end{lstlisting}
 \end{column}
  \end{columns}  
+ \note{Un gazetier est une liste de données qui recense toutes les occurrences possibles d'un élément. Par exemple ici, on pourrai constituer un gazetier contenant toutes les périodes de l'ouvrage.\\
+ Une règle JAPE est une formule basée sur les expression régulières qui permet de définir l'allure générale d'une période par exemple.}
 \end{frame}
 
 \section{Construction d'une règle JAPE}
@@ -366,5 +369,7 @@ Rule: PeriodeEmissionRule
 \end{column}
 \end{columns}
 \end{frame}
+
+\section{Visualisation}
 
 \end{document}
