@@ -437,8 +437,8 @@ Exemple : \textit{Type de 793/4-812}
 \begin{center}
 \onslide<2>{Type de} \onslide<1->{793/4-812}
 \end{center}
-1. \textbf{\textsc{Langage naturel}}\\
-\onslide<1->{Une période est un intervalle entre deux dates. Dans notre travail, les dates sont constituées de trois et seulement trois chiffres. En cas d'ambiguïté, chacune d'entre elles peut être suivie d'un / et d'un chiffre traduisant l'indétermination de la date.}\\
+1. \textbf{\textsc{\textbf{Langage naturel}}}\\
+\onslide<1->{Une période est un intervalle entre deux dates. Dans notre travail, les dates sont constituées de trois chiffres. En cas d'ambiguïté, une date peut être suivie d'un / et d'un chiffre traduisant l'indétermination de la date.}\\
 \onslide<2>{Il faut assurer la capture de la période d'émission en ajoutant la contrainte précédée de "Type de" afin de ne pas récupérer toutes les périodes du document.}
 \end{frame}
 
@@ -448,7 +448,7 @@ Exemple : \textit{Type de 793/4-812}
 \begin{center}
 \onslide<4->{Type de} \onslide<1->{793/4}\onslide<2->{-}\onslide<3->{812}
 \end{center}
-2. \textbf{\textsc{Langage régulier}}\\
+2. \textbf{\textsc{\textbf{Langage régulier}}}\\
 \onslide<4->{Type de : }\onslide<1->{([0-9]\{3\}(/[0-9])?)}\onslide<2->{-}\onslide<3->{([0-9]\{3\}(/[0-9])?)}
 \end{frame}
 
@@ -458,7 +458,7 @@ Exemple : \textit{Type de 793/4-812}
 \begin{center}
 \onslide<1->{Type de} \onslide<2->{793/4}\onslide<2->{-}\onslide<2->{812}
 \end{center}
-3. \textbf{\textsc{Langage de programmation}}\\
+3. \textbf{\textsc{\textbf{Langage de programmation}}}\\
 \begin{columns}[t]
   \begin{column}{.5\linewidth}
 \onslide<1->
@@ -503,6 +503,16 @@ Rule: PeriodeEmissionRule
 \end{lstlisting}
 \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Approche par raffinement}
+\textbf{Résultat d'annotation}\\~
+\begin{center}
+\alert{$<$PeriodeEmission$>$}Type de 793/4-812\alert{$<$/PeriodeEmission$>$}\\~\\
+\end{center}
+\onslide<2->{\textit{Comment le visualiser de façon élégante ?}}\hfill\onslide<3>{\textbf{XSLT}}
+
 \end{frame}
 
 \section{Visualisation}

@@ -7,4 +7,4 @@
 \beamer@sectionintoc {3}{Structure du numéraire}{23}{0}{3}
 \beamer@sectionintoc {4}{Annotations}{33}{0}{4}
 \beamer@sectionintoc {5}{Construction d'une règle JAPE}{36}{0}{5}
-\beamer@sectionintoc {6}{Visualisation}{54}{0}{6}
+\beamer@sectionintoc {6}{Visualisation}{57}{0}{6}
