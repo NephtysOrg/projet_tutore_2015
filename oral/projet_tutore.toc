@@ -2,9 +2,18 @@
 \beamer@sectionintoc {1}{Le cahier des charges}{9}{0}{1}
 \beamer@sectionintoc {2}{Cadre d'analyse}{18}{0}{2}
 \beamer@subsectionintoc {2}{1}{L'environnement GATE}{19}{0}{2}
+<<<<<<< HEAD
+\beamer@subsectionintoc {2}{2}{Les Gazetiers}{22}{0}{2}
+\beamer@subsectionintoc {2}{3}{Le formalisme JAPE}{23}{0}{2}
+\beamer@sectionintoc {3}{Structure du numéraire}{24}{0}{3}
+\beamer@sectionintoc {4}{Annotations}{34}{0}{4}
+\beamer@sectionintoc {5}{Construction d'une règle JAPE}{37}{0}{5}
+\beamer@sectionintoc {6}{Visualisation}{55}{0}{6}
+=======
 \beamer@subsectionintoc {2}{2}{Les Gazetiers}{21}{0}{2}
 \beamer@subsectionintoc {2}{3}{Le formalisme JAPE}{22}{0}{2}
 \beamer@sectionintoc {3}{Structure du numéraire}{23}{0}{3}
 \beamer@sectionintoc {4}{Annotations}{33}{0}{4}
 \beamer@sectionintoc {5}{Construction d'une règle JAPE}{36}{0}{5}
 \beamer@sectionintoc {6}{Visualisation}{57}{0}{6}
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249

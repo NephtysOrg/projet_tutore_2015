@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.4.27)  17 MAY 2015 23:03
+=======
 This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  16 MAY 2015 17:09
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1770,21 +1774,33 @@ File: img/afteran.png Graphic file (type QTm)
 \openout4 = `projet_tutore.vrb'.
 
  (./projet_tutore.vrb
-File: img/exempleAnnotationGATE.png Graphic file (type QTm)
+File: img/gatePresent.png Graphic file (type QTm)
 
-<use  "img/exempleAnnotationGATE.png" >)
-Overfull \hbox (5.5423pt too wide) in paragraph at lines 2--142
-[][]  
+<use  "img/gatePresent.png" >
+Overfull \hbox (12.98903pt too wide) in paragraph at lines 4--7
+[][][][][][]  
  []
 
-[19
+) [19
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
  (./projet_tutore.vrb
-File: img/exempleChaineTraitement.png Graphic file (type QTm)
- <use  "img/exempleChaineTraitement.png" >) [20
+File: img/gateMod.png Graphic file (type QTm)
+ <use  "img/gateMod.png" >
+Overfull \hbox (25.378pt too wide) in paragraph at lines 4--7
+[][][][][][]  
+ []
+
+) [20
+
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb
+File: img/annieChaine.png Graphic file (type QTm)
+ <use  "img/annieChaine.png" >) [21
 
 ]
 \openout4 = `projet_tutore.vrb'.
@@ -1792,20 +1808,23 @@ File: img/exempleChaineTraitement.png Graphic file (type QTm)
 
 (./projet_tutore.vrb
 File: img/Gaz.png Graphic file (type QTm)
- <use  "img/Gaz.png" >) [21
+ <use  "img/Gaz.png" >
+Overfull \hbox (9.92247pt too wide) in paragraph at lines 4--7
+[][][][][][]  
+ []
+
+) [22
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb) [22
+ (./projet_tutore.vrb)
+Overfull \vbox (2.26842pt too high) detected at line 276
+ []
 
-]
 [23
 
-]
-\openout4 = `projet_tutore.vrb'.
-
- (./projet_tutore.vrb) [24
+] [24
 
 ]
 \openout4 = `projet_tutore.vrb'.
@@ -1820,7 +1839,8 @@ File: img/Gaz.png Graphic file (type QTm)
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb) [27
+
+(./projet_tutore.vrb) [27
 
 ]
 \openout4 = `projet_tutore.vrb'.
@@ -1830,8 +1850,8 @@ File: img/Gaz.png Graphic file (type QTm)
 ]
 \openout4 = `projet_tutore.vrb'.
 
-
-(./projet_tutore.vrb) [29
+ (./projet_tutore.vrb)
+[29
 
 ]
 \openout4 = `projet_tutore.vrb'.
@@ -1841,79 +1861,123 @@ File: img/Gaz.png Graphic file (type QTm)
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb)
-[31
+ (./projet_tutore.vrb) [31
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
  (./projet_tutore.vrb) [32
 
-] [33
+]
+\openout4 = `projet_tutore.vrb'.
+
+ (./projet_tutore.vrb) [33
+
+] [34
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb) [34
+ (./projet_tutore.vrb) [35
 
 ]
-(./projet_tutore.vrb) [35
+(./projet_tutore.vrb) [36
 
-] [36
+] [37
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
+<<<<<<< HEAD
+ (./projet_tutore.vrb
+
+LaTeX Font Warning: Font shape `EU1/FiraSansLight(0)/bx/it' undefined
+(Font)              using `EU1/FiraSansLight(0)/bx/n' instead on input line 5.
+
+) [38
+=======
  (./projet_tutore.vrb) [37
 
 ] (./projet_tutore.vrb) [38
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
 
 ] (./projet_tutore.vrb) [39
 
 ] (./projet_tutore.vrb) [40
+<<<<<<< HEAD
 
 ]
 (./projet_tutore.vrb) [41
 
 ] (./projet_tutore.vrb) [42
 
+] (./projet_tutore.vrb)
+[43
+=======
+
+]
+(./projet_tutore.vrb) [41
+
+] (./projet_tutore.vrb) [42
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
+
 ]
 \openout4 = `projet_tutore.vrb'.
 
+<<<<<<< HEAD
+ (./projet_tutore.vrb) [44
+=======
  (./projet_tutore.vrb)
 [43
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb) [44
+ (./projet_tutore.vrb) [45
 
-] (./projet_tutore.vrb) [45
+] (./projet_tutore.vrb) [46
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb) [46
+ (./projet_tutore.vrb) [47
 
-] (./projet_tutore.vrb) [47
+] (./projet_tutore.vrb) [48
 
+<<<<<<< HEAD
+]
+(./projet_tutore.vrb) [49
+
+] (./projet_tutore.vrb) [50
+=======
 ] (./projet_tutore.vrb) [48
 
 ]
 (./projet_tutore.vrb) [49
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
+<<<<<<< HEAD
+ (./projet_tutore.vrb)
+=======
  (./projet_tutore.vrb) [50
 
 ] (./projet_tutore.vrb)
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
 [51
 
 ] (./projet_tutore.vrb) [52
 
 ] (./projet_tutore.vrb) [53
 
+<<<<<<< HEAD
+] (./projet_tutore.vrb) [54
+
+] [55
+=======
 ]
 \openout4 = `projet_tutore.vrb'.
 
@@ -1924,6 +1988,7 @@ File: img/Gaz.png Graphic file (type QTm)
 ] (./projet_tutore.vrb) [56
 
 ] [57
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
 
 ]
 \tf@nav=\write6
@@ -1935,6 +2000,29 @@ File: img/Gaz.png Graphic file (type QTm)
 \tf@snm=\write8
 \openout8 = `projet_tutore.snm'.
 
+<<<<<<< HEAD
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 599.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 599.
+ (./projet_tutore.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 599.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 599.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 599.
+ ) 
+Here is how much of TeX's memory you used:
+ 42260 strings out of 495590
+ 907473 string characters out of 6185815
+ 1044917 words of memory out of 5000000
+ 44569 multiletter control sequences out of 15000+600000
+ 6852 words of font info for 57 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 59i,13n,91p,10427b,1517s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on projet_tutore.pdf (55 pages).
+=======
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 520.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 520.
 
@@ -1953,3 +2041,4 @@ Here is how much of TeX's memory you used:
  59i,13n,91p,10427b,1517s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on projet_tutore.pdf (57 pages).
+>>>>>>> 0e8afe9169e3795e508ba6a9b49288323dbe9249
