@@ -36,231 +36,55 @@
 \institute{Université de Pau et Pays de l'Adour}
 
 \begin{document}
-
 \maketitle
+%%%%% Introduction %%%%%%%%%
 \begin{frame}[fragile]
 	\frametitle{Introduction}
 		\begin{itemize}[<+->]
   			\setbeamertemplate{itemize item}[square]
   			\item{Annotation sémantique : phase en amont de la recherche d'information sémantique}
   			\item{Utilisation de la plate-forme GATE Developper}
-  			\item{Problématique : comment annoter sémantiquement un document texte non-structuré ?}		
+  			\item{Problématique : comment annoter de manière automatique un document texte non-structuré ?}		
   		\end{itemize}
 \end{frame}
-
+%%%% Sommaire %%%%%%%%%%
 \begin{frame}[fragile]
   \frametitle{Sommaire}
   \tableofcontents
 \end{frame}
-
-\section{Le cahier des charges}
+%%%%%% Comprehension du domaine %%%%%%%
+\section{Compréhension du domaine}
 \begin{frame}[fragile]
-	\frametitle{Le cahier des charges}
+	\frametitle{Compréhension du domaine - La ressource}
 	\onslide<1->{
-	Contexte: Recherche d'informations sur le Numéraire Carolingien de Georges DEPEYROT.
+	Recherches sur le Numéraire Carolingien de Georges DEPEYROT.\\~\\
 	\begin{columns}
 		\column{.4\linewidth}
 			\includegraphics[scale=0.2]{img/depeyrot.jpg}
 		\column{.6\linewidth}
+		Pouvoir répondre aux questions suivantes:
 		\begin{scriptsize}
-			Problème : répondre aux questions
 			\begin{itemize}
 				\setbeamertemplate{itemize item}[square]
 				\item{Temporelles : Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
-				\item{Spatiales : Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
-				\item{Thématiques : Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?}
+				\item{Thématiques : Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?\\
+				Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
 			\end{itemize}	
 		\end{scriptsize}
 	\end{columns}
 	}
-	\onslide<2>{Solution: Utilisation d'un outil de Traitement automatique du langage.}
 \end{frame}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-	\frametitle{Le cahier des charges}
-	Caractéristiques du projet :\\
-	\begin{itemize}[<+->]
-	\setbeamertemplate{itemize item}[square]
-		\item{apprentissage et compréhension du domaine considéré}
-		\item{étude des principes d'annotation de documents}
-		\item{développement d'une chaîne d'annotation dans GATE}
-		\item{mise en place d'une interface web de visualisation des résultats}
-	\end{itemize}
+	\frametitle{Compréhension du domaine - l'OCRisation}
+	\begin{center}
+	Etape d'OCRisation du numéraire.\\~\\
+	\includegraphics[scale=.4]{img/ocr.png} 
+	\end{center}
 \end{frame}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-	\frametitle{Le cahier des charges}
-	Scénario attendu:
-	\begin{scriptsize}
-	Texte en entrée de traitement
-	\end{scriptsize}
-	\includegraphics[scale=0.3]{img/beforean.png}
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Le cahier des charges}
-	Scénario attendu:
-	\begin{scriptsize}
-	Texte en sortie de traitement
-	\end{scriptsize}
-	\includegraphics[scale=0.3]{img/afteran.png}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Cadre d'analyse			%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Cadre d'analyse}
-\subsection{L'environnement GATE}
-\begin{frame}[fragile]
-\frametitle{Cadre d'analyse - L'outil GATE}
-\begin{columns}
-	\onslide<1>
-	\column{.6\linewidth}
-	\includegraphics[scale=0.190]{img/gatePresent.png} 
-	\onslide<1>
-	\column{.4\linewidth}
-	\begin{scriptsize}
-		\setbeamertemplate{itemize item}[square]
-	\begin{itemize}
-		\item{Outil de traitement automatique du langage (en JAVA).}
-		\item{Université de Sheffield 1995.}
-		\item{Principe: Chaîne de traitement (Pipeline).}
-		\item{Plusieurs modules dans un pipeline.}
-		\item{ANNIE: Pipeline par défaut pouvant servir de chaîne de départ}
-	\end{itemize}
-	\end{scriptsize}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Cadre d'analyse - L'outil GATE}
-\begin{columns}
-	\onslide<1>
-	\column{.6\linewidth}
-	\includegraphics[scale=0.2]{img/gateMod.png} 
-	\onslide<1>
-	\column{.3\linewidth}
-	\begin{scriptsize}
-		\setbeamertemplate{itemize item}[square]
-	\begin{itemize}	
-		\item{1- Chaîne de traitement}
-		\item{2- Textes et corpus à traiter}
-		\item{3- Modules d'annotation}
-		\item{4- Composition d'une chaîne de traitement}
-	\end{itemize}
-	\end{scriptsize}
-\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-\frametitle{Cadre d'analyse - L'outil GATE}
-\begin{itemize}
-\setbeamertemplate{itemize item}[square]
-	\item{Exemple de la chaîne de traitement ANNIE}
-\end{itemize}
-	\begin{columns}
-	\onslide<1>
-	\column{.6\linewidth}
-		\includegraphics[scale=0.3]{img/annieChaine.png} 
-	\onslide<1>
-	\column{.3\linewidth}
-	\begin{scriptsize}
-		\begin{itemize}
-			\setbeamertemplate{itemize item}[square]
-			\item{Module Gazetter: Identification des noms d'entité dans le texte, sur la base d'un gazetier}
-			\item{Module NE Transducer: Repérage d'entités nommées inconnues en fonction de modèles d'extraction écrits en langage JAPE}
-		\end{itemize}
-	\end{scriptsize}
-	\end{columns}
-\end{frame}
-
-\subsection{Les Gazetiers}
-\begin{frame}[fragile]
-\frametitle{Cadre d'analyse - Gazetiers}
-\begin{columns}
-	\onslide<1>
-	\column{.6\linewidth}
-		\begin{scriptsize}
-Bérenger I:valeur=Bérenger I:periode=888-924\\
-Bérenger II:valeur=Bérenger II:periode=950-961
-Carloman:valeur=Carloman:periode=768-771
-Carloman:valeur=Carloman:periode=879-884
-Charlemagne:valeur=Charlemagne:periode=768-814
-		\end{scriptsize}
-	\onslide<1>
-	\column{.4\linewidth}
-		\begin{scriptsize}
-		\begin{itemize}
-			\setbeamertemplate{itemize item}[square]
-			\item{liste de noms d'entités (Villes, métiers,etc)}
-			\item{permettant un repérage d’occurrences dans un texte}
-			\item{possibilité d'associer des caractéristiques a chaque nom d'entité (séparateurs)}
-			\item{Dans Gate: MajorType, MinorType}
-		\end{itemize}
-		\end{scriptsize}
-	\end{columns}
-\end{frame}
-
-\subsection{Le formalisme JAPE}
-\begin{frame}[fragile]
-\frametitle{Cadre d'analyse - Le formalisme JAPE}
-\begin{columns}
-	\onslide<1>
-	\column{.6\linewidth}
-	\begin{scriptsize}
-\begin{lstlisting}
-Phase: pourcent
-Input: Lookup Token
-Options: control = appelt
-/**************************** MACROS */
-Macro: AMOUNT_NUMBER
-(({Token.kind == number}
-(
-({Token.string == ","} | {Token.string == "."})
-{Token.kind == number}
-)?
-({Token.string == "-"}{Token.kind == number})?))
-Macro: PERCENT(
-{Token.string == "%"} |
-{Token.string == "pourcent"}|
-({Token.string == "pour"}{Token.string == "cent"})14)
-Macro: LIAISON_PERCENT_DE_ET(
-{Token.string == "de"}|
-{Token.string == "et"}|
-{Token.string == ","})
-/***************************** Regle */
-Rule: Percent_number
-/***************************** LHS */
-(((AMOUNT_NUMBER)
-({Token.string == "à"})
-)?(AMOUNT_NUMBER)(PERCENT))
-:pourcent
-/***************************** RHS */ 
--->:pourcent.Percent = 
-{Kind="pourcent",Rule="Percent_number"}
-\end{lstlisting}
-\end{scriptsize}
-	\onslide<1>
-	\column{.4\linewidth}
-	\begin{scriptsize}
-	\begin{itemize}
-	\setbeamertemplate{itemize item}[square]
-	
-	\item{Règles JAPE en deux blocs}
-	\item{Partie gauche (LHS): définition d'un motif d'annotation à repérer}
-	\item{Partie droite (RHS): Opérations sur un motif (Code JAVA éventuel)}
-	\item{Utilisation d'un système de Macros}
-	\end{itemize}
-	
-	\end{scriptsize}
-\end{columns}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   Structure du numeraire %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Structure du numéraire}
-\begin{frame}[fragile]
-\frametitle{Exemple}
+\frametitle{Compréhension du domaine - Structure du numéraire}
 \begin{scriptsize}
 Agen (Lot-et-Garonne)\\~\\
 
@@ -278,7 +102,7 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{L'atelier}
+  \frametitle{Compréhension du domaine - L'atelier}
   \begin{scriptsize}
 \textbf{Agen (Lot-et-Garonne)}\\~\\
 \textcolor{light_gray}{
@@ -297,7 +121,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Le type}
+  \frametitle{Compréhension du domaine - Le type}
   \begin{scriptsize}
 \textcolor{light_gray}{Agen (Lot-et-Garonne)}\\~\\
 
@@ -317,7 +141,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{La nature}
+  \frametitle{Compréhension du domaine - La nature}
   \begin{scriptsize}
 \textcolor{light_gray}{Agen (Lot-et-Garonne)}\\~\\
 
@@ -337,7 +161,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{La légende}
+  \frametitle{Compréhension du domaine - La légende}
   \begin{scriptsize}
 \textcolor{light_gray}{Agen (Lot-et-Garonne)}\\~\\
 
@@ -358,7 +182,7 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Les collections}
+  \frametitle{Compréhension du domaine - Les collections}
   \begin{scriptsize}
 \textcolor{light_gray}{Agen (Lot-et-Garonne)}\\~\\
 
@@ -377,7 +201,7 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Les trésors}
+  \frametitle{Compréhension du domaine - Les trésors}
   \begin{scriptsize}
 \textcolor{light_gray}{Agen (Lot-et-Garonne)}\\~\\
 
@@ -400,7 +224,7 @@ Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Les trouvailles}
+  \frametitle{Compréhension du domaine - Les trouvailles}
   \begin{scriptsize}
 \textcolor{light_gray}{Agen (Lot-et-Garonne)}\\~\\
 
@@ -419,50 +243,143 @@ Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73;
 \textbf{Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).}
     \end{scriptsize}
 \end{frame}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-  \frametitle{Résumé}
-  \begin{scriptsize}
-Agen (Lot-et-Garonne)\alert{\up{Atelier}}\\~\\
-Type de 793/4-812: Charlemagne (768-814)\alert{\up{Type}}\\
-Denier de Charlemagne (24 exemplaires étudiés)\alert{\up{Nature}}\\
-+ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\alert{\up{Légende}}\\
-Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1;
-Collections: Berlin 1,64, 1,45; \\
+	\frametitle{Compréhension du domaine - Scénario d'annotation}
+
+	\textbf{Texte en entrée de notre chaîne de traitement}\\~\\~\\
+\begin{scriptsize}
+Agen (Lot-et-Garonne)\\~\\
+
+Type de 793/4-812: Charlemagne (768-814)\\
+Denier de Charlemagne (24 exemplaires étudiés)\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\\
+Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45;\\
 Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
 (1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60), \\
-794 (1,50)\alert{\up{Collections}} Trésors: Biebrich (790-814), 2 ex. (MG 11, Vôlkers, p. 182) (1,60); Ibersheim (814), 1 ex. \\
-(MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);\alert{\up{Trésors}} \\
-Trouvailles: Bolsward, 1 ex. (H. 528) (1,26)\alert{\up{Trouvailles}}.
-    \end{scriptsize}
-    \note{Nous avons définis toutes les annotations susceptible d’apparaître, nous allons voir dans la partie suivante les méthodes d’annotation à notre disposition}
+794 (1,50) Trésors: Biebrich (790-814), 2 ex. (MG 11, Vôlkers, p. 182) (1,60); Ibersheim (814), 1 ex. \\
+(MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);\\
+Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
+\end{scriptsize}
+
 \end{frame}
 
-\section{Annotations}
-\begin{frame}[fragile,t]
-\setbeamercovered{transparent}
-  \frametitle{Deux façons d'annoter}
- \begin{columns}[t]
- \onslide<1>
-  \begin{column}{.5\linewidth}
-    {\large \textsc{\alert{Gazetier}}}\\
-    \textbf{liste} de valeurs.\\~\\
+\begin{frame}[fragile]
+	\frametitle{Compréhension du domaine - Scénario d'annotation}
+
+	\textbf{Texte en sortie de notre chaîne de traitement}\\
+	Domaine annoté : \colorbox{red!30}{Temporel}.\\~\\~\\
 \begin{scriptsize}
-    \begin{itemize}
-    \item Type de 754/5-768
-    \item Type de 768-771
-    \item Type de 771-793/4
-    \item Type de 793/4-812
-    \item Type de 812-814
-    \item ...
-    \end{itemize}
+Agen (Lot-et-Garonne)\\~\\
+
+Type de \colorbox{red!30}{793/4-812}: Charlemagne (\colorbox{red!30}{768-814})\\
+Denier de Charlemagne (24 exemplaires étudiés)\\
++ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme\\
+Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: Berlin 1,64, 1,45;\\
+Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735 \\
+(1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60), \\
+794 (1,50) Trésors: Biebrich (790-814), 2 ex. (MG 11, Vôlkers, p. 182) (1,60); Ibersheim (814), 1 ex. \\
+(MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);\\
+Trouvailles: Bolsward, 1 ex. (H. 528) (1,26).
 \end{scriptsize}
-  \end{column}
-  \onslide<2>
-  \begin{column}{.5\linewidth}
-    {\large \textsc{\alert{Règle JAPE}}}\\
-    \textbf{règle} basée sur une expression régulière.\\
-    \begin{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Compréhension du domaine}
+
+	\textbf{Texte en sortie de notre chaîne de traitement}\\
+	Domaine annoté : \colorbox{blue!30}{Thématique}.\\~\\~\\
+\begin{scriptsize}
+\colorbox{blue!30}{Agen (Lot-et-Garonne)}\\~\\
+
+\colorbox{blue!30}{Type de 793/4-812}: Charlemagne (768-814)\\
+\colorbox{blue!30}{Denier de Charlemagne} (24 exemplaires étudiés)\\
+\colorbox{blue!30}{+ CARLVS REX FR croix~~~~~~~ + AGINNO monogramme}\\
+Gariel XXII 26; Morrison-Grunthal 177-179; Depeyrot (1) (2) 1; Collections: \colorbox{blue!30}{Berlin 1,64, 1,45;}\\
+\colorbox{blue!30}{Bruxelles 1,25, 1,25; Charleville-Mézières 1,56; Copenhague 1,31; Garett 1,73; Grenoble; MEC 735} \\
+\colorbox{blue!30}{(1,57), 736 (1,24); Monnaie de Paris 88 (1,55); New York 1,64, 1,57; Prou 792 (1,36), 793 (1,60),} \\
+\colorbox{blue!30}{794 (1,50)} Trésors: \colorbox{blue!30}{Biebrich (790-814), 2 ex. (MG 11, Vôlkers, p. 182) (1,60); Ibersheim (814), 1 ex.} \\
+\colorbox{blue!30}{(MG 13, Vôlkers, p. 186) (1,64); Dorestad (822), 4 ex. (MG 18, Vôlkers, p. 139; H. 7) (1,35);}\\
+Trouvailles: \colorbox{blue!30}{Bolsward, 1 ex. (H. 528) (1,26).}
+\end{scriptsize}
+\end{frame}
+
+
+%%%%%% Annotations dans GATE Developper %%%%%%%%
+\section{Annotations dans GATE}
+\begin{frame}[fragile]
+\frametitle{Annotations dans GATE}
+\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+	\begin{center}
+	\includegraphics[scale=0.190]{img/gate.png} 
+	\end{center}
+	\onslide<1>
+	\column{.4\linewidth}
+	\begin{scriptsize}
+		\setbeamertemplate{itemize item}[square]
+	\begin{itemize}
+		\item{Outil de traitement automatique du langage (en JAVA).}
+		\item{Université de Sheffield depuis 1995 (version 8).}
+		\item{Principe: Chaîne de traitement (Pipeline).}
+		\item{Plusieurs modules dans un pipeline.}
+		\item{ANNIE: Pipeline par défaut pouvant servir de chaîne de départ}
+	\end{itemize}
+	\end{scriptsize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Annotations dans GATE}
+	\begin{center}
+	\includegraphics[scale=0.275]{img/gatePresent.png} 
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Annotations dans GATE - LANG}
+La chaîne de traitement LANG
+\begin{center}
+\includegraphics[scale=0.5]{img/chaine1.png} 
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Annotations dans GATE - LANG}
+\begin{center}
+\includegraphics[scale=0.5]{img/chaine2.png} 
+\end{center}
+\begin{itemize}[<+->]
+	\setbeamertemplate{itemize item}[square]
+	\item{Document reset : Réinitialisation du document}
+	\item{French Tokeniser : Découpage des phrases en mots}
+	\item{MyGazetter : Identification de noms d'entités par Gazetier}
+	\item{temporal/thematic Transducer : Repérage d'entités nommées inconnues en fonction de modèles d'extraction écrits en langage JAPE}
+\end{itemize}
+\end{frame}
+
+\subsection{Les Gazetiers}
+\begin{frame}[fragile]
+\frametitle{Annotations dans GATE - Gazetiers}
+	\includegraphics[scale=0.4]{img/gazetier.png} 
+		\begin{itemize}[<+->]
+			\setbeamertemplate{itemize item}[square]
+			\item{liste de noms d'entités (Villes, métiers,etc)}
+			\item{permettant un repérage d’occurrences dans un texte}
+			\item{possibilité d'associer des caractéristiques a chaque nom d'entité (séparateurs)}
+			\item{Dans Gate: MajorType, MinorType réutilisable dans une règle \textit{JAPE}}
+		\end{itemize}
+\end{frame}
+
+\subsection{Le formalisme JAPE}
+\begin{frame}[fragile]
+\frametitle{Annotations dans GATE - Le formalisme JAPE}
+\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+	\begin{scriptsize}
+\begin{lstlisting}
 Macro: CHAINE_DEBUT
 (
     ({Token.string =="Type"})({SpaceToken})
@@ -471,23 +388,37 @@ Macro: CHAINE_DEBUT
 
 // Exemple : Type de 758/9-762
 Rule: PeriodeEmissionRule
+/************ Left Hand Side ***********/
 (
     CHAINE_DEBUT ({Periode}):p
 ):PeriodeEmission
+/**************************************/
+/************ Right Hand Side ***********/
 -->:PeriodeEmission.PeriodeEmission = {
  	Kind = "PeriodeEmission" ,
  	D1 = :p.Periode.D1, D2 = :p.Periode.D2
 }
+/**************************************/
 \end{lstlisting}
-\end{column}
- \end{columns}  
- \note{Un gazetier est une liste de données qui recense toutes les occurrences possibles d'un élément. Par exemple ici, on pourrai constituer un gazetier contenant toutes les périodes de l'ouvrage.\\
- Une règle JAPE est une formule basée sur les expression régulières qui permet de définir l'allure générale d'une période par exemple.}
+\end{scriptsize}
+	\onslide<1>
+	\column{.4\linewidth}
+	\begin{scriptsize}
+	\begin{itemize}
+	\setbeamertemplate{itemize item}[square]
+	\item{Règles JAPE en deux blocs}
+	\item{Partie gauche (LHS): définition d'un motif d'annotation à repérer}
+	\item{Partie droite (RHS): Opérations sur un motif (Code JAVA éventuel)}
+	\item{Utilisation d'un système de Macros}
+	\end{itemize}
+	\end{scriptsize}
+\end{columns}
 \end{frame}
 
-\section{Construction d'une règle JAPE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mise en œuvre}
 \begin{frame}[fragile]
-  \frametitle{Approche par raffinement}
+  \frametitle{Mise en œuvre - Démarche}
 \begin{enumerate}[<+->]
     \item{Langage naturel \onslide<4,5,6>{\hfill \textbf{français}}}
     \item{Langage régulier \onslide<5,6>{\hfill\textbf{expressions régulières}}}
@@ -496,14 +427,14 @@ Rule: PeriodeEmissionRule
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{Approche par raffinement}
+  \frametitle{Mise en œuvre - Exemple 1}
 Annotation : La période d'émission \\
-Exemple : \textit{Type de 793/4-812}
+Exemple 1 : \textit{Type de 793/4-812}
 \end{frame}
 
 \begin{frame}[fragile,t]
 \setbeamercovered{transparent}
-  \frametitle{Approche par raffinement}
+  \frametitle{Mise en œuvre - Exemple 1}
 \begin{center}
 \onslide<2>{Type de} \onslide<1->{793/4-812}
 \end{center}
@@ -514,7 +445,7 @@ Exemple : \textit{Type de 793/4-812}
 
 \begin{frame}[fragile,t]
 \setbeamercovered{transparent}
-  \frametitle{Approche par raffinement}
+  \frametitle{Mise en œuvre - Exemple 1}
 \begin{center}
 \onslide<4->{Type de} \onslide<1->{793/4}\onslide<2->{-}\onslide<3->{812}
 \end{center}
@@ -524,7 +455,7 @@ Exemple : \textit{Type de 793/4-812}
 
 \begin{frame}[fragile,t]
 \setbeamercovered{transparent}
-  \frametitle{Approche par raffinement}
+  \frametitle{Mise en œuvre - Exemple 1}
 \begin{center}
 \onslide<1->{Type de} \onslide<2->{793/4}\onslide<2->{-}\onslide<2->{812}
 \end{center}
@@ -532,7 +463,7 @@ Exemple : \textit{Type de 793/4-812}
 \begin{columns}[t]
   \begin{column}{.5\linewidth}
 \onslide<1->
-\begin{lstlisting}
+ \begin{lstlisting}
 Macro: CHAINE_DEBUT
 (
     ({Token.string =="Type"})({SpaceToken})
@@ -575,30 +506,121 @@ Rule: PeriodeEmissionRule
 \end{columns}
 \end{frame}
 
+
+
+
+
+
 \begin{frame}[fragile]
-  \frametitle{Approche par raffinement}
+  \frametitle{Mise en œuvre- Exemple 2}
+Annotation : La nature de la monnaie \\
+Exemple 2 : \textit{Obole de Carloman}
+\end{frame}
+
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Mise en œuvre - Exemple 2}
+\begin{center}
+\onslide<1->{Obole de Carloman}
+\end{center}
+1. \textbf{\textsc{\textbf{Langage naturel}}}\\
+\onslide<1->{La nature de la monnaie est toujours un élément de l'ensemble \{Denier, Obole, Monnaie D'Or, Faux obole, Monnaies de type indéterminé\} suivi du nom d'un souverain. Il suffit donc d'utiliser une expression composée de tous les mots de l'ensemble.}
+\end{frame}
+
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Mise en œuvre - Exemple 2}
+\begin{center}
+\onslide<1->{Obole }\onslide<2->{de }\onslide<3->{Carloman}
+\end{center}
+2. \textbf{\textsc{\textbf{Langage régulier}}}\\
+\begin{scriptsize}
+\onslide<1->{[\textbackslash s]\{2,\}(Denier|Obole|Monnaie d'or|Faux Obole|
+Monnaies de type indéterminé) }\onslide<2->{(.*) } \onslide<3->{Nom\_Souverain}
+\end{scriptsize}
+
+\end{frame}
+
+\begin{frame}[fragile,t]
+\setbeamercovered{transparent}
+  \frametitle{Mise en œuvre - Exemple 2}
+\begin{center}
+\onslide<1->{Obole } \onslide<2->{de }\onslide<3->{Carloman}
+\end{center}
+3. \textbf{\textsc{\textbf{Langage de programmation}}}\\
+\begin{columns}[t]
+  \begin{column}{.5\linewidth}
+\onslide<1->
+\begin{lstlisting}
+Macro: MONNAIE
+(
+   ({Token.string == "Obole"})|
+   ({Token.string == "Denier"})|
+   ({Token.string == "Monnaie d'or"})|
+   ({Token.string == "Faux Obole"})|
+    ({Token.string == "Monnaies de type indéterminé"})
+)
+\end{lstlisting}
+\onslide<2->
+\begin{lstlisting}
+Macro: LIAISON
+({Token.string == "de"})
+\end{lstlisting}
+\end{column}
+
+
+\begin{column}{.5\linewidth}
+\onslide<3->
+\begin{lstlisting}
+Rule: NatureMonnaieRule
+(   
+   ({SpaceToken})?(MONNAIE):monnaie
+   ({SpaceToken})(LIAISON)({SpaceToken})
+   ({ANgazetier.majorType == "rois"})
+   
+):NatureMonnaie 
+-->
+      :NatureMonnaie.NatureMonnaie = {/* ... */}
+\end{lstlisting}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Mise en œuvre - Résultat}
 \textbf{Résultat d'annotation}\\~
+Fichier XML : \\
 \begin{center}
 \alert{$<$PeriodeEmission$>$}Type de 793/4-812\alert{$<$/PeriodeEmission$>$}\\~\\
+\alert{$<$NatureMonnaie$>$}Obole de Carloman\alert{$<$/NatureMonnaie$>$}\\~\\
 \end{center}
-\onslide<2->{\textit{Comment le visualiser de façon élégante ?}}\hfill\onslide<3>{\textbf{XSLT}}
+\onslide<2->{\textit{Comment visualiser les annotations en dehors de GATE ?}}\hfill\onslide<3>{\textbf{XSLT}}
+
+\end{frame}
+%%%%%% Visualisation %%%%%%%%%
+\section{Visualisation}
+\begin{frame}[fragile]
+  \frametitle{Visualisation}
+\begin{center}
+\includegraphics[scale=.5]{img/visualisation.png} 
+\end{center}
+\end{frame}
+%%%% DEMO %%%%%%%%%%%%%%
+\section{Démonstration}
+%%%%%%% Conclusion %%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Conclusion}
+\begin{center}
+\includegraphics[scale=0.5]{img/conclusion.png}
+\end{center}
 \end{frame}
 
-\section{Visualisation}
-
-\section*{Conclusion}
-\begin{frame}[fragile]
-	\frametitle{Conclusion}
-Retours d'expérience sur:
+\begin{frame}
+\frametitle{Conclusion}
 \begin{itemize}[<+->]
 	\setbeamertemplate{itemize item}[square]
-\item{La gestion du temps}
-\item{Respect des spécifications du cahier de charge}
-\item{Organisation du projet (gestion des réunions)}
+	\item{Amélioration de la robustesse de l'application}
+	\item{}
 \end{itemize}
 \end{frame}
-\plain{Merci pour votre attention.\\~\\Questions ?}
 \end{document}
-
-
-
