@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 
 \usepgfplotslibrary{dateplot}
+\setcounter{tocdepth}{1}
 
 %Colors
 \definecolor{light_gray}{HTML}{aaaaaa}
@@ -30,7 +31,7 @@
 
 \title{Conception et développement d’une application d’annotation thématique}
 \subtitle{dans l’environnement Gate}
-\date{\today}
+\date{}
 \author{Charles Follet \and Roland Bary}
 \institute{Université de Pau et Pays de l'Adour}
 
@@ -42,9 +43,9 @@
 		\begin{itemize}[<+->]
   			\setbeamertemplate{itemize item}[square]
   			\item{Extension du web vers un web dit de données: le web sémantique}
-  			\item{Recherche sémantique: activité du web sémantique}
-  			\item{Annotation sémantique: Étape du processus de recherche sémantique}
-  			\item{Problème: Comment annoter sémantiquement un document texte non-structuré ?}
+  			\item{Recherche sémantique : activité du web sémantique}
+  			\item{Annotation sémantique : étape du processus de recherche sémantique}
+  			\item{Problématique : comment annoter sémantiquement un document texte non-structuré ?}
   			\item{Quelles outils pour l'annotation ?}
   			\item{Quelle approche de conception ?}
   		\end{itemize}
@@ -60,50 +61,29 @@
 \section{Le cahier des charges}
 \begin{frame}[fragile]
 	\frametitle{Le cahier des charges}
+	\onslide<1->{
 	Contexte: Recherche d'informations sur le Numéraire Carolingien de Georges DEPEYROT.
 	\begin{columns}
-		\onslide<1>
 		\column{.4\linewidth}
 			\includegraphics[scale=0.2]{img/depeyrot.jpg}
-		\onslide<1>
 		\column{.6\linewidth}
 		\begin{scriptsize}
-			Exemples de recherches possibles:
+			Problème : répondre aux questions
 			\begin{itemize}
 				\setbeamertemplate{itemize item}[square]
-				\item{Temporelle: Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
-				\item{Spatiale: Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
-				\item{Thématique: Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?}
+				\item{Temporelles : Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
+				\item{Spatiales : Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
+				\item{Thématiques : Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?}
 			\end{itemize}	
 		\end{scriptsize}
 	\end{columns}
+	}
+	\onslide<2>{Solution: Utilisation d'un outil de Traitement automatique du langage.}
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Le cahier des charges}
-	Contexte: Recherche d'informations sur le Numéraire Carolingien de Georges DEPEYROT.
-	\begin{columns}
-		\onslide<1>
-		\column{.4\linewidth}
-			\includegraphics[scale=0.2]{img/depeyrot.jpg}
-		\onslide<1>
-		\column{.6\linewidth}
-		\begin{scriptsize}
-			Problème : pouvoir faire des recherches
-			\begin{itemize}
-				\setbeamertemplate{itemize item}[square]
-				\item{Temporelle: Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
-				\item{Spatiale: Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
-				\item{Thématique: Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?}
-			\end{itemize}	
-		\end{scriptsize}
-	\end{columns}
-	Solution: Utilisation d'un outil de Traitement automatique du langage.
-\end{frame}
-
-\begin{frame}[fragile]
-	\frametitle{Le cahier des charges}
-	Caractéristiques du projets:\\
+	Caractéristiques du projet :\\
 	\begin{itemize}[<+->]
 	\setbeamertemplate{itemize item}[square]
 		\item{apprentissage et compréhension du domaine considéré}
@@ -612,7 +592,18 @@ Rule: PeriodeEmissionRule
 
 \section{Visualisation}
 
-
+\section*{Conclusion}
+\begin{frame}[fragile]
+	\frametitle{Conclusion}
+Retours d'expérience sur:
+\begin{itemize}[<+->]
+	\setbeamertemplate{itemize item}[square]
+\item{La gestion du temps}
+\item{Respect des spécifications du cahier de charge}
+\item{Organisation du projet (gestion des réunions)}
+\end{itemize}
+\end{frame}
+\plain{Merci pour votre attention.\\~\\Questions ?}
 \end{document}
 
 

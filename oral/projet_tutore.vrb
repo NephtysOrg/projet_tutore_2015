@@ -1,7 +1,8 @@
-\frametitle{Approche par raffinement}
-\textbf{Résultat d'annotation}\\~
-\begin{center}
-\alert{$<$PeriodeEmission$>$}Type de 793/4-812\alert{$<$/PeriodeEmission$>$}\\~\\
-\end{center}
-\onslide<2->{\textit{Comment le visualiser de façon élégante ?}}\hfill\onslide<3>{\textbf{XSLT}}
-
+\frametitle{Conclusion}
+Retours d'expérience sur:
+\begin{itemize}[<+->]
+\setbeamertemplate{itemize item}[square]
+\item{La gestion du temps}
+\item{Respect des spécifications du cahier de charge}
+\item{Organisation du projet (gestion des réunions)}
+\end{itemize}
