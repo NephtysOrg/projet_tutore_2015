@@ -41,7 +41,7 @@
 	\frametitle{Introduction}
 		\begin{itemize}[<+->]
   			\setbeamertemplate{itemize item}[square]
-  			\item{Extension du web vers un web de dit de données: le web sémantique}
+  			\item{Extension du web vers un web dit de données: le web sémantique}
   			\item{Recherche sémantique: activité du web sémantique}
   			\item{Annotation sémantique: Étape du processus de recherche sémantique}
   			\item{Problème: Comment annoter sémantiquement un document texte non-structuré ?}
@@ -98,12 +98,12 @@
 			\end{itemize}	
 		\end{scriptsize}
 	\end{columns}
-	Solution: Utilisation d'un outil de TAL: GATE
+	Solution: Utilisation d'un outil de Traitement automatique du langage.
 \end{frame}
 
 \begin{frame}[fragile]
 	\frametitle{Le cahier des charges}
-	Caractéristiques du projets:
+	Caractéristiques du projets:\\
 	\begin{itemize}[<+->]
 	\setbeamertemplate{itemize item}[square]
 		\item{apprentissage et compréhension du domaine considéré}
@@ -137,29 +137,101 @@
 \section{Cadre d'analyse}
 \subsection{L'environnement GATE}
 \begin{frame}[fragile]
-\frametitle{Cadre d'analyse - GATE}
-\includegraphics[scale=0.3]{img/exempleAnnotationGATE.png} 
+\frametitle{Cadre d'analyse - L'outil GATE}
+\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+	\includegraphics[scale=0.190]{img/gatePresent.png} 
+	\onslide<1>
+	\column{.4\linewidth}
+	\begin{scriptsize}
+		\setbeamertemplate{itemize item}[square]
+	\begin{itemize}
+		\item{Outil de traitement automatique du langage (en JAVA).}
+		\item{Université de Sheffield 1995.}
+		\item{Principe: Chaîne de traitement (Pipeline).}
+		\item{Plusieurs modules dans un pipeline.}
+		\item{ANNIE: Pipeline par défaut pouvant servir de chaîne de départ}
+	\end{itemize}
+	\end{scriptsize}
+\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Cadre d'analyse - GATE}
-\includegraphics[scale=0.3]{img/exempleChaineTraitement.png} 
+\frametitle{Cadre d'analyse - L'outil GATE}
+\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+	\includegraphics[scale=0.2]{img/gateMod.png} 
+	\onslide<1>
+	\column{.3\linewidth}
+	\begin{scriptsize}
+		\setbeamertemplate{itemize item}[square]
+	\begin{itemize}	
+		\item{1- Chaîne de traitement}
+		\item{2- Textes et corpus à traiter}
+		\item{3- Modules d'annotation}
+		\item{4- Composition d'une chaîne de traitement}
+	\end{itemize}
+	\end{scriptsize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Cadre d'analyse - L'outil GATE}
+\begin{itemize}
+\setbeamertemplate{itemize item}[square]
+	\item{Exemple de la chaîne de traitement ANNIE}
+\end{itemize}
+	\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+		\includegraphics[scale=0.2]{img/annieChaine.png} 
+	\onslide<1>
+	\column{.3\linewidth}
+	\begin{scriptsize}
+		\begin{itemize}
+			\setbeamertemplate{itemize item}[square]
+			\item{Module Gazetter: Identification des noms d'entité dans le texte, sur la base d'un gazetier}
+			\item{Module NE Transducer: Repérage d'entités nommées inconnues en fonction de modèles d'extraction écrits en langage JAPE}
+		\end{itemize}
+	\end{scriptsize}
+	\end{columns}
 \end{frame}
 
 \subsection{Les Gazetiers}
 \begin{frame}[fragile]
 \frametitle{Cadre d'analyse - Gazetiers}
-\includegraphics[scale=0.2]{img/Gaz.png} 
+\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+		\includegraphics[scale=0.2]{img/Gaz.png} 
+	\onslide<1>
+	\column{.4\linewidth}
+		\begin{scriptsize}
+		\begin{itemize}
+			\setbeamertemplate{itemize item}[square]
+			\item{liste de noms d'entités (Villes, métiers,etc)}
+			\item{permettant un repérage d’occurrences dans un texte}
+			\item{possibilité d'associer des caractéristiques a chaque nom d'entité (séparateurs)}
+			\item{Dans Gate: MajorType, MinorType}
+		\end{itemize}
+		\end{scriptsize}
+	\end{columns}
 \end{frame}
 
 \subsection{Le formalisme JAPE}
 \begin{frame}[fragile]
-\frametitle{Cadre d'analyse - JAPE}
-\begin{scriptsize}
+\frametitle{Cadre d'analyse - Le formalisme JAPE}
+\begin{columns}
+	\onslide<1>
+	\column{.6\linewidth}
+	\begin{scriptsize}
 \begin{lstlisting}
 Phase: pourcent
 Input: Lookup Token
 Options: control = appelt
+/**************************** MACROS */
 Macro: AMOUNT_NUMBER
 (({Token.kind == number}
 (
@@ -170,20 +242,37 @@ Macro: AMOUNT_NUMBER
 Macro: PERCENT(
 {Token.string == "%"} |
 {Token.string == "pourcent"}|
-({Token.string == "pour"}{Token.string == "cent"})
-14)
+({Token.string == "pour"}{Token.string == "cent"})14)
 Macro: LIAISON_PERCENT_DE_ET(
 {Token.string == "de"}|
 {Token.string == "et"}|
 {Token.string == ","})
+/***************************** Regle */
 Rule: Percent_number
+/***************************** LHS */
 (((AMOUNT_NUMBER)
-({Token.string == "`
-a"})
+({Token.string == "à"})
 )?(AMOUNT_NUMBER)(PERCENT))
-:pourcent -->:pourcent.Percent = {Kind="pourcent",Rule="Percent_number"}
+:pourcent
+/***************************** RHS */ 
+-->:pourcent.Percent = 
+{Kind="pourcent",Rule="Percent_number"}
 \end{lstlisting}
 \end{scriptsize}
+	\onslide<1>
+	\column{.4\linewidth}
+	\begin{scriptsize}
+	\begin{itemize}
+	\setbeamertemplate{itemize item}[square]
+	
+	\item{Règles JAPE en deux blocs}
+	\item{Partie gauche (LHS): définition d'un motif d'annotation à repérer}
+	\item{Partie droite (RHS): Opérations sur un motif (Code JAVA éventuel)}
+	\item{Utilisation d'un système de Macros}
+	\end{itemize}
+	
+	\end{scriptsize}
+\end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   Structure du numeraire %
@@ -517,4 +606,8 @@ Rule: PeriodeEmissionRule
 
 \section{Visualisation}
 
+
 \end{document}
+
+
+

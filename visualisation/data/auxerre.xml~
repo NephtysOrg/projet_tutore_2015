@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<root>
+                                      <paragraph><ANgazetier>Altenheim (Bas-Rhin)</ANgazetier>
+</paragraph>
+
+
+
+
+
+
+
+
+
+                      <paragraph><PeriodeEmission>Type de 814-819</PeriodeEmission>: <ANgazetier>Louis le Pieux</ANgazetier> (814-840), <ANgazetier>Pépin I roi 
+                             d&apos;Aquitaine</ANgazetier> (817-838), <ANgazetier>Lothaire I</ANgazetier> (817-855)
+27        <NatureMonnaie> Denier de <ANgazetier>Louis le Pieux</ANgazetier></NatureMonnaie> (11 exemplaires étudiés)
+           + HLVDOVVICVS IMP croix                              ALDVN-HEIM en 2 lignes
+           Gariel XV 34; Mon-ison-Grunthal 462; Depeyrot (1) (2) 27; Collections: <CollectionsDetails>Berlin 1,78; <ANgazetier>Paris</ANgazetier> 943a.</CollectionsDetails> 
+           Trésors: <TresorsDetails>Apremont (820-829), 9 ex. (D. 17 n&apos;inventorie que 2 ex.; H. 2 daté de 819).</TresorsDetails>
+</paragraph>
+
+
+                                          <paragraph><ANgazetier>Amiens (Somme)</ANgazetier>
+</paragraph>
+                <paragraph><PeriodeEmission>Type de 768-771</PeriodeEmission>: <ANgazetier><ANgazetier>Carloman</ANgazetier></ANgazetier> (768-771), <ANgazetier>Charlemagne</ANgazetier> (768-814)
+28        <NatureMonnaie> Denier de <ANgazetier>Charlemagne</ANgazetier></NatureMonnaie> (3 exemplaires étudiés)
+           CAR-LVS en 2 lignes                                  AM-BIANI en 2 lignes, trait
+           Gariel V 4; Morrison-Grunthal 124; Depeyrot (1)(2) 28; Collections: <CollectionsDetails>Leiden; <ANgazetier>Paris</ANgazetier> 230a.</CollectionsDetails> Trouvailles: 
+           <TrouvaillesDetails>Domburg, 1 ex. (Viilkers, p. 131).</TrouvaillesDetails>
+</paragraph>
+                <paragraph><PeriodeEmission>Type de 771-793/4</PeriodeEmission>: <ANgazetier>Charlemagne</ANgazetier> (768-814), <ANgazetier>Louis le Pieux roi 
+                                            d&apos;Aquitaine</ANgazetier> (781-814)
+29        <NatureMonnaie> Denier de <ANgazetier>Charlemagne</ANgazetier></NatureMonnaie> (1 exemplaire étudié)
+           CARO-LVS en 2 lignes                                 AMB
+           Gariel V 5; Morrison-Grunthal 227; Depeyrot (1)(2) 29; Collections: <CollectionsDetails>Berlin 1,09.</CollectionsDetails>
+</paragraph>
+                     <paragraph><PeriodeEmission>Type de 864-875</PeriodeEmission>: <ANgazetier>Charles le Chauve</ANgazetier> (840-877), <ANgazetier><ANgazetier>Louis le 
+                Germanique</ANgazetier></ANgazetier> (840-876), <ANgazetier>Louis II le Bègue roi d&apos;Aquitaine</ANgazetier> (867- 
+                                         877), de France (877-879)
+30        <NatureMonnaie> Denier de <ANgazetier>Charles le Chauve</ANgazetier></NatureMonnaie> (182 exemplaires étudiés)
+           + GRATTA DEI REX monogramme                          +  AMBIANIS CIVITAS croix
+           Gariel XXV 2-6; Morrison-Grunthal 751-752, 754, 756-758, 760, 762-763, 766; Depeyrot (1) (2) 30; 
+           Nombreuses variétés de légende et de ponctuation (CIVITA, CIVIT, CIVIL CIVI, CM, 4 points â la 
+           place de la croisette). Collections: <CollectionsDetails>Berlin 1,76, 1,76, 1,71, 1,47, 1,39, 1,27; Blunt 1,50; Bruxelles 
+           1,67, 1,54; Charleville-Mézières 41 (1,71); Leiden 1,30; MEC 850 (1,63); Monnaie de <ANgazetier>Paris</ANgazetier> 100
+           (1,55); New York 1,80, 1,72, 1,71, 1,66,    1,63, 1,57, 1,57, 1,56, 1,53, 1,49, 1,46, 1,40, 1,34, 1,34,
+           1,33, 1,28, 1,27; <ANgazetier>Paris</ANgazetier> 233a, 241a, 241b,  241c, 241d; Prou 231 (1,81),   232  (1,58), 233 (1,73), 234
+           (1,76), 235 (1,56), 236 (1,58), 239 (1,71), 240 (1,74), 241 (1,81).</CollectionsDetails> Trésors: Imbleville (864-875), 2 
+           ex. (D. 168; H. 62 daté de 869); Nourray (869-875), 1 ex. (D. 243; H. 64 daté de 869-870); Zelzate 
+           (890 env.), 1 ex. (MG 51; H. 86 daté de 888); Cosne (875-877), 1 ex. (D. 110; H. 67 daté de 875).; 
+           Compiègne ? (877-879), 11 ex. (D. 104); Chalo-Saint-Mars (879-884), 11 ex. (D. 79; H. 77 daté de 
+           879); Glisy (890), 94 ex. (D. 154 ne mentionne que 68 ex.; H. 90 daté de 888); Ablaincourt-ANS 
+           (890), 13 ex. (MG 84); Monchy-au-Bois (895-898), 5 ex. (D. 217; H. 101 daté de 897-898).
+</paragraph>
+
+
+
+                                                                                                              <paragraph>129
+ 
+</paragraph>
+
+</root>
