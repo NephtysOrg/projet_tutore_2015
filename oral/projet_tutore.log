@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  18 MAY 2015 10:14
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  18 MAY 2015 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1796,26 +1796,23 @@ Overfull \hbox (25.378pt too wide) in paragraph at lines 4--7
 
  (./projet_tutore.vrb
 File: img/annieChaine.png Graphic file (type QTm)
- <use  "img/annieChaine.png" >) [21
+ <use  "img/annieChaine.png" >
+Overfull \hbox (34.81749pt too wide) in paragraph at lines 8--11
+[][][][][][]  
+ []
+
+) [21
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
-
-(./projet_tutore.vrb
-File: img/Gaz.png Graphic file (type QTm)
- <use  "img/Gaz.png" >
-Overfull \hbox (9.92247pt too wide) in paragraph at lines 4--7
-[][][][][][]  
- []
-
-) [22
+ (./projet_tutore.vrb) [22
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
  (./projet_tutore.vrb)
-Overfull \vbox (2.5084pt too high) detected at line 276
+Overfull \vbox (2.5084pt too high) detected at line 282
  []
 
 [23
@@ -1955,19 +1952,19 @@ Overfull \vbox (2.5084pt too high) detected at line 276
 \tf@snm=\write8
 \openout8 = `projet_tutore.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 610.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 610.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 616.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 616.
 
 (./projet_tutore.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 610.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 610.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 610.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 616.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 616.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 616.
  ) 
 Here is how much of TeX's memory you used:
- 42335 strings out of 493918
- 909958 string characters out of 6150563
+ 42333 strings out of 493918
+ 909940 string characters out of 6150563
  1050574 words of memory out of 5000000
- 44733 multiletter control sequences out of 15000+600000
+ 44732 multiletter control sequences out of 15000+600000
  6980 words of font info for 73 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  59i,13n,91p,10427b,1517s stack positions out of 5000i,500n,10000p,200000b,80000s
