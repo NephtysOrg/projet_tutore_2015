@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  16 MAY 2015 17:09
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.5.10)  18 MAY 2015 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1687,28 +1687,23 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.9}).
 \c@lstlisting=\count308
 (./projet_tutore.nav) [1
 
-]
-\openout4 = `projet_tutore.vrb'.
+] [2
 
- (./projet_tutore.vrb) [2
+] [3
 
-] (./projet_tutore.vrb)
-[3
+] [4
 
-] (./projet_tutore.vrb) [4
+] [5
 
-] (./projet_tutore.vrb) [5
+] [6
 
-] (./projet_tutore.vrb)
-[6
-
-] (./projet_tutore.vrb) [7
+] [7
 
 ]
 \openout4 = `projet_tutore.vrb'.
 
- (./projet_tutore.vrb) (./projet_tutore.toc)
-[8
+ (./projet_tutore.vrb)
+(./projet_tutore.toc) [8
 
 ] [9
 
@@ -1944,8 +1939,8 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 520.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 520.
  ) 
 Here is how much of TeX's memory you used:
- 42329 strings out of 493918
- 909924 string characters out of 6150563
+ 42317 strings out of 493918
+ 909708 string characters out of 6150563
  1050574 words of memory out of 5000000
  44730 multiletter control sequences out of 15000+600000
  6980 words of font info for 73 fonts, out of 8000000 for 9000

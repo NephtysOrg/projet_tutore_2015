@@ -1,56 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+
 <annotations>
-<paragraph>Type de 879-887: Louis III (879-882), Louis le Jeune (879-882), 
-              Carloman (879-884), Charles le Gros (884-887), Charles de 
-                Provence (876-880), Boson roi de Provence (879-887)
-94      Denier de Carloman (9 exemplaires étudiés)
-        + KARL ° CT D, Rx                     + MON +°S NAZ croix
-        Poey d&apos;Avant 5638-5641; 5643-5644; Gariel XXXIX 16-17; Morrison-Grunthal 1419; Nombreuses 
-        variétés de légende, de ponctuation et de gravure. Collections: <CollectionsDetails>Berlin; MEC 907 (1,69), 908 (1,32); 
-        New York 1,74, 1,71; Prou 603 (1,70); Saint-Pétersbourg 1,74; Vienne 1,59.</CollectionsDetails> Trésors: <TresorsDetails>Issy-l&apos;Evêque 
-        (879-884), 2 ex. (D. 172; H. 70 daté de 875).</TresorsDetails>
-95      Obole de Carloman
-        + KARL ° CT D, Rx                     + MON +°S NAZ croix
-        Poey d&apos;Avant 5637, 5642, 5642; Gariel XXXIX 15-18; Morrison-Grunthal 1418, 1420.
-        Monnaies de type indéterminé de Carloman (55 exemplaires étudiés).
-        Trésors: <TresorsDetails>Autun (879-884), 40 deniers et oboles (D. 23; H. 59 daté de 866); Luzy (début Xe), 15 ex. 
-        (deniers et oboles) (D. 202).</TresorsDetails>
-</paragraph>
-
-
                                <paragraph>Auxerre (Yonne)
 </paragraph>
-            <paragraph>Type de 840-864: Lothaire I (817-855), Pépin II, roi d&apos;Aquitaine 
-              (839-865), Charles le Chauve (840-877), Lothaire II roi de 
-            Lorraine (855-869), Charles l&apos;Enfant roi d&apos;Aquitaine (vers 860)
-96      Denier de Charles le Chauve (43 exemplaires étudiés)
+            <paragraph><PeriodeEmission>Type de <Periode>840-864</Periode></PeriodeEmission>: Lothaire I (<Periode>817-855</Periode>), Pépin II, roi d&apos;Aquitaine 
+              (<Periode>839-865</Periode>), Charles le Chauve (<Periode>840-877</Periode>), Lothaire II roi de 
+            Lorraine (<Periode>855-869</Periode>), Charles l&apos;Enfant roi d&apos;Aquitaine (vers 860)
+96     <NatureMonnaie> Denier de Charles le Chauve</NatureMonnaie> (43 exemplaires étudiés)
+<Legende>
         + CAROLVS REX FR croix, 4 globes      AVTISIODERO CIVI temple
-        Gariel XXI 1, 2; Morrison-Grunthal 987-990; Depeyrot (I) (2) 96; Nombreuses variétés de légende, de 
+</Legende>
+        Gariel XXI 1, 2; Morrison-Grunthal <Periode>987-990</Periode>; Depeyrot (I) (2) 96; Nombreuses variétés de légende, de 
         ponctuation et de gravure. Collections: <CollectionsDetails>Assen 1,54; Berlin; MEC 842 (1,59); New York 1,49; Prou 
-        582 (1,63), 583 (1,46).</CollectionsDetails> Trésors: <TresorsDetails>Groningen-1890 (vers 840), 1 ex. (MG 38; H. 39, daté de 845-846); 
-        Auxerre (840-845), 1 ex. (D. 24); Tzummarum (840-845), 1 ex. (H. 22 daté de 840, ne mentionne pas 
-        cette monnaie dans le catalogue); Cosne (840-845), 30 ex. (D. 109; H. 45, daté de 845-846, voir 
-        p. 93); Midlaren (855), 1 ex. (MG 55; H. 57 daté de 864); Nourray (869-875), 1 ex. (D. 243; H. 64 
-        daté de 869-870); Roswinkel (875), 1 ex. (MG 66; H. 75 daté de 877) (1,55);</TresorsDetails> Trouvailles: <TrouvaillesDetails>Auxerre, 1 
+        582 (1,63), 583 (1,46).</CollectionsDetails> Trésors: <TresorsDetails>Groningen-1890 (vers 840), 1 ex. (MG 38; H. 39, daté de <Periode>845-846</Periode>); 
+        Auxerre (<Periode>840-845</Periode>), 1 ex. (D. 24); Tzummarum (<Periode>840-845</Periode>), 1 ex. (H. 22 daté de 840, ne mentionne pas 
+        cette monnaie dans le catalogue); Cosne (<Periode>840-845</Periode>), 30 ex. (D. 109; H. 45, daté de <Periode>845-846</Periode>, voir 
+        p. 93); Midlaren (855), 1 ex. (MG 55; H. 57 daté de 864); Nourray (<Periode>869-875</Periode>), 1 ex. (D. 243; H. 64 
+        daté de <Periode>869-870</Periode>); Roswinkel (875), 1 ex. (MG 66; H. 75 daté de 877) (1,55);</TresorsDetails> Trouvailles: <TrouvaillesDetails>Auxerre, 1 
         ex. (H. 511)</TrouvaillesDetails>
 </paragraph>
-                <paragraph>Type de 864-875: Charles le Chauve (840-877), Louis le 
-            Germanique (840-876), Louis II le Bègue roi d&apos;Aquitaine (867- 
-                              877), de France (877-879)
-97      Denier de Charles le Chauve (22 exemplaires étudiés)
+                <paragraph><PeriodeEmission>Type de <Periode>864-875</Periode></PeriodeEmission>: Charles le Chauve (<Periode>840-877</Periode>), Louis le 
+            Germanique (<Periode>840-876</Periode>), Louis II le Bègue roi d&apos;Aquitaine (<Periode>867- 
+                              877</Periode>), de France (<Periode>877-879</Periode>)
+97     <NatureMonnaie> Denier de Charles le Chauve</NatureMonnaie> (22 exemplaires étudiés)
+<Legende>
         + GRATIA DEI REX monogramme           + AVTISIODER CIVITAS croix
+</Legende>
         Gariel XXV 20-23; Morrison-Grunthal 991, 994, 996-1001; Depeyrot (1) (2) 97; Nombreuses variétés 
         de légende, de ponctuation et de gravure (AVTISIODER CIVI). Collections: <CollectionsDetails>Berlin 1,77, 1,70, 1,59, 
         1,55; MEC 853 (1,78); Monnaie de Paris 105 (1,63); Prou 584 (1,58), 585 (1,69), 586 (1,79), 587 
-        (1,72), 588 (1,77).</CollectionsDetails> Trésors: <TresorsDetails>Fontaines/Mercurey (840-875), 1 ex. (D. 147 ne mentionne pas cette 
-        monnaie; H. 66 daté de 875); Cosne (875-877), 2 ex. (D. 110; H. 67 daté de 875) (1,74, 1,73); 
-        Montrieux-en-Sologne (887-898), 4 ex. (D. 231; H. 88 daté de 888); Glisy (890), 3 ex. (D. 154; H. 90 
-        daté de 888). Monchy-au-Bois (895-898), 1 ex. (D. 217; H. 101 daté de 897-898); Montrieux-en- 
+        (1,72), 588 (1,77).</CollectionsDetails> Trésors: <TresorsDetails>Fontaines/Mercurey (<Periode>840-875</Periode>), 1 ex. (D. 147 ne mentionne pas cette 
+        monnaie; H. 66 daté de 875); Cosne (<Periode>875-877</Periode>), 2 ex. (D. 110; H. 67 daté de 875) (1,74, 1,73); 
+        Montrieux-en-Sologne (<Periode>887-898</Periode>), 4 ex. (D. 231; H. 88 daté de 888); Glisy (890), 3 ex. (D. 154; H. 90 
+        daté de 888). Monchy-au-Bois (<Periode>895-898</Periode>), 1 ex. (D. 217; H. 101 daté de <Periode>897-898</Periode>); Montrieux-en- 
         Sologne (900), 1 ex. (D. 229; H. 87 daté de 888).</TresorsDetails>
-98      Denier de Charles le Chauve (1 exemplaire étudié)
+98     <NatureMonnaie> Denier de Charles le Chauve</NatureMonnaie> (1 exemplaire étudié)
+<Legende>
         + GRATIA DEI REX monogramme           + ALTIEI CIVITVS (rétro.) croix
-        Gariel XXV 24; Morrison-Grunthal 991; Depeyrot (1) (2) 98; Collections: Prou 589 (1,68).
+</Legende>
+        Gariel XXV 24; Morrison-Grunthal 991; Depeyrot (1) (2) 98;
 </paragraph>
 
 
@@ -58,4 +47,5 @@
                                                                                <paragraph>151
  
 </paragraph>
+
 </annotations>
