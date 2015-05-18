@@ -33,7 +33,7 @@
 \subtitle{dans l’environnement Gate}
 \date{}
 \author{Charles Follet \and Roland Bary}
-\institute{Université de Pau et Pays de l'Adour}
+\institute{Université de Pau et des Pays de l'Adour}
 
 \begin{document}
 \maketitle
@@ -43,7 +43,7 @@
 		\begin{itemize}[<+->]
   			\setbeamertemplate{itemize item}[square]
   			\item{Annotation sémantique : phase en amont de la recherche d'information sémantique}
-  			\item{Utilisation de la plate-forme GATE Developper}
+  			\item{Utilisation de la plate-forme GATE Developer}
   			\item{Problématique : comment annoter de manière automatique un document texte non-structuré ?}		
   		\end{itemize}
 \end{frame}
@@ -67,7 +67,7 @@
 			\begin{itemize}
 				\setbeamertemplate{itemize item}[square]
 				\item{Temporelles : Quelles étaient les pièces en circulation de l’an 859 à l’an 865 ?}
-				\item{Thématiques : Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?\\
+				\item{Thématiques : Combien d’exemplaires de la monnaie d’or de Charles le Chauve ont été étudiés ?\\~
 				Dans quels ateliers, les pièces de type Obole de Charlemagne ont été produites ?}
 			\end{itemize}	
 		\end{scriptsize}
@@ -304,7 +304,6 @@ Trouvailles: \colorbox{blue!30}{Bolsward, 1 ex. (H. 528) (1,26).}
 \end{scriptsize}
 \end{frame}
 
-
 %%%%%% Annotations dans GATE Developper %%%%%%%%
 \section{Annotations dans GATE}
 \begin{frame}[fragile]
@@ -320,10 +319,10 @@ Trouvailles: \colorbox{blue!30}{Bolsward, 1 ex. (H. 528) (1,26).}
 	\begin{scriptsize}
 		\setbeamertemplate{itemize item}[square]
 	\begin{itemize}
-		\item{Outil de traitement automatique du langage (en JAVA).}
-		\item{Université de Sheffield depuis 1995 (version 8).}
-		\item{Principe: Chaîne de traitement (Pipeline).}
-		\item{Plusieurs modules dans un pipeline.}
+		\item{Outil de traitement automatique du langage (en JAVA)}
+		\item{Université de Sheffield depuis 1995 (version 8)}
+		\item{Principe: Chaîne de traitement (Pipeline)}
+		\item{Plusieurs modules dans un pipeline}
 		\item{ANNIE: Pipeline par défaut pouvant servir de chaîne de départ}
 	\end{itemize}
 	\end{scriptsize}
@@ -339,7 +338,7 @@ Trouvailles: \colorbox{blue!30}{Bolsward, 1 ex. (H. 528) (1,26).}
 
 \begin{frame}[fragile]
 \frametitle{Annotations dans GATE - LANG}
-La chaîne de traitement LANG
+La chaîne de traitement LANG (L'Annotation du Numéraire dans Gate)
 \begin{center}
 \includegraphics[scale=0.5]{img/chaine1.png} 
 \end{center}
@@ -365,9 +364,9 @@ La chaîne de traitement LANG
 	\includegraphics[scale=0.4]{img/gazetier.png} 
 		\begin{itemize}[<+->]
 			\setbeamertemplate{itemize item}[square]
-			\item{liste de noms d'entités (Villes, métiers,etc)}
-			\item{permettant un repérage d’occurrences dans un texte}
-			\item{possibilité d'associer des caractéristiques a chaque nom d'entité (séparateurs)}
+			\item{Liste de noms d'entités}
+			\item{Permettant un repérage d’occurrences dans un texte}
+			\item{Possibilité d'associer des caractéristiques à chaque nom d'entité}
 			\item{Dans Gate: MajorType, MinorType réutilisable dans une règle \textit{JAPE}}
 		\end{itemize}
 \end{frame}
@@ -506,11 +505,6 @@ Rule: PeriodeEmissionRule
 \end{columns}
 \end{frame}
 
-
-
-
-
-
 \begin{frame}[fragile]
   \frametitle{Mise en œuvre- Exemple 2}
 Annotation : La nature de la monnaie \\
@@ -619,8 +613,14 @@ Fichier XML : \\
 \frametitle{Conclusion}
 \begin{itemize}[<+->]
 	\setbeamertemplate{itemize item}[square]
-	\item{Amélioration de la robustesse de l'application}
-	\item{}
+	\item{Chaîne de traitement et visualisation fonctionnelles}
+	\item{Besoins du cahier de charges satisfait}
+	\item{Améliorations possibles sur :}
+		\begin{itemize}[<+->]
+			\setbeamertemplate{itemize item}[square]
+			\item{L'interface web de visualisation}
+			\item{Performance de la chaîne de traitement}
+\end{itemize}
 \end{itemize}
 \end{frame}
 \end{document}
