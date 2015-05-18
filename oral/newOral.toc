@@ -4,5 +4,5 @@
 \beamer@subsectionintoc {2}{1}{Les Gazetiers}{28}{0}{2}
 \beamer@subsectionintoc {2}{2}{Le formalisme JAPE}{32}{0}{2}
 \beamer@sectionintoc {3}{Mise en œuvre}{33}{0}{3}
-\beamer@sectionintoc {4}{Visualisation}{62}{0}{4}
-\beamer@sectionintoc {5}{Démonstration}{64}{0}{5}
+\beamer@sectionintoc {4}{Visualisation}{59}{0}{4}
+\beamer@sectionintoc {5}{Démonstration}{61}{0}{5}

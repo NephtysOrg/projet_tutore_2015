@@ -1,8 +1,0 @@
-\frametitle{Conclusion}
-Retours d'expérience sur:
-\begin{itemize}[<+->]
-\setbeamertemplate{itemize item}[square]
-\item{La gestion du temps}
-\item{Respect des spécifications du cahier de charge}
-\item{Organisation du projet (gestion des réunions)}
-\end{itemize}
